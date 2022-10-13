@@ -1,7 +1,7 @@
 ### Hi There! 
 C4Dynamics (read Tsipor (bird) Dynamics) is your place to get ideas, inspiration, and quickstart projects for systems that invlove physics, sensors, and coding. 
 
-[![My Skills](https://skillicons.dev/icons?i=python,matlab,vscode)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=python,matlab,vscode,cpp)](https://skillicons.dev)
 
 Gain Knowledge with articles!
 Explore featured projects!

@@ -1,18 +1,26 @@
-![Algorithms Engineering and Development](https://media-exp1.licdn.com/dms/image/C4D16AQEITVCHqjPsJQ/profile-displaybackgroundimage-shrink_350_1400/0/1659384852670?e=1671062400&v=beta&t=p1Sopc1PJ39LOxkOt6bDOhBJPpruXvkMP5QiApSP0uQ)
-
 ### Hi there 👋 
 #### Tsipor Dynamics
 #### Algorithms Engineering and Development
 ****
 
-C4Dynamics (read Tsipor (bird) Dynamics) is your place to get ideas, inspiration, and quickstart projects for systems that involve physics, sensors, and coding. 
+C4Dynamics (read Tsipor (bird) Dynamics) is an open-source framework for algorithms engineering. 
 
+[![My Skills](https://skillicons.dev/icons?i=python)](https://skillicons.dev)
 
-[![My Skills](https://skillicons.dev/icons?i=python,matlab,cpp&theme=dark)](https://skillicons.dev)
+Welcome to the C4dynamics - an open-source framework for algorithm engineers!
 
-* ✅ Gain knowledge with articles!
-* ✅ Explore featured projects!
-* ✅ Contribute by your own Tsipor Dynamics projects!
+This framework is designed to help algorithm engineers quickly and efficiently implement and test new algorithms. 
+It includes a variety of tools and features to streamline the development process, including:
+
+* ✅ A comprehensive library of common algorithms and data structures!
+* ✅ A robust testing suite to ensure the reliability and correctness of your implementation!
+* ✅ An intuitive API for easily integrating your algorithms into larger systems!
+* ✅ Documentation and examples to help you get up and running quickly!
+
+Whether you're a seasoned algorithm engineer or just getting started, this framework has something to offer. Its modular design allows you to easily pick and choose the components you need, and its active community of contributors is always working to improve and expand its capabilities.
+
+So why wait? Start using the C4dynamics today and take your algorithms engineering to the next level!
+
 
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=C4dynamics)](https://github.com/anuraghazra/github-readme-stats)
 

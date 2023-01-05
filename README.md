@@ -49,7 +49,7 @@ seeker analysis: the program simulates the behavior of a seeker with errors: sca
 
 
 proportional_navigation: the program demonstrates the development of proportional navigation algorithm to pursuit a constant-speed target. 
-![](https://github.com/C4dynamics/missile_guidance/blob/main/simple_pn.gif)
+![](https://github.com/C4dynamics/missile_guidance/blob/main/simple_pn.gif?360x290)
 
 
 kalman_radar: the program demonstrates the development of extended kalman filter algorithm on a vertically falling target. the target model is two opposing forces: gravity and drag. 

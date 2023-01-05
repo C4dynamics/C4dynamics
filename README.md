@@ -68,26 +68,10 @@ Thanks goes to these wonderful people ([:hugs:](https://allcontributors.org/docs
 <!-- markdownlint-disable -->
 <table>
   <tbody>
-    <tr>
-	
-      <td align="center">
-	  <a href="https://github.com/C4dynamics">
-	  <img src="https://github.com/C4dynamics/C4dynamics/blob/main/tools/ziv.png" width="100px;" alt="Ziv Meri"/>
-	  <br /><sub><b>Ziv Meri</b></sub></a><br />
-	  <a href="#maintenance-Smartmind12" title="Maintenance">🚧</a></td>
-      
-	  <td align="center">
-	  <a href="http://santoshb.com.np">
-	  <img src="https://avatars.githubusercontent.com/u/23402178?v=4?s=100" width="100px;" alt="Ziv Meri"/>
-	  <br /><sub><b>Santosh Bhandari</b></sub></a><br />
-	  <a href="https://github.com/amplication/amplication/commits?author=TheLearneer" title="Code">💻</a></td>
-      
-	  <td align="center">
-	  <a href="https://github.com/vincenzodomina">
-	  <img src="https://avatars.githubusercontent.com/u/54762917?v=4?s=100" width="100px;" alt="Vincenzo Domina"/>
-	  <br /><sub><b>Vincenzo Domina</b></sub></a><br />
-	  <a href="https://github.com/amplication/amplication/commits?author=vincenzodomina" title="Code">💻</a></td>
-	  
+    <tr>	
+      <td align="center"><a href="https://github.com/C4dynamics"><img src="https://github.com/C4dynamics/C4dynamics/blob/main/tools/ziv.png" width="100px;" alt="Ziv Meri"/> <br /><sub><b>Ziv Meri</b></sub></a><br /><a href="#maintenance-Smartmind12" title="Maintenance">🚧</a></td>
+      <td align="center"><a href="http://santoshb.com.np"><img src="https://avatars.githubusercontent.com/u/23402178?v=4?s=100" width="100px;" alt="Ziv Meri"/><br /><sub><b>Santosh Bhandari</b></sub></a><br /><a href="https://github.com/amplication/amplication/commits?author=TheLearneer" title="Code">💻</a></td>
+      <td align="center"><a href="https://github.com/vincenzodomina"><img src="https://avatars.githubusercontent.com/u/54762917?v=4?s=100" width="100px;" alt="Vincenzo Domina"/><br /><sub><b>Vincenzo Domina</b></sub></a><br /><a href="https://github.com/amplication/amplication/commits?author=vincenzodomina" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>

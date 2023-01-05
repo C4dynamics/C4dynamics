@@ -76,7 +76,7 @@ rdr = c4d.seekers.radar(sf = 0.9, bias = 0, noisestd = 1)
 <table>
   <tbody>
     <tr>	
-      <td align="center"><a href="https://github.com/C4dynamics"><img src="https://github.com/C4dynamics/C4dynamics/blob/main/tools/ziv_noa.png" width="100px;" alt="Ziv Meri"/> <br /><sub><b>Ziv Meri</b></sub></a><br /><a href="https://github.com/C4dynamics" title="Code">💻</a></td>
+      <td align="center"><a href="https://github.com/C4dynamics"><img src="https://github.com/C4dynamics/C4dynamics/blob/main/tools/ziv_noa.jpg" width="100px;" alt="Ziv Meri"/> <br /><sub><b>Ziv Meri</b></sub></a><br /><a href="https://github.com/C4dynamics" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>

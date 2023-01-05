@@ -21,8 +21,51 @@ Whether you're a seasoned algorithm engineer or just getting started, this frame
 
 So why wait? Start using the C4dynamics today and take your algorithms engineering to the next level!
 
-for quickstart run examples\pn.py: a missile-target pursuit. 
+for quickstart see jupyter notebook demonstrations in examples (GitHub repository). 
 
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=C4dynamics)](https://github.com/anuraghazra/github-readme-stats)
+
+
+define radar with C4dynamics: 
+
+import C4dynamics as c4d
+rdr = c4d.seekers.dzradar([0, 0, 0], c4d.filters.filtertype.ex_kalman, 50e-3)
+
+
+#### define moving target with C4dynamics: 
+import C4dynamics as c4d
+tgt = c4d.datapoint(x = 1000, vx = 100)
+
+#### define errors to a general-purpose seeker with C4dynamics: 
+import C4dynamics as c4d
+rdr = c4d.seekers.radar(sf = 0.9, bias = 0, noisestd = 1)
+
+
+
+
+### /Examples
+
+seeker analysis: the program simulates the behavior of a seeker with errors: scale factor, bias, noise
+![](https://github.com/C4dynamics/examples/blob/main/error%20analysis.gif)
+
+
+proportional_navigation: the program demonstrates the development of proportional navigation algorithm to pursuit a constant-speed target. 
+![](https://github.com/C4dynamics/missile_guidance/blob/main/simple_pn.gif)
+
+
+kalman_radar: the program demonstrates the development of extended kalman filter algorithm on a vertically falling target. the target model is two opposing forces: gravity and drag. 
+![](https://github.com/C4dynamics/filters/blob/main/beta_estim.gif)
+
+
+
+
+
+
+
+
+
+
+
+
 
 

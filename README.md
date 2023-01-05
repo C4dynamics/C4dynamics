@@ -25,23 +25,24 @@ So why wait? Start using the C4dynamics today and take your algorithms engineeri
 
 See jupyter notebook demonstrations in examples (GitHub repository). 
 
+
 define radar with C4dynamics: 
 
-...
-$ import C4dynamics as c4d
-$ rdr = c4d.seekers.dzradar([0, 0, 0], c4d.filters.filtertype.ex_kalman, 50e-3)
-...
+```
+import C4dynamics as c4d
+rdr = c4d.seekers.dzradar([0, 0, 0], c4d.filters.filtertype.ex_kalman, 50e-3)
+```
 
 define moving target with C4dynamics: 
 
-...
+```
 import C4dynamics as c4d
 tgt = c4d.datapoint(x = 1000, vx = 100)
-...
+```
 
 define errors to a general-purpose seeker with C4dynamics: 
 
-...
+```
 import C4dynamics as c4d
 rdr = c4d.seekers.radar(sf = 0.9, bias = 0, noisestd = 1)
-...
+```

@@ -28,8 +28,8 @@ See jupyter notebook demonstrations in examples (GitHub repository).
 define radar with C4dynamics: 
 
 ...
-import C4dynamics as c4d
-rdr = c4d.seekers.dzradar([0, 0, 0], c4d.filters.filtertype.ex_kalman, 50e-3)
+$ import C4dynamics as c4d
+$ rdr = c4d.seekers.dzradar([0, 0, 0], c4d.filters.filtertype.ex_kalman, 50e-3)
 ...
 
 define moving target with C4dynamics: 

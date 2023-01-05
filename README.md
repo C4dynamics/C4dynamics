@@ -19,14 +19,22 @@ This framework is designed to help algorithm engineers quickly and efficiently i
 
 It includes a variety of tools and features to streamline the development process, including:
 
-* ✅ A comprehensive library of common algorithms and data structures!
+✅ A comprehensive library of common algorithms and data structures!
+
 * Data-point and rigid-body objects
+
 * 6DOF (six degrees of freedom) simulation
+
 * Seekers and sensors
+
 * Save and plot state-vector in one klick
-* ✅ A robust testing suite to ensure the reliability and correctness of your implementation!
-* ✅ An intuitive API for easily integrating your algorithms into larger systems!
-* ✅ Documentation and examples to help you get up and running quickly!
+
+✅ A robust testing suite to ensure the reliability and correctness of your implementation!
+
+✅ An intuitive API for easily integrating your algorithms into larger systems!
+
+✅ Documentation and examples to help you get up and running quickly!
+
 
 
 Whether you're a seasoned algorithm engineer or just getting started, this framework has something to offer. Its modular design allows you to easily pick and choose the components you need, and its active community of contributors is always working to improve and expand its capabilities.
@@ -61,7 +69,6 @@ rdr = c4d.seekers.radar(sf = 0.9, bias = 0, noisestd = 1)
 
 # Contributors ✨
 
-Thanks goes to these wonderful people ([:hugs:](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
@@ -69,7 +76,7 @@ Thanks goes to these wonderful people ([:hugs:](https://allcontributors.org/docs
 <table>
   <tbody>
     <tr>	
-      <td align="center"><a href="https://github.com/C4dynamics"><img src="https://github.com/C4dynamics/C4dynamics/blob/main/tools/ziv_noa.png" width="100px;" alt="Ziv Meri"/> <br /><sub><b>Ziv Meri</b></sub></a><br /><a href="https://github.com/C4dynamics" title="Development">🚧</a></td>
+      <td align="center"><a href="https://github.com/C4dynamics"><img src="https://github.com/C4dynamics/C4dynamics/blob/main/tools/ziv_noa.png" width="100px;" alt="Ziv Meri"/> <br /><sub><b>Ziv Meri</b></sub></a><br /><a href="https://github.com/C4dynamics" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
@@ -80,28 +87,4 @@ Thanks goes to these wonderful people ([:hugs:](https://allcontributors.org/docs
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

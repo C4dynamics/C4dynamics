@@ -45,7 +45,7 @@ rdr = c4d.seekers.radar(sf = 0.9, bias = 0, noisestd = 1)
 ### /Examples
 
 seeker analysis: the program simulates the behavior of a seeker with errors: scale factor, bias, noise
-![](https://github.com/C4dynamics/examples/blob/main/error%20analysis.gif =360x290)
+![](https://github.com/C4dynamics/examples/blob/main/error%20analysis.gif?360x290)
 
 
 proportional_navigation: the program demonstrates the development of proportional navigation algorithm to pursuit a constant-speed target. 

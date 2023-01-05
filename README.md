@@ -20,10 +20,10 @@ This framework is designed to help algorithm engineers quickly and efficiently i
 It includes a variety of tools and features to streamline the development process, including:
 
 * ✅ A comprehensive library of common algorithms and data structures!
-		- Data-point and rigid-body objects.
-		- 6DOF (six degrees of freedom) simulation 
-		- Seekers and sensors 
-		- Save and plot state-vector in one klick 	
+* Data-point and rigid-body objects
+* 6DOF (six degrees of freedom) simulation
+* Seekers and sensors
+* Save and plot state-vector in one klick
 * ✅ A robust testing suite to ensure the reliability and correctness of your implementation!
 * ✅ An intuitive API for easily integrating your algorithms into larger systems!
 * ✅ Documentation and examples to help you get up and running quickly!
@@ -58,3 +58,52 @@ Define errors to a general-purpose seeker with C4dynamics:
 import C4dynamics as c4d
 rdr = c4d.seekers.radar(sf = 0.9, bias = 0, noisestd = 1)
 ```
+
+# Contributors ✨
+
+Thanks goes to these wonderful people ([:hugs:](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center"><a href="https://github.com/C4dynamics"><img src="https://github.com/C4dynamics/C4dynamics/blob/main/tools/ziv.png" width="100px;" alt="Ziv Meri"/><br /><sub><b>Ziv Meri</b></sub></a><br /><a href="#maintenance-Smartmind12" title="Maintenance">🚧</a></td>
+      <td align="center"><a href="http://santoshb.com.np"><img src="https://avatars.githubusercontent.com/u/23402178?v=4?s=100" width="100px;" alt="Santosh Bhandari"/><br /><sub><b>Santosh Bhandari</b></sub></a><br /><a href="https://github.com/amplication/amplication/commits?author=TheLearneer" title="Code">💻</a></td>
+      <td align="center"><a href="https://github.com/vincenzodomina"><img src="https://avatars.githubusercontent.com/u/54762917?v=4?s=100" width="100px;" alt="Vincenzo Domina"/><br /><sub><b>Vincenzo Domina</b></sub></a><br /><a href="https://github.com/amplication/amplication/commits?author=vincenzodomina" title="Code">💻</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

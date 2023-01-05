@@ -20,6 +20,10 @@ This framework is designed to help algorithm engineers quickly and efficiently i
 It includes a variety of tools and features to streamline the development process, including:
 
 * ✅ A comprehensive library of common algorithms and data structures!
+		- Data-point and rigid-body objects.
+		- 6DOF (six degrees of freedom) simulation 
+		- Seekers and sensors 
+		- Save and plot state-vector in one klick 	
 * ✅ A robust testing suite to ensure the reliability and correctness of your implementation!
 * ✅ An intuitive API for easily integrating your algorithms into larger systems!
 * ✅ Documentation and examples to help you get up and running quickly!

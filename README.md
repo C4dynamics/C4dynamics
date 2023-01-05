@@ -69,7 +69,7 @@ Thanks goes to these wonderful people ([:hugs:](https://allcontributors.org/docs
 <table>
   <tbody>
     <tr>	
-      <td align="center"><a href="https://github.com/C4dynamics"><img src="https://github.com/C4dynamics/C4dynamics/blob/main/tools/ziv.png" width="100px;" alt="Ziv Meri"/> <br /><sub><b>Ziv Meri</b></sub></a><br /><a href="https://github.com/C4dynamics" title="Development">🚧</a></td>
+      <td align="center"><a href="https://github.com/C4dynamics"><img src="https://github.com/C4dynamics/C4dynamics/blob/main/tools/ziv_noa.png" width="100px;" alt="Ziv Meri"/> <br /><sub><b>Ziv Meri</b></sub></a><br /><a href="https://github.com/C4dynamics" title="Development">🚧</a></td>
     </tr>
   </tbody>
 </table>

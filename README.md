@@ -67,7 +67,21 @@ import C4dynamics as c4d
 rdr = c4d.seekers.radar(sf = 0.9, bias = 0, noisestd = 1)
 ```
 
-# Contributors ✨
+
+# Quickstart for Contributors
+
+* Press the 'Fork' button (upper right corner of the C4dynamics page)
+* Clone C4dynamics to your local machine (GitHub Desktop is a nice tool to help you clone and push your changes back)
+* Create a new python notebook 
+* Import C4dynamics to your notebook (see some examples in the repository 'examples')
+* In the notebook, write some code you would like to do using the C4dynamics library
+* Create and edit files in C4dynamics to support your code
+* Make tests and document your changes
+* Push the changes back to your GitHub
+* Press the 'Pull Request' button. Submit a message with details about your changes.
+
+
+## Contributors ✨
 
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->

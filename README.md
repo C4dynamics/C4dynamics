@@ -41,6 +41,9 @@ Whether you're a seasoned algorithm engineer or just getting started, this frame
 
 So why wait? Start using the C4dynamics today and take your algorithms engineering to the next level!
 
+## Note
+This frameworked is aimed mainly for the purpose of developing algorithms for a body in motion or 
+
 ## Quickstart
 
 See jupyter notebook demonstrations in examples (GitHub repository). 

@@ -68,6 +68,8 @@ from . import tools
 
 from .body.datapoint import datapoint 
 from .body.rigidbody import rigidbody 
+from .body.sixdof import sixdof
+
 # from .filters import *
 from . import seekers
 from . import path_planning 

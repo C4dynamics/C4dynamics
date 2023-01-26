@@ -13,20 +13,29 @@ class datapoint:
   """
   
   # 
-  # 
+  # position
   ##
   x = 0
   y = 0
   z = 0
-  # r = 0
+
+  # 
+  # velocity
+  ##
   vx = 0
   vy = 0
   vz = 0
-  # v = 0
+
+  #
+  # acceleration
+  ##
   ax = 0
   ay = 0
   az = 0
-  # a = 0
+  
+  # 
+  # initial position 
+  ##
   x0 = 0
   y0 = 0
   z0 = 0
@@ -50,6 +59,14 @@ class datapoint:
     # if not os.path.exists(fol):
     #   os.mkdir(fol)
 
+  def update(obj, x):
+    obj.x = x[0]
+    obj.y = x[1]
+    obj.z = x[2]
+    obj.vx = x[3]
+    obj.vy = x[4]
+    obj.vz = x[5]
+    
   
   # def set_x(obj, x):
   #   obj.r = x
@@ -130,29 +147,24 @@ class datapoint:
     # plt.axis('off')
     # plt.savefig(obj.fol + "/" + var) 
 
-    
   
-  
-  @staticmethod
-  def eqm(xin, fx, fy, fz, m):
-    x  = xin[0]
-    y  = xin[1]
-    z  = xin[2]
-    vx = xin[3]
-    vy = xin[4]
-    vz = xin[5]
-    ax = xin[6]
-    ay = xin[7]
-    az = xin[8]
+  # @staticmethod
+  # def eqm(xin, fx, fy, fz, m):
+  #   x  = xin[0]
+  #   y  = xin[1]
+  #   z  = xin[2]
+  #   vx = xin[3]
+  #   vy = xin[4]
+  #   vz = xin[5]
     
-    dx  = vx
-    dy  = vy
-    dz  = vz
-    dvx = fx / m 
-    dvy = fy / m
-    dvz = fz / m
+  #   dx  = vx
+  #   dy  = vy
+  #   dz  = vz
+  #   dvx = fx / m 
+  #   dvy = fy / m
+  #   dvz = fz / m
     
-    return dx, dy, dz, dvx, dvy, dvz
+  #   return dx, dy, dz, dvx, dvy, dvz
    
       
 

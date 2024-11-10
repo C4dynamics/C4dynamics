@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>c4dynamics.states.lib.datapoint &#8212; c4dynamics &lt;span class=&#34;project-version&#34;&gt;1.2&lt;/span&gt;</title>
+    <title>c4dynamics.states.lib.datapoint &#8212; C4DYNAMICS v1.2 Manual</title>
   
   
   
@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=80d5e7a1" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/style.css?v=f9876931" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/style.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
@@ -48,7 +48,7 @@
     <link rel="search" title="Search" href="../../../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Oct 07, 2024"/>
+    <meta name="docbuild:last-update" content="Nov 10, 2024"/>
   </head>
   
   
@@ -134,7 +134,7 @@
   
   
   
-    <p class="title logo__title">c4dynamics <span class="project-version">1.2</span></p>
+    <p class="title logo__title">C4DYNAMICS v1.2 Manual</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -154,13 +154,15 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../../../index.html">
-                    C4DYNAMICS
+                    Home
                 </a>
             </li>
         </ul>
         <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../gettingstarted.html">Getting Started</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../../api/index.html">API Reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../api/States.html">State objects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../api/States.html">State Objects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../../api/states.state.html">The state class</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/generated/state/c4dynamics.states.state.state.X.html">c4dynamics.states.state.state.X</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/generated/state/c4dynamics.states.state.state.X0.html">c4dynamics.states.state.state.X0</a></li>
@@ -229,7 +231,7 @@
 </details></li>
 </ul>
 </details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../api/Utils.html">Utils</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../api/Routines.html">Routines</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../../api/utils.eqm.html">Equations of motion solvers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/generated/eqm/c4dynamics.eqm.derivs.eqm3.html">c4dynamics.eqm.derivs.eqm3</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/generated/eqm/c4dynamics.eqm.derivs.eqm6.html">c4dynamics.eqm.derivs.eqm6</a></li>
@@ -246,6 +248,9 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/generated/rotmat/c4dynamics.rotmat.animate.animate.html">c4dynamics.rotmat.animate.animate</a></li>
 </ul>
 </details></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../api/Utils.html">Utils</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/utils.math.html">Math functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/utils.const.html">Constants</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../../api/utils.misc.html">Misc</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -373,12 +378,11 @@ document.write(`
                   
   <h1>Source code for c4dynamics.states.lib.datapoint</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="c1"># directly import a submodule (eqm3) from the c4dynamics.eqm package:</span>
+<span class="kn">import</span> <span class="nn">sys</span> 
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">c4dynamics</span> <span class="k">as</span> <span class="nn">c4d</span> 
-<span class="kn">from</span> <span class="nn">c4dynamics.eqm</span> <span class="kn">import</span> <span class="n">int3</span>  
-<span class="c1"># from c4dynamics.src.main.py.eqm import eqm3</span>
 <span class="kn">from</span> <span class="nn">c4dynamics.states.state</span> <span class="kn">import</span> <span class="n">state</span> 
+<span class="kn">import</span> <span class="nn">warnings</span> 
 
 <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
   <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">:</span>
@@ -435,8 +439,9 @@ document.write(`
 <span class="sd">  </span>
 <span class="sd">  .. code::</span>
 
-<span class="sd">    &gt;&gt;&gt; dp = c4d.datapoint(x = 1000, vx = -100)</span>
-<span class="sd">    &gt;&gt;&gt; dp.X0</span>
+<span class="sd">    &gt;&gt;&gt; from c4dynamics import datapoint</span>
+<span class="sd">    &gt;&gt;&gt; dp = datapoint(x = 1000, vx = -100)</span>
+<span class="sd">    &gt;&gt;&gt; print(dp.X0) # doctest: +NUMPY_FORMAT</span>
 <span class="sd">    [1000  0  0  -100  0  0]</span>
 
 
@@ -471,16 +476,36 @@ document.write(`
 <span class="sd">  in the three dimensional space, and integrate them </span>
 <span class="sd">  using the fourth-order Runge-Kutta method.</span>
 
+<span class="sd">  </span>
+<span class="sd">  Import required packages:</span>
+
+<span class="sd">  .. code:: </span>
+
+<span class="sd">    &gt;&gt;&gt; import c4dynamics as c4d </span>
+<span class="sd">    &gt;&gt;&gt; from matplotlib import pyplot as plt </span>
+<span class="sd">    &gt;&gt;&gt; import numpy as np </span>
+
+
+<span class="sd">  Settings and initial conditions: </span>
 
 <span class="sd">  .. code:: </span>
 
 <span class="sd">    &gt;&gt;&gt; dp = c4d.datapoint(z = 100)</span>
 <span class="sd">    &gt;&gt;&gt; dt = 1e-2</span>
-<span class="sd">    &gt;&gt;&gt; t = np.arange(0, 10, dt) </span>
+<span class="sd">    &gt;&gt;&gt; t = np.arange(0, 10 + dt, dt)</span>
+
+<span class="sd">    </span>
+<span class="sd">  Main loop: </span>
+
+<span class="sd">  .. code:: </span>
+
 <span class="sd">    &gt;&gt;&gt; for ti in t:</span>
-<span class="sd">    ...   if dp.z &lt; 0: break</span>
-<span class="sd">    ...   dp.inteqm([0, 0, -c4d.g_ms2], dt) </span>
 <span class="sd">    ...   dp.store(ti)</span>
+<span class="sd">    ...   if dp.z &lt; 0: break</span>
+<span class="sd">    ...   dp.inteqm([0, 0, -c4d.g_ms2], dt) # doctest: +IGNORE_OUTPUT </span>
+
+<span class="sd">  .. code:: </span>
+
 <span class="sd">    &gt;&gt;&gt; dp.plot(&#39;z&#39;)</span>
 <span class="sd">    &gt;&gt;&gt; plt.show()</span>
 
@@ -488,7 +513,13 @@ document.write(`
 
 
 <span class="sd">  &#39;&#39;&#39;</span>
-
+  <span class="n">x</span><span class="p">:</span> <span class="nb">float</span>
+  <span class="n">y</span><span class="p">:</span> <span class="nb">float</span>
+  <span class="n">z</span><span class="p">:</span> <span class="nb">float</span>
+  <span class="n">vx</span><span class="p">:</span> <span class="nb">float</span>
+  <span class="n">vy</span><span class="p">:</span> <span class="nb">float</span>
+  <span class="n">vz</span><span class="p">:</span> <span class="nb">float</span>
+  
   
   <span class="c1"># Attributes</span>
   <span class="c1"># ==========</span>
@@ -589,41 +620,58 @@ document.write(`
 
 <span class="sd">    1. `datapoint` </span>
 
-<span class="sd">    Two Helium balloons of 1kg and 10kg float with total force of L = 0.5N </span>
+<span class="sd">    Two floating balloons of 1kg and 10kg float with total force of L = 0.5N </span>
 <span class="sd">    and expreience a side wind of 10k.</span>
+
+<span class="sd">    Import required packages: </span>
 
 <span class="sd">    .. code:: </span>
 
-<span class="sd">      &gt;&gt;&gt; t1, t2, dt = 0, 10, 0.01</span>
+<span class="sd">      &gt;&gt;&gt; import c4dynamics as c4d </span>
+<span class="sd">      &gt;&gt;&gt; from matplotlib import pyplot as plt </span>
+<span class="sd">      &gt;&gt;&gt; import numpy as np </span>
+
+<span class="sd">      </span>
+<span class="sd">    Settings and initial conditions: </span>
+
+<span class="sd">    .. code:: </span>
+
+<span class="sd">      &gt;&gt;&gt; dt = 0.01</span>
+<span class="sd">      &gt;&gt;&gt; tf = 10 + dt </span>
 <span class="sd">      &gt;&gt;&gt; F = [0, 0, .5]</span>
 <span class="sd">      &gt;&gt;&gt; #</span>
-<span class="sd">      &gt;&gt;&gt; hballoon1 = c4d.datapoint(vx = 10 * c4d.k2ms)</span>
-<span class="sd">      &gt;&gt;&gt; hballoon1.mass = 1 </span>
+<span class="sd">      &gt;&gt;&gt; bal1 = c4d.datapoint(vx = 10 * c4d.k2ms)</span>
+<span class="sd">      &gt;&gt;&gt; bal1.mass = 1 </span>
 <span class="sd">      &gt;&gt;&gt; #</span>
-<span class="sd">      &gt;&gt;&gt; hballoon10 = c4d.datapoint(vx = 10 * c4d.k2ms)</span>
-<span class="sd">      &gt;&gt;&gt; hballoon10.mass = 10 </span>
-<span class="sd">      &gt;&gt;&gt; #</span>
-<span class="sd">      &gt;&gt;&gt; for t in np.arange(t1, t2, dt):</span>
-<span class="sd">      ...   hballoon1.X = int3(hballoon1, F, dt)</span>
-<span class="sd">      ...   hballoon1.store(t)</span>
-<span class="sd">      ...   hballoon10.X = int3(hballoon10, F, dt)</span>
-<span class="sd">      ...   hballoon10.store(t)</span>
-<span class="sd">      &gt;&gt;&gt; hballoon1.plot(&#39;side&#39;)</span>
-<span class="sd">      &gt;&gt;&gt; hballoon10.plot(&#39;side&#39;, ax = plt.gca(), linecolor = &#39;c&#39;)</span>
+<span class="sd">      &gt;&gt;&gt; bal10 = c4d.datapoint(vx = 10 * c4d.k2ms)</span>
+<span class="sd">      &gt;&gt;&gt; bal10.mass = 10 </span>
+
+<span class="sd">      </span>
+<span class="sd">    Main loop: </span>
+
+<span class="sd">    .. code:: </span>
+<span class="sd">            </span>
+<span class="sd">      &gt;&gt;&gt; for t in np.arange(0, tf, dt):</span>
+<span class="sd">      ...   bal1.store(t)</span>
+<span class="sd">      ...   bal10.store(t)</span>
+<span class="sd">      ...   bal1.X = c4d.eqm.int3(bal1, F, dt)</span>
+<span class="sd">      ...   bal10.X = c4d.eqm.int3(bal10, F, dt)</span>
+
+
+<span class="sd">    .. code:: </span>
+
+<span class="sd">      &gt;&gt;&gt; bal1.plot(&#39;side&#39;)</span>
+<span class="sd">      &gt;&gt;&gt; bal10.plot(&#39;side&#39;, ax = plt.gca(), color = &#39;c&#39;)</span>
 <span class="sd">      &gt;&gt;&gt; plt.show() </span>
 
 <span class="sd">    .. figure:: /_examples/datapoint/mass_balloon.png</span>
 
 <span class="sd">    2. `rigidbody`</span>
+
 <span class="sd">    The previous example for a `datapoint` object is directly applicable </span>
 <span class="sd">    to the `rigidbody` object, as both classes share the same underlying principles </span>
 <span class="sd">    concerning translational dynamics. Simply replace :code:`c4d.datapoint(vx = 10 * c4d.k2ms)` </span>
 <span class="sd">    with :code:`c4d.rigidbody(vx = 10 * c4d.k2ms)`.</span>
-
-
-
-
-
 
 
 <span class="sd">    &#39;&#39;&#39;</span>
@@ -674,7 +722,7 @@ document.write(`
 <span class="sd">    ------- </span>
 <span class="sd">    This method is not recommanded when the vector </span>
 <span class="sd">    of forces depends on the state variables.</span>
-<span class="sd">    Since the vector of forces is provided once at the </span>
+<span class="sd">    Since the force vector is provided once at the </span>
 <span class="sd">    entrance to the integration, it remains constant </span>
 <span class="sd">    for the entire steps. </span>
 <span class="sd">    Therefore, when the forces depend on the state variables </span>
@@ -684,8 +732,8 @@ document.write(`
 <span class="sd"> </span>
 
 <span class="sd">    </span>
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 
 <span class="sd">    Simulation of the motion of a body in a free fall. </span>
 
@@ -696,15 +744,36 @@ document.write(`
 <span class="sd">    using the fourth-order Runge-Kutta method.</span>
 
 
+<span class="sd">    Import required packages: </span>
+
+<span class="sd">    .. code::</span>
+
+<span class="sd">      &gt;&gt;&gt; import c4dynamics as c4d </span>
+<span class="sd">      &gt;&gt;&gt; from matplotlib import pyplot as plt </span>
+<span class="sd">      &gt;&gt;&gt; import numpy as np </span>
+
+<span class="sd">      </span>
+<span class="sd">    Settings and initial conditions: </span>
+<span class="sd">    </span>
 <span class="sd">    .. code:: </span>
 
 <span class="sd">      &gt;&gt;&gt; dp = c4d.datapoint(z = 100)</span>
 <span class="sd">      &gt;&gt;&gt; dt = 1e-2</span>
-<span class="sd">      &gt;&gt;&gt; t = np.arange(0, 10, dt) </span>
+<span class="sd">      &gt;&gt;&gt; t = np.arange(0, 10 + dt, dt) </span>
+
+<span class="sd">      </span>
+<span class="sd">    Main loop: </span>
+
+<span class="sd">    .. code:: </span>
+
 <span class="sd">      &gt;&gt;&gt; for ti in t:</span>
-<span class="sd">      ...   if dp.z &lt; 0: break</span>
-<span class="sd">      ...   dp.inteqm([0, 0, -c4d.g_ms2], dt) </span>
 <span class="sd">      ...   dp.store(ti)</span>
+<span class="sd">      ...   if dp.z &lt; 0: break</span>
+<span class="sd">      ...   dp.inteqm([0, 0, -c4d.g_ms2], dt) # doctest: +IGNORE_OUTPUT </span>
+<span class="sd">      </span>
+
+<span class="sd">    .. code:: </span>
+
 <span class="sd">      &gt;&gt;&gt; dp.plot(&#39;z&#39;)</span>
 <span class="sd">      &gt;&gt;&gt; plt.show()</span>
 
@@ -713,7 +782,7 @@ document.write(`
 
 
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">acc</span> <span class="o">=</span> <span class="n">int3</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">forces</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="n">derivs_out</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">acc</span> <span class="o">=</span> <span class="n">c4d</span><span class="o">.</span><span class="n">eqm</span><span class="o">.</span><span class="n">int3</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">forces</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="n">derivs_out</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">acc</span></div>
 
      
@@ -724,7 +793,7 @@ document.write(`
 
 <div class="viewcode-block" id="datapoint.plot">
 <a class="viewcode-back" href="../../../../api/generated/dp/c4dynamics.states.lib.datapoint.datapoint.plot.html#c4dynamics.states.lib.datapoint.datapoint.plot">[docs]</a>
-  <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">var</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">filename</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">darkmode</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">linecolor</span> <span class="o">=</span> <span class="s1">&#39;m&#39;</span><span class="p">):</span>
+  <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">var</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">filename</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">darkmode</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39; </span>
 <span class="sd">    Draws plots of trajectories or variable evolution over time. </span>
 
@@ -756,9 +825,12 @@ document.write(`
 <span class="sd">        Directory path to save the plot image. </span>
 <span class="sd">        If None, the plot will not be saved, by default None.</span>
 
-<span class="sd">    linecolor : str, optional </span>
-<span class="sd">        Color name for the line, by default &#39;m&#39; (magenta).         </span>
-
+<span class="sd">    **kwargs : dict, optional</span>
+<span class="sd">        Additional key-value arguments passed to `matplotlib.pyplot.plot`.</span>
+<span class="sd">        These can include any keyword arguments accepted by `plot`,</span>
+<span class="sd">        such as `color`, `linestyle`, `marker`, etc. </span>
+<span class="sd">        </span>
+<span class="sd">        </span>
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
 <span class="sd">    - The method overrides the :meth:`plot &lt;c4dynamics.states.state.state.plot&gt;` of </span>
@@ -778,6 +850,16 @@ document.write(`
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
 
+<span class="sd">    Import necessary packages: </span>
+
+<span class="sd">    .. code:: </span>
+
+<span class="sd">      &gt;&gt;&gt; import c4dynamics as c4d </span>
+<span class="sd">      &gt;&gt;&gt; from matplotlib import pyplot as plt </span>
+<span class="sd">      &gt;&gt;&gt; import numpy as np </span>
+<span class="sd">      &gt;&gt;&gt; import scipy </span>
+
+
 <span class="sd">    1) `datapoint`: </span>
 
 <span class="sd">    .. code:: </span>
@@ -790,34 +872,61 @@ document.write(`
 
 <span class="sd">    .. figure:: /_examples/datapoint/plot.png</span>
 
+
 <span class="sd">    2) `rigidbody`:</span>
 
 <span class="sd">    A physical pendulum is represented by a rigidoby object.</span>
 <span class="sd">    `scipy&#39;s odeint` integrates the equations of motion to simulate </span>
 <span class="sd">    the angle of rotation of the pendulum over time.    </span>
 
+<span class="sd">    </span>
+<span class="sd">    Settings and initial conditions: </span>
+<span class="sd">    </span>
 <span class="sd">    .. code:: </span>
 
 <span class="sd">      &gt;&gt;&gt; dt =.01 </span>
 <span class="sd">      &gt;&gt;&gt; pndlm  = c4d.rigidbody(theta = 80 * c4d.d2r)</span>
 <span class="sd">      &gt;&gt;&gt; pndlm.I = [0, .5, 0]</span>
-<span class="sd">      &gt;&gt;&gt; # dynamics  </span>
-<span class="sd">      &gt;&gt;&gt; def physical_pendulum(yin, t, Iyy):</span>
+<span class="sd">    </span>
+<span class="sd">      </span>
+<span class="sd">    Dynamic equations: </span>
+
+<span class="sd">    .. code:: </span>
+
+<span class="sd">      &gt;&gt;&gt; def pendulum(yin, t, Iyy):</span>
 <span class="sd">      ...   yout = np.zeros(12)</span>
 <span class="sd">      ...   yout[7]  =  yin[10]</span>
 <span class="sd">      ...   yout[10] = -c4d.g_ms2 * c4d.sin(yin[7]) / Iyy - .5 * yin[10]</span>
 <span class="sd">      ...   return yout</span>
-<span class="sd">      &gt;&gt;&gt; # main loop </span>
+
+<span class="sd">    </span>
+<span class="sd">    Main loop: </span>
+
+<span class="sd">    .. code:: </span>
+
 <span class="sd">      &gt;&gt;&gt; for ti in np.arange(0, 4, dt): </span>
 <span class="sd">      ...   pndlm.X = scipy.integrate.odeint(pendulum, pndlm.X, [ti, ti + dt], (pndlm.I[1],))[1]</span>
 <span class="sd">      ...   pndlm.store(ti)</span>
+
+<span class="sd">      </span>
+<span class="sd">    Plot results: </span>
+<span class="sd">    </span>
+<span class="sd">    .. code:: </span>
+
 <span class="sd">      &gt;&gt;&gt; pndlm.plot(&#39;theta&#39;, scale = c4d.r2d)</span>
+
 
 <span class="sd">    .. figure:: /_examples/rigidbody/plot_pendulum.png     </span>
 
 
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+    <span class="k">if</span> <span class="n">var</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_didx</span> <span class="ow">and</span> <span class="n">var</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="s1">&#39;side&#39;</span><span class="p">]:</span>
+      <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span><span class="si">{</span><span class="n">var</span><span class="si">}</span><span class="s2"> is not a state variable or a valid trajectory to plot.&quot;&quot;&quot;</span> <span class="p">,</span> <span class="n">c4d</span><span class="o">.</span><span class="n">c4warn</span><span class="p">)</span>
+      <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">:</span>
+      <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;No stored data for </span><span class="si">{</span><span class="n">var</span><span class="si">}</span><span class="s2">.&quot;&quot;&quot;</span> <span class="p">,</span> <span class="n">c4d</span><span class="o">.</span><span class="n">c4warn</span><span class="p">)</span>
+      <span class="k">return</span> <span class="kc">None</span>
 
     <span class="k">if</span> <span class="n">darkmode</span><span class="p">:</span> 
       <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;dark_background&#39;</span><span class="p">)</span>  
@@ -825,7 +934,8 @@ document.write(`
       <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;default&#39;</span><span class="p">)</span>
     
     
-
+    <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="n">ylabel</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 
     <span class="k">if</span> <span class="n">var</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;top&#39;</span><span class="p">:</span>
       <span class="c1"># x axis: y data</span>
@@ -874,6 +984,9 @@ document.write(`
 
 
 
+    <span class="c1"># Set default values in kwargs only if the user hasn&#39;t provided them</span>
+    <span class="n">kwargs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;color&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">)</span>
+    <span class="n">kwargs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;linewidth&#39;</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> 
       <span class="c1"># _, ax = plt.subplots()</span>
@@ -892,12 +1005,10 @@ document.write(`
                     <span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="n">factorsize</span><span class="p">,</span> <span class="n">factorsize</span> <span class="o">*</span> <span class="n">aspectratio</span><span class="p">)</span> 
                             <span class="p">,</span> <span class="n">gridspec_kw</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;left&#39;</span><span class="p">:</span> <span class="mf">0.15</span><span class="p">,</span> <span class="s1">&#39;right&#39;</span><span class="p">:</span> <span class="mf">.9</span>
                                                 <span class="p">,</span> <span class="s1">&#39;top&#39;</span><span class="p">:</span> <span class="mf">.9</span><span class="p">,</span> <span class="s1">&#39;bottom&#39;</span><span class="p">:</span> <span class="mf">.2</span><span class="p">})</span>
-    <span class="k">else</span><span class="p">:</span> 
-      <span class="k">if</span> <span class="n">linecolor</span> <span class="o">==</span> <span class="s1">&#39;m&#39;</span><span class="p">:</span>
-        <span class="n">linecolor</span> <span class="o">=</span> <span class="s1">&#39;c&#39;</span>
+    
 
 
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">linecolor</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mf">1.5</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
     <span class="n">c4d</span><span class="o">.</span><span class="n">plotdefaults</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">xlabel</span><span class="p">,</span> <span class="n">ylabel</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
 
     
@@ -910,7 +1021,31 @@ document.write(`
   
 
     
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+
+  <span class="kn">import</span> <span class="nn">doctest</span><span class="o">,</span> <span class="nn">contextlib</span><span class="o">,</span> <span class="nn">os</span>
+  <span class="kn">from</span> <span class="nn">c4dynamics</span> <span class="kn">import</span> <span class="n">IgnoreOutputChecker</span><span class="p">,</span> <span class="n">cprint</span>
   
+  <span class="c1"># Register the custom OutputChecker</span>
+  <span class="n">doctest</span><span class="o">.</span><span class="n">OutputChecker</span> <span class="o">=</span> <span class="n">IgnoreOutputChecker</span>
+
+  <span class="n">tofile</span> <span class="o">=</span> <span class="kc">False</span> 
+  <span class="n">optionflags</span> <span class="o">=</span> <span class="n">doctest</span><span class="o">.</span><span class="n">FAIL_FAST</span>
+
+  <span class="k">if</span> <span class="n">tofile</span><span class="p">:</span> 
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;tests&#39;</span><span class="p">,</span> <span class="s1">&#39;_out&#39;</span><span class="p">,</span> <span class="s1">&#39;output.txt&#39;</span><span class="p">),</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+      <span class="k">with</span> <span class="n">contextlib</span><span class="o">.</span><span class="n">redirect_stdout</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="n">contextlib</span><span class="o">.</span><span class="n">redirect_stderr</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">(</span><span class="n">optionflags</span> <span class="o">=</span> <span class="n">optionflags</span><span class="p">)</span> 
+  <span class="k">else</span><span class="p">:</span> 
+    <span class="n">result</span> <span class="o">=</span> <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">(</span><span class="n">optionflags</span> <span class="o">=</span> <span class="n">optionflags</span><span class="p">)</span>
+
+  <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">failed</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">cprint</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;: all tests passed!&quot;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">failed</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
 </pre></div>
 
                 </article>
@@ -958,7 +1093,7 @@ By C4dynamics
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Oct 07, 2024.
+  Last updated on Nov 10, 2024.
   <br/>
 </p>
   </div>

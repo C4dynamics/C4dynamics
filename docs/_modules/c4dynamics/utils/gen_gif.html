@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>c4dynamics.utils.gen_gif &#8212; c4dynamics &lt;span class=&#34;project-version&#34;&gt;1.2&lt;/span&gt;</title>
+    <title>c4dynamics.utils.gen_gif &#8212; C4DYNAMICS v1.2 Manual</title>
   
   
   
@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/style.css?v=f9876931" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/style.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
@@ -48,7 +48,7 @@
     <link rel="search" title="Search" href="../../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Oct 07, 2024"/>
+    <meta name="docbuild:last-update" content="Nov 10, 2024"/>
   </head>
   
   
@@ -134,7 +134,7 @@
   
   
   
-    <p class="title logo__title">c4dynamics <span class="project-version">1.2</span></p>
+    <p class="title logo__title">C4DYNAMICS v1.2 Manual</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -154,13 +154,15 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../../index.html">
-                    C4DYNAMICS
+                    Home
                 </a>
             </li>
         </ul>
         <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../gettingstarted.html">Getting Started</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../api/index.html">API Reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/States.html">State objects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/States.html">State Objects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/states.state.html">The state class</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/generated/state/c4dynamics.states.state.state.X.html">c4dynamics.states.state.state.X</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/generated/state/c4dynamics.states.state.state.X0.html">c4dynamics.states.state.state.X0</a></li>
@@ -229,7 +231,7 @@
 </details></li>
 </ul>
 </details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/Utils.html">Utils</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/Routines.html">Routines</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/utils.eqm.html">Equations of motion solvers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/generated/eqm/c4dynamics.eqm.derivs.eqm3.html">c4dynamics.eqm.derivs.eqm3</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/generated/eqm/c4dynamics.eqm.derivs.eqm6.html">c4dynamics.eqm.derivs.eqm6</a></li>
@@ -246,6 +248,9 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../api/generated/rotmat/c4dynamics.rotmat.animate.animate.html">c4dynamics.rotmat.animate.animate</a></li>
 </ul>
 </details></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/Utils.html">Utils</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/utils.math.html">Math functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/utils.const.html">Constants</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/utils.misc.html">Misc</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -375,11 +380,17 @@ document.write(`
 <span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">imageio</span>
 <span class="kn">import</span> <span class="nn">natsort</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="kn">import</span> <span class="nn">sys</span> 
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">c4dynamics</span> <span class="k">as</span> <span class="nn">c4d</span> 
+
 
 <div class="viewcode-block" id="gif">
 <a class="viewcode-back" href="../../../api/generated/misc/c4dynamics.utils.gen_gif.gif.html#c4dynamics.utils.gen_gif.gif">[docs]</a>
 <span class="k">def</span> <span class="nf">gif</span><span class="p">(</span><span class="n">dirname</span><span class="p">,</span> <span class="n">gif_name</span><span class="p">,</span> <span class="n">duration</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="w">  </span><span class="sd">&#39;&#39;&#39;</span>
 
 <span class="sd">    Gif creator.</span>
 
@@ -401,54 +412,114 @@ document.write(`
 <span class="sd">        </span>
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
+
+<span class="sd">    1. Prepare trajectory to animate. </span>
+
+
+<span class="sd">    Import required packages:</span>
+
 <span class="sd">    .. code::</span>
 
+<span class="sd">      &gt;&gt;&gt; import c4dynamics as c4d </span>
 <span class="sd">      &gt;&gt;&gt; from IPython.display import Image</span>
+<span class="sd">      &gt;&gt;&gt; import numpy as np </span>
+<span class="sd">      &gt;&gt;&gt; import os </span>
+
+<span class="sd">      </span>
+<span class="sd">    Settings and initial conditions:</span>
+
+<span class="sd">    .. code::</span>
+
 <span class="sd">      &gt;&gt;&gt; f16 = c4d.rigidbody()</span>
-<span class="sd">      &gt;&gt;&gt; dt = .01</span>
+<span class="sd">      &gt;&gt;&gt; dt = 0.01</span>
+
+<span class="sd">    </span>
+<span class="sd">    Main loop:</span>
+
+<span class="sd">    .. code::</span>
+
 <span class="sd">      &gt;&gt;&gt; for t in np.arange(0, 9, dt): </span>
-<span class="sd">      ...     # in 3 seconds make 180 deg: </span>
-<span class="sd">      ...     if t &lt; 3: </span>
-<span class="sd">      ...         f16.psi += dt * 180 * c4d.d2r / 3</span>
-<span class="sd">      ...     elif t &lt; 6: </span>
-<span class="sd">      ...         f16.theta += dt * 180 * c4d.d2r / 3</span>
-<span class="sd">      ...     else:</span>
-<span class="sd">      ...         f16.phi -= dt * 180 * c4d.d2r / 3 </span>
-<span class="sd">      ...     f16.store(t)</span>
+<span class="sd">      ...  # in 3 seconds make 180 deg: </span>
+<span class="sd">      ...  if t &lt; 3: </span>
+<span class="sd">      ...    f16.psi += dt * 180 * c4d.d2r / 3</span>
+<span class="sd">      ...  elif t &lt; 6: </span>
+<span class="sd">      ...    f16.theta += dt * 180 * c4d.d2r / 3</span>
+<span class="sd">      ...  else:</span>
+<span class="sd">      ...    f16.phi -= dt * 180 * c4d.d2r / 3 </span>
+<span class="sd">      ...  f16.store(t)</span>
+
+<span class="sd">      </span>
+<span class="sd">    2. Animate and save image files. </span>
+<span class="sd">   </span>
+<span class="sd">    (Use c4dynamics&#39; :mod:`datasets &lt;c4dynamics.datasets&gt;` to fetch F16 3D model.)</span>
+
+<span class="sd">    .. code::</span>
+
+<span class="sd">      &gt;&gt;&gt; f16path = c4d.datasets.d3_model(&#39;f16&#39;) </span>
+<span class="sd">      Fetched successfully</span>
 <span class="sd">      &gt;&gt;&gt; x0 = [90 * c4d.d2r, 0, 180 * c4d.d2r] </span>
-<span class="sd">      &gt;&gt;&gt; modelpath = os.path.join(os.getcwd(), &#39;examples\\resources\\f16&#39;)</span>
-<span class="sd">      &gt;&gt;&gt; outfol = os.path.join(os.getcwd(), &#39;examples\\out\\f16_monochrome_gif&#39;)</span>
-<span class="sd">      &gt;&gt;&gt; f16.animate(modelpath, savedir = outfol, angle0 = x0, modelcolor = [0, 0, 0], cbackground = [230 / 255, 230 / 255, 255 / 255])</span>
+<span class="sd">      &gt;&gt;&gt; outfol = os.path.join(&#39;tests&#39;, &#39;_out&#39;, &#39;f16b&#39;)</span>
+<span class="sd">      &gt;&gt;&gt; f16.animate(f16path, savedir = outfol, angle0 = x0, modelcolor = [0, 0, 0], cbackground = [230 / 255, 230 / 255, 255 / 255])</span>
+<span class="sd">      </span>
+<span class="sd">      </span>
+<span class="sd">    3. Export images as gif.</span>
+
+<span class="sd">    .. code::</span>
+
 <span class="sd">      &gt;&gt;&gt; gifname = &#39;f16_monochrome_gif.gif&#39;</span>
 <span class="sd">      &gt;&gt;&gt; c4d.gif(outfol, gifname, duration = 1)</span>
-<span class="sd">      &gt;&gt;&gt; Image(filename = os.path.join(outfol, gifpath)) </span>
+<span class="sd">      &gt;&gt;&gt; Image(filename = os.path.join(outfol, gifname)) </span>
 
 <span class="sd">    .. figure:: /_examples/animate/f16_monochrome_gif.gif</span>
 <span class="sd">    </span>
-<span class="sd">    &#39;&#39;&#39;</span>
-    <span class="n">dirfiles</span> <span class="o">=</span> <span class="n">natsort</span><span class="o">.</span><span class="n">natsorted</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">dirname</span><span class="p">))</span> 
-    <span class="n">imgfiles</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">dirfiles</span> <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">((</span><span class="s1">&#39;.png&#39;</span><span class="p">,</span> <span class="s1">&#39;.jpg&#39;</span><span class="p">,</span> <span class="s1">&#39;.jpeg&#39;</span><span class="p">,</span> <span class="s1">&#39;bmp&#39;</span><span class="p">,</span> <span class="s1">&#39;.tiff&#39;</span><span class="p">))]</span> 
+<span class="sd">  &#39;&#39;&#39;</span>
+  <span class="n">dirfiles</span> <span class="o">=</span> <span class="n">natsort</span><span class="o">.</span><span class="n">natsorted</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">dirname</span><span class="p">))</span> 
+  <span class="n">imgfiles</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">dirfiles</span> <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">((</span><span class="s1">&#39;.png&#39;</span><span class="p">,</span> <span class="s1">&#39;.jpg&#39;</span><span class="p">,</span> <span class="s1">&#39;.jpeg&#39;</span><span class="p">,</span> <span class="s1">&#39;bmp&#39;</span><span class="p">,</span> <span class="s1">&#39;.tiff&#39;</span><span class="p">))]</span> 
 
-    <span class="c1"># dirfiles.sort(key = lambda f: int(&#39;&#39;.join(filter(str.isdigit, f))))</span>
-    <span class="c1"># dirfiles = [f for f in listdir(dirname) if isfile(join(dirname, f))]</span>
+  <span class="k">if</span> <span class="ow">not</span> <span class="n">imgfiles</span><span class="p">:</span> 
+    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;No image files in </span><span class="si">{</span><span class="n">dirfiles</span><span class="si">}</span><span class="s2">. (&#39;.png&#39;, &#39;.jpg&#39;, &#39;.jpeg&#39;, &#39;bmp&#39;, &#39;.tiff&#39;, are supported). &quot;&quot;&quot;</span> <span class="p">,</span> <span class="n">c4d</span><span class="o">.</span><span class="n">c4warn</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">None</span>
 
-    <span class="c1"># x = (frame_rate � duratio) / total number of images</span>
+  <span class="n">fps</span> <span class="o">=</span> <span class="mi">60</span> <span class="c1"># 60hz (60frames per second) -&gt; 16.6msec</span>
+  <span class="k">if</span> <span class="n">duration</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> 
+    <span class="n">interval</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="k">else</span><span class="p">:</span> 
+    <span class="c1"># FIXME sth here is wrong. see the test test_specified_fps_effect currently disabled. </span>
+    <span class="n">interval</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">imgfiles</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">duration</span> <span class="o">*</span> <span class="n">fps</span><span class="p">)),</span> <span class="mi">1</span><span class="p">)</span>
 
-    <span class="n">fps</span> <span class="o">=</span> <span class="mi">60</span> <span class="c1"># 60hz (60frames per second) -&gt; 16.6msec</span>
-    <span class="k">if</span> <span class="n">duration</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> 
-        <span class="n">interval</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="k">else</span><span class="p">:</span> 
-        <span class="n">interval</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">imgfiles</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">duration</span> <span class="o">*</span> <span class="n">fps</span><span class="p">))</span>
+  <span class="n">images</span> <span class="o">=</span> <span class="p">[]</span>
 
-    <span class="n">images</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">imgfiles</span><span class="p">),</span> <span class="n">interval</span><span class="p">):</span>
+    <span class="n">images</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">imageio</span><span class="o">.</span><span class="n">v2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirname</span><span class="p">,</span> <span class="n">imgfiles</span><span class="p">[</span><span class="n">i</span><span class="p">])))</span>
 
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">imgfiles</span><span class="p">),</span> <span class="n">interval</span><span class="p">):</span>
-        <span class="n">images</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">imageio</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirname</span><span class="p">,</span> <span class="n">imgfiles</span><span class="p">[</span><span class="n">i</span><span class="p">])))</span>
+  <span class="n">gif_name</span> <span class="o">=</span> <span class="n">gif_name</span> <span class="k">if</span> <span class="n">gif_name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.gif&#39;</span><span class="p">)</span> <span class="k">else</span> <span class="n">gif_name</span> <span class="o">+</span> <span class="s1">&#39;.gif&#39;</span>
+  <span class="n">imageio</span><span class="o">.</span><span class="n">mimsave</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirname</span><span class="p">,</span> <span class="n">gif_name</span><span class="p">)</span>
+                      <span class="p">,</span> <span class="n">images</span><span class="p">,</span> <span class="n">loop</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">duration</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">1000</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">fps</span><span class="p">))</span></div>
 
-    <span class="n">gif_name</span> <span class="o">=</span> <span class="n">gif_name</span> <span class="k">if</span> <span class="n">gif_name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.gif&#39;</span><span class="p">)</span> <span class="k">else</span> <span class="n">gif_name</span> <span class="o">+</span> <span class="s1">&#39;.gif&#39;</span>
-    <span class="n">imageio</span><span class="o">.</span><span class="n">mimsave</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirname</span><span class="p">,</span> <span class="n">gif_name</span><span class="p">)</span>
-                        <span class="p">,</span> <span class="n">images</span><span class="p">,</span> <span class="n">loop</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">duration</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">1000</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">fps</span><span class="p">))</span></div>
 
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+
+  <span class="kn">import</span> <span class="nn">doctest</span><span class="o">,</span> <span class="nn">contextlib</span>
+  <span class="kn">from</span> <span class="nn">c4dynamics</span> <span class="kn">import</span> <span class="n">IgnoreOutputChecker</span><span class="p">,</span> <span class="n">cprint</span>
+  
+  <span class="c1"># Register the custom OutputChecker</span>
+  <span class="n">doctest</span><span class="o">.</span><span class="n">OutputChecker</span> <span class="o">=</span> <span class="n">IgnoreOutputChecker</span>
+
+  <span class="n">tofile</span> <span class="o">=</span> <span class="kc">False</span> 
+  <span class="n">optionflags</span> <span class="o">=</span> <span class="n">doctest</span><span class="o">.</span><span class="n">FAIL_FAST</span>
+
+  <span class="k">if</span> <span class="n">tofile</span><span class="p">:</span> 
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;tests&#39;</span><span class="p">,</span> <span class="s1">&#39;_out&#39;</span><span class="p">,</span> <span class="s1">&#39;output.txt&#39;</span><span class="p">),</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+      <span class="k">with</span> <span class="n">contextlib</span><span class="o">.</span><span class="n">redirect_stdout</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="n">contextlib</span><span class="o">.</span><span class="n">redirect_stderr</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">(</span><span class="n">optionflags</span> <span class="o">=</span> <span class="n">optionflags</span><span class="p">)</span> 
+  <span class="k">else</span><span class="p">:</span> 
+    <span class="n">result</span> <span class="o">=</span> <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">(</span><span class="n">optionflags</span> <span class="o">=</span> <span class="n">optionflags</span><span class="p">)</span>
+
+  <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">failed</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">cprint</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;: all tests passed!&quot;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">failed</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 
 </pre></div>
@@ -498,7 +569,7 @@ By C4dynamics
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Oct 07, 2024.
+  Last updated on Nov 10, 2024.
   <br/>
 </p>
   </div>

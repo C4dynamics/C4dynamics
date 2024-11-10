@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>c4dynamics.utils.tictoc &#8212; c4dynamics &lt;span class=&#34;project-version&#34;&gt;1.2&lt;/span&gt;</title>
+    <title>c4dynamics.utils.tictoc &#8212; C4DYNAMICS v1.2 Manual</title>
   
   
   
@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/style.css?v=f9876931" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/style.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
@@ -48,7 +48,7 @@
     <link rel="search" title="Search" href="../../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Oct 07, 2024"/>
+    <meta name="docbuild:last-update" content="Nov 10, 2024"/>
   </head>
   
   
@@ -134,7 +134,7 @@
   
   
   
-    <p class="title logo__title">c4dynamics <span class="project-version">1.2</span></p>
+    <p class="title logo__title">C4DYNAMICS v1.2 Manual</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -154,13 +154,15 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../../index.html">
-                    C4DYNAMICS
+                    Home
                 </a>
             </li>
         </ul>
         <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../gettingstarted.html">Getting Started</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../api/index.html">API Reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/States.html">State objects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/States.html">State Objects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/states.state.html">The state class</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/generated/state/c4dynamics.states.state.state.X.html">c4dynamics.states.state.state.X</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/generated/state/c4dynamics.states.state.state.X0.html">c4dynamics.states.state.state.X0</a></li>
@@ -229,7 +231,7 @@
 </details></li>
 </ul>
 </details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/Utils.html">Utils</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/Routines.html">Routines</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/utils.eqm.html">Equations of motion solvers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/generated/eqm/c4dynamics.eqm.derivs.eqm3.html">c4dynamics.eqm.derivs.eqm3</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/generated/eqm/c4dynamics.eqm.derivs.eqm6.html">c4dynamics.eqm.derivs.eqm6</a></li>
@@ -246,6 +248,9 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../api/generated/rotmat/c4dynamics.rotmat.animate.animate.html">c4dynamics.rotmat.animate.animate</a></li>
 </ul>
 </details></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/Utils.html">Utils</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/utils.math.html">Math functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/utils.const.html">Constants</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/utils.misc.html">Misc</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -372,7 +377,9 @@ document.write(`
                 <article class="bd-article">
                   
   <h1>Source code for c4dynamics.utils.tictoc</h1><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">time</span>
+<span></span><span class="kn">import</span> <span class="nn">sys</span> 
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">time</span>
 <span class="n">_tic</span> <span class="o">=</span> <span class="mf">0.0</span>
 
 <div class="viewcode-block" id="tic">
@@ -393,37 +400,43 @@ document.write(`
 <span class="sd">    Examples </span>
 <span class="sd">    --------</span>
 
+<span class="sd">    .. code::</span>
+
+<span class="sd">      &gt;&gt;&gt; import c4dynamics as c4d </span>
+<span class="sd">      &gt;&gt;&gt; import numpy as np </span>
+
+
 <span class="sd">    .. code:: </span>
 <span class="sd">        </span>
 <span class="sd">      &gt;&gt;&gt; N = 10000</span>
-<span class="sd">      &gt;&gt;&gt; tic()</span>
+<span class="sd">      &gt;&gt;&gt; tic()   # doctest: +IGNORE_OUTPUT</span>
 <span class="sd">      &gt;&gt;&gt; a = np.ones((1, 3))</span>
 <span class="sd">      &gt;&gt;&gt; for i in range(N - 1):</span>
 <span class="sd">      ...     a = np.concatenate((a, np.ones((1, 3))))</span>
-<span class="sd">      &gt;&gt;&gt; t1 = toc()</span>
-<span class="sd">      &gt;&gt;&gt; c4d.cprint(&#39;numpy concat: &#39; + str(1000 * t1) + &#39; ms&#39;, &#39;r&#39;)</span>
-<span class="sd">        numpy concat: 1101.062 ms</span>
+<span class="sd">      &gt;&gt;&gt; t1 = toc() # doctest: +IGNORE_OUTPUT</span>
+<span class="sd">      &gt;&gt;&gt; c4d.cprint(&#39;numpy concat: &#39; + str(1000 * t1) + &#39; ms&#39;, &#39;r&#39;) # doctest: +IGNORE_OUTPUT</span>
+<span class="sd">      numpy concat: 40.0 ms</span>
 
 <span class="sd">    .. code:: </span>
 
-<span class="sd">      &gt;&gt;&gt; tic()</span>
+<span class="sd">      &gt;&gt;&gt; tic() # doctest: +IGNORE_OUTPUT</span>
 <span class="sd">      &gt;&gt;&gt; a = np.zeros((N, 3))</span>
 <span class="sd">      &gt;&gt;&gt; for i in range(N):</span>
 <span class="sd">      ...     a[i, :] = np.ones((1, 3))</span>
-<span class="sd">      &gt;&gt;&gt; t2 = toc()</span>
-<span class="sd">      &gt;&gt;&gt; c4d.cprint(&#39;numpy predefined: &#39; + str(1000 * t2) + &#39; ms&#39;, &#39;g&#39;)</span>
-<span class="sd">        numpy predefined: 294.169 ms</span>
+<span class="sd">      &gt;&gt;&gt; t2 = toc() # doctest: +IGNORE_OUTPUT</span>
+<span class="sd">      &gt;&gt;&gt; c4d.cprint(&#39;numpy predefined: &#39; + str(1000 * t2) + &#39; ms&#39;, &#39;g&#39;) # doctest: +IGNORE_OUTPUT</span>
+<span class="sd">      numpy predefined: 3.0 ms</span>
 
 <span class="sd">    .. code:: </span>
 
-<span class="sd">      &gt;&gt;&gt; tic()</span>
+<span class="sd">      &gt;&gt;&gt; tic()# doctest: +IGNORE_OUTPUT</span>
 <span class="sd">      &gt;&gt;&gt; a = []</span>
 <span class="sd">      &gt;&gt;&gt; for i in range(N):</span>
 <span class="sd">      ...     a.append([1, 1, 1])</span>
 <span class="sd">      &gt;&gt;&gt; a = np.array(a)</span>
-<span class="sd">      &gt;&gt;&gt; t3 = toc()</span>
-<span class="sd">      &gt;&gt;&gt; c4d.cprint(&#39;list to numpy: &#39; + str(1000 * t3) + &#39; ms&#39;, &#39;y&#39;)</span>
-<span class="sd">        list to numpy: 86.085 ms</span>
+<span class="sd">      &gt;&gt;&gt; t3 = toc()# doctest: +IGNORE_OUTPUT</span>
+<span class="sd">      &gt;&gt;&gt; c4d.cprint(&#39;list to numpy: &#39; + str(1000 * t3) + &#39; ms&#39;, &#39;y&#39;) # doctest: +IGNORE_OUTPUT</span>
+<span class="sd">      list to numpy: 0.0 ms</span>
 <span class="sd">    </span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
@@ -450,37 +463,45 @@ document.write(`
 <span class="sd">  Examples </span>
 <span class="sd">  --------</span>
 
+<span class="sd">  .. code::</span>
+
+<span class="sd">    &gt;&gt;&gt; import c4dynamics as c4d </span>
+<span class="sd">    &gt;&gt;&gt; import numpy as np </span>
+
+
 <span class="sd">  .. code:: </span>
 <span class="sd">      </span>
 <span class="sd">    &gt;&gt;&gt; N = 10000</span>
-<span class="sd">    &gt;&gt;&gt; tic()</span>
+<span class="sd">    &gt;&gt;&gt; tic() # doctest: +IGNORE_OUTPUT</span>
 <span class="sd">    &gt;&gt;&gt; a = np.ones((1, 3))</span>
 <span class="sd">    &gt;&gt;&gt; for i in range(N - 1):</span>
 <span class="sd">    ...     a = np.concatenate((a, np.ones((1, 3))))</span>
-<span class="sd">    &gt;&gt;&gt; t1 = toc()</span>
-<span class="sd">    &gt;&gt;&gt; c4d.cprint(&#39;numpy concat: &#39; + str(1000 * t1) + &#39; ms&#39;, &#39;r&#39;)</span>
-<span class="sd">    numpy concat: 1101.062 ms</span>
+<span class="sd">    &gt;&gt;&gt; t1 = toc() # doctest: +IGNORE_OUTPUT</span>
+<span class="sd">    &gt;&gt;&gt; c4d.cprint(&#39;numpy concat: &#39; + str(1000 * t1) + &#39; ms&#39;, &#39;r&#39;) # doctest: +IGNORE_OUTPUT</span>
+<span class="sd">    numpy concat: 31.0 ms</span>
 
 <span class="sd">  .. code:: </span>
 
-<span class="sd">    &gt;&gt;&gt; tic()</span>
+<span class="sd">    &gt;&gt;&gt; tic() # doctest: +IGNORE_OUTPUT</span>
 <span class="sd">    &gt;&gt;&gt; a = np.zeros((N, 3))</span>
 <span class="sd">    &gt;&gt;&gt; for i in range(N):</span>
 <span class="sd">    ...     a[i, :] = np.ones((1, 3))</span>
-<span class="sd">    &gt;&gt;&gt; t2 = toc()</span>
-<span class="sd">    &gt;&gt;&gt; c4d.cprint(&#39;numpy predefined: &#39; + str(1000 * t2) + &#39; ms&#39;, &#39;g&#39;)</span>
-<span class="sd">    numpy predefined: 294.169 ms</span>
+<span class="sd">    &gt;&gt;&gt; t2 = toc() # doctest: +IGNORE_OUTPUT</span>
+<span class="sd">    &gt;&gt;&gt; c4d.cprint(&#39;numpy predefined: &#39; + str(1000 * t2) + &#39; ms&#39;, &#39;g&#39;) # doctest: +IGNORE_OUTPUT</span>
+<span class="sd">    numpy predefined: 15.0 ms</span>
 
 <span class="sd">  .. code:: </span>
 
-<span class="sd">    &gt;&gt;&gt; tic()</span>
+<span class="sd">    &gt;&gt;&gt; tic() # doctest: +IGNORE_OUTPUT</span>
 <span class="sd">    &gt;&gt;&gt; a = []</span>
 <span class="sd">    &gt;&gt;&gt; for i in range(N):</span>
 <span class="sd">    ...     a.append([1, 1, 1])</span>
 <span class="sd">    &gt;&gt;&gt; a = np.array(a)</span>
-<span class="sd">    &gt;&gt;&gt; t3 = toc()</span>
-<span class="sd">    &gt;&gt;&gt; c4d.cprint(&#39;list to numpy: &#39; + str(1000 * t3) + &#39; ms&#39;, &#39;y&#39;)</span>
-<span class="sd">      list to numpy: 86.085 ms</span>
+<span class="sd">    &gt;&gt;&gt; t3 = toc() # doctest: +IGNORE_OUTPUT</span>
+<span class="sd">    &gt;&gt;&gt; c4d.cprint(&#39;list to numpy: &#39; + str(1000 * t3) + &#39; ms&#39;, &#39;y&#39;) # doctest: +IGNORE_OUTPUT</span>
+<span class="sd">    list to numpy: 0.0 ms</span>
+
+<span class="sd">    </span>
 <span class="sd">  &#39;&#39;&#39;</span>
 
   <span class="k">global</span> <span class="n">_tic</span>
@@ -504,6 +525,31 @@ document.write(`
 
 <span class="c1">#     Returns:</span>
 <span class="c1">#     float: The elapsed time in seconds.</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+
+  <span class="kn">import</span> <span class="nn">doctest</span><span class="o">,</span> <span class="nn">contextlib</span><span class="o">,</span> <span class="nn">os</span>
+  <span class="kn">from</span> <span class="nn">c4dynamics</span> <span class="kn">import</span> <span class="n">IgnoreOutputChecker</span><span class="p">,</span> <span class="n">cprint</span>
+  
+  <span class="c1"># Register the custom OutputChecker</span>
+  <span class="n">doctest</span><span class="o">.</span><span class="n">OutputChecker</span> <span class="o">=</span> <span class="n">IgnoreOutputChecker</span>
+
+  <span class="n">tofile</span> <span class="o">=</span> <span class="kc">False</span> 
+  <span class="n">optionflags</span> <span class="o">=</span> <span class="n">doctest</span><span class="o">.</span><span class="n">FAIL_FAST</span>
+
+  <span class="k">if</span> <span class="n">tofile</span><span class="p">:</span> 
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;tests&#39;</span><span class="p">,</span> <span class="s1">&#39;_out&#39;</span><span class="p">,</span> <span class="s1">&#39;output.txt&#39;</span><span class="p">),</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+      <span class="k">with</span> <span class="n">contextlib</span><span class="o">.</span><span class="n">redirect_stdout</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="n">contextlib</span><span class="o">.</span><span class="n">redirect_stderr</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">(</span><span class="n">optionflags</span> <span class="o">=</span> <span class="n">optionflags</span><span class="p">)</span> 
+  <span class="k">else</span><span class="p">:</span> 
+    <span class="n">result</span> <span class="o">=</span> <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">(</span><span class="n">optionflags</span> <span class="o">=</span> <span class="n">optionflags</span><span class="p">)</span>
+
+  <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">failed</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">cprint</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;: all tests passed!&quot;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">failed</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
 </pre></div>
 
                 </article>
@@ -551,7 +597,7 @@ By C4dynamics
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Oct 07, 2024.
+  Last updated on Nov 10, 2024.
   <br/>
 </p>
   </div>

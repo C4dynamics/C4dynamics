@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>c4dynamics.utils.cprint &#8212; c4dynamics &lt;span class=&#34;project-version&#34;&gt;1.2&lt;/span&gt;</title>
+    <title>c4dynamics.utils.cprint &#8212; C4DYNAMICS v1.2 Manual</title>
   
   
   
@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/style.css?v=f9876931" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/style.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
@@ -48,7 +48,7 @@
     <link rel="search" title="Search" href="../../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Oct 07, 2024"/>
+    <meta name="docbuild:last-update" content="Nov 10, 2024"/>
   </head>
   
   
@@ -134,7 +134,7 @@
   
   
   
-    <p class="title logo__title">c4dynamics <span class="project-version">1.2</span></p>
+    <p class="title logo__title">C4DYNAMICS v1.2 Manual</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -154,13 +154,15 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../../index.html">
-                    C4DYNAMICS
+                    Home
                 </a>
             </li>
         </ul>
         <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../gettingstarted.html">Getting Started</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../api/index.html">API Reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/States.html">State objects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/States.html">State Objects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/states.state.html">The state class</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/generated/state/c4dynamics.states.state.state.X.html">c4dynamics.states.state.state.X</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/generated/state/c4dynamics.states.state.state.X0.html">c4dynamics.states.state.state.X0</a></li>
@@ -229,7 +231,7 @@
 </details></li>
 </ul>
 </details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/Utils.html">Utils</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/Routines.html">Routines</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/utils.eqm.html">Equations of motion solvers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/generated/eqm/c4dynamics.eqm.derivs.eqm3.html">c4dynamics.eqm.derivs.eqm3</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/generated/eqm/c4dynamics.eqm.derivs.eqm6.html">c4dynamics.eqm.derivs.eqm6</a></li>
@@ -246,6 +248,9 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../api/generated/rotmat/c4dynamics.rotmat.animate.animate.html">c4dynamics.rotmat.animate.animate</a></li>
 </ul>
 </details></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/Utils.html">Utils</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/utils.math.html">Math functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/utils.const.html">Constants</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/utils.misc.html">Misc</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -372,7 +377,10 @@ document.write(`
                 <article class="bd-article">
                   
   <h1>Source code for c4dynamics.utils.cprint</h1><div class="highlight"><pre>
-<span></span><span class="n">TXTCOLORS</span> <span class="o">=</span>     <span class="p">{</span> <span class="s1">&#39;k&#39;</span><span class="p">:</span> <span class="s1">&#39;30&#39;</span><span class="p">,</span> <span class="s1">&#39;black&#39;</span><span class="p">:</span>   <span class="s1">&#39;30&#39;</span>
+<span></span><span class="kn">import</span> <span class="nn">sys</span> 
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+
+<span class="n">TXTCOLORS</span> <span class="o">=</span>     <span class="p">{</span> <span class="s1">&#39;k&#39;</span><span class="p">:</span> <span class="s1">&#39;30&#39;</span><span class="p">,</span> <span class="s1">&#39;black&#39;</span><span class="p">:</span>   <span class="s1">&#39;30&#39;</span>
                 <span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">:</span> <span class="s1">&#39;31&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">:</span>     <span class="s1">&#39;31&#39;</span>
                 <span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">:</span> <span class="s1">&#39;32&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">:</span>   <span class="s1">&#39;32&#39;</span>
                 <span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="s1">&#39;33&#39;</span><span class="p">,</span> <span class="s1">&#39;yellow&#39;</span><span class="p">:</span>  <span class="s1">&#39;33&#39;</span>
@@ -384,8 +392,8 @@ document.write(`
 
 <div class="viewcode-block" id="cprint">
 <a class="viewcode-back" href="../../../api/generated/misc/c4dynamics.utils.cprint.cprint.html#c4dynamics.utils.cprint.cprint">[docs]</a>
-<span class="k">def</span> <span class="nf">cprint</span><span class="p">(</span><span class="n">txt</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">bold</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">italic</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="k">def</span> <span class="nf">cprint</span><span class="p">(</span><span class="n">txt</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">):</span>
+<span class="w">  </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Printing colored text in the console.</span>
 
 <span class="sd">    Parameters</span>
@@ -397,12 +405,6 @@ document.write(`
 <span class="sd">    color : str, optional</span>
 <span class="sd">        The color of the text. Default is &#39;white&#39;.</span>
 <span class="sd">    </span>
-<span class="sd">    bold : bool, optional</span>
-<span class="sd">        If True, the text will be printed in bold. Default is False.</span>
-<span class="sd">    </span>
-<span class="sd">    italic : bool, optional</span>
-<span class="sd">        If True, the text will be printed in italic. Default is False.</span>
-
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
 
@@ -410,24 +412,52 @@ document.write(`
 <span class="sd">    </span>
 <span class="sd">      &gt;&gt;&gt; carr = [&#39;k&#39;, &#39;r&#39;, &#39;g&#39;, &#39;y&#39;, &#39;b&#39;, &#39;m&#39;, &#39;c&#39;, &#39;w&#39;]</span>
 <span class="sd">      &gt;&gt;&gt; for c in carr:</span>
-<span class="sd">      ...     c4d.cprint(&#39;C4DYNAMICS&#39;, c)</span>
-<span class="sd">        </span>
-<span class="sd">        </span>
-<span class="sd">    .. figure:: /_static/images/cprint.png</span>
+<span class="sd">      ...   c4d.cprint(&#39;C4DYNAMICS&#39;, c)</span>
 
-<span class="sd">    </span>
-<span class="sd">        </span>
-<span class="sd">    &#39;&#39;&#39;</span>
-    <span class="n">settxt</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\033</span><span class="s1">[&#39;</span>
+<span class="sd">    .. raw:: html</span>
 
-    <span class="c1"># if bold:</span>
-    <span class="c1">#     settxt += &#39;1;&#39;</span>
-    <span class="c1"># if italic:</span>
-    <span class="c1">#     settxt += &#39;3;&#39;</span>
+<span class="sd">      &lt;span style=&quot;color:yellow&quot;&gt;C4DYNAMICS&lt;/span&gt;&lt;br&gt;</span>
+<span class="sd">      &lt;span style=&quot;color:white&quot;&gt;C4DYNAMICS&lt;/span&gt;</span>
+<span class="sd">      &lt;span style=&quot;color:red&quot;&gt;C4DYNAMICS&lt;/span&gt;&lt;br&gt;</span>
+<span class="sd">      &lt;span style=&quot;color:magenta&quot;&gt;C4DYNAMICS&lt;/span&gt;&lt;br&gt;</span>
+<span class="sd">      &lt;span style=&quot;color:cyan&quot;&gt;C4DYNAMICS&lt;/span&gt;&lt;br&gt;</span>
+<span class="sd">      &lt;span style=&quot;color:green&quot;&gt;C4DYNAMICS&lt;/span&gt;&lt;br&gt;</span>
+<span class="sd">      &lt;span style=&quot;color:black&quot;&gt;C4DYNAMICS&lt;/span&gt;&lt;br&gt;</span>
+<span class="sd">      &lt;span style=&quot;color:blue&quot;&gt;C4DYNAMICS&lt;/span&gt;&lt;br&gt;</span>
+<span class="sd"> </span>
+<span class="sd">  &#39;&#39;&#39;</span>
+  <span class="n">settxt</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\033</span><span class="s1">[&#39;</span>
 
-    <span class="n">settxt</span> <span class="o">+=</span> <span class="n">TXTCOLORS</span><span class="p">[</span><span class="n">color</span><span class="p">]</span> 
-        
-    <span class="nb">print</span><span class="p">(</span><span class="n">settxt</span> <span class="o">+</span> <span class="s1">&#39;m&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">txt</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\033</span><span class="s1">[0m&#39;</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">end</span><span class="p">)</span></div>
+
+  <span class="n">settxt</span> <span class="o">+=</span> <span class="n">TXTCOLORS</span><span class="p">[</span><span class="n">color</span><span class="p">]</span> 
+      
+  <span class="nb">print</span><span class="p">(</span><span class="n">settxt</span> <span class="o">+</span> <span class="s1">&#39;m&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">txt</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\033</span><span class="s1">[0m&#39;</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">end</span><span class="p">)</span></div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+
+  <span class="kn">import</span> <span class="nn">os</span> 
+  <span class="kn">import</span> <span class="nn">doctest</span><span class="o">,</span> <span class="nn">contextlib</span>
+  <span class="kn">from</span> <span class="nn">c4dynamics</span> <span class="kn">import</span> <span class="n">IgnoreOutputChecker</span><span class="p">,</span> <span class="n">cprint</span>
+  
+  <span class="c1"># Register the custom OutputChecker</span>
+  <span class="n">doctest</span><span class="o">.</span><span class="n">OutputChecker</span> <span class="o">=</span> <span class="n">IgnoreOutputChecker</span>
+
+  <span class="n">tofile</span> <span class="o">=</span> <span class="kc">False</span> 
+  <span class="n">optionflags</span> <span class="o">=</span> <span class="n">doctest</span><span class="o">.</span><span class="n">FAIL_FAST</span>
+
+  <span class="k">if</span> <span class="n">tofile</span><span class="p">:</span> 
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;tests&#39;</span><span class="p">,</span> <span class="s1">&#39;_out&#39;</span><span class="p">,</span> <span class="s1">&#39;output.txt&#39;</span><span class="p">),</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+      <span class="k">with</span> <span class="n">contextlib</span><span class="o">.</span><span class="n">redirect_stdout</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="n">contextlib</span><span class="o">.</span><span class="n">redirect_stderr</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">(</span><span class="n">optionflags</span> <span class="o">=</span> <span class="n">optionflags</span><span class="p">)</span> 
+  <span class="k">else</span><span class="p">:</span> 
+    <span class="n">result</span> <span class="o">=</span> <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">(</span><span class="n">optionflags</span> <span class="o">=</span> <span class="n">optionflags</span><span class="p">)</span>
+
+  <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">failed</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">cprint</span><span class="p">(</span><span class="s2">&quot;All tests passed!&quot;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">failed</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 
 </pre></div>
@@ -477,7 +507,7 @@ By C4dynamics
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Oct 07, 2024.
+  Last updated on Nov 10, 2024.
   <br/>
 </p>
   </div>

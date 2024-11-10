@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Extended Kalman filter &#8212; c4dynamics &lt;span class=&#34;project-version&#34;&gt;1.2&lt;/span&gt;</title>
+    <title>Extended Kalman filter &#8212; C4DYNAMICS v1.2 Manual</title>
   
   
   
@@ -31,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../_static/style.css?v=f9876931" />
+    <link rel="stylesheet" type="text/css" href="../_static/style.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
@@ -51,7 +51,7 @@
     <link rel="prev" title="c4dynamics.filters.kalman.kalman.store" href="generated/kalman/c4dynamics.filters.kalman.kalman.store.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Oct 07, 2024"/>
+    <meta name="docbuild:last-update" content="Nov 10, 2024"/>
   </head>
   
   
@@ -135,7 +135,7 @@
   
   
   
-    <p class="title logo__title">c4dynamics <span class="project-version">1.2</span></p>
+    <p class="title logo__title">C4DYNAMICS v1.2 Manual</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -155,13 +155,15 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../index.html">
-                    C4DYNAMICS
+                    Home
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted.html">Getting Started</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">API Reference</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 has-children"><a class="reference internal" href="States.html">State objects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="States.html">State Objects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3 has-children"><a class="reference internal" href="states.state.html">The state class</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="generated/state/c4dynamics.states.state.state.X.html">c4dynamics.states.state.state.X</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/state/c4dynamics.states.state.state.X0.html">c4dynamics.states.state.state.X0</a></li>
@@ -230,7 +232,7 @@
 </details></li>
 </ul>
 </details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="Utils.html">Utils</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="Routines.html">Routines</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3 has-children"><a class="reference internal" href="utils.eqm.html">Equations of motion solvers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="generated/eqm/c4dynamics.eqm.derivs.eqm3.html">c4dynamics.eqm.derivs.eqm3</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/eqm/c4dynamics.eqm.derivs.eqm6.html">c4dynamics.eqm.derivs.eqm6</a></li>
@@ -247,6 +249,9 @@
 <li class="toctree-l4"><a class="reference internal" href="generated/rotmat/c4dynamics.rotmat.animate.animate.html">c4dynamics.rotmat.animate.animate</a></li>
 </ul>
 </details></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="Utils.html">Utils</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="utils.math.html">Math functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="utils.const.html">Constants</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="utils.misc.html">Misc</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -434,33 +439,47 @@ document.write(`
 <h1>Extended Kalman filter<a class="headerlink" href="#extended-kalman-filter" title="Link to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="c4dynamics.filters.ekf.ekf">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">c4dynamics.filters.ekf.</span></span><span class="sig-name descname"><span class="pre">ekf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">P0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">G</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/c4dynamics/filters/ekf.html#ekf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#c4dynamics.filters.ekf.ekf" title="Link to this definition">#</a></dt>
-<dd><p>Extended Kalman Filter.</p>
-<p>Extended Kalman Filter class for state estimation.</p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">c4dynamics.filters.ekf.</span></span><span class="sig-name descname"><span class="pre">ekf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">P0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">F</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">H</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">G</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Q</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">R</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/c4dynamics/filters/ekf.html#ekf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#c4dynamics.filters.ekf.ekf" title="Link to this definition">#</a></dt>
+<dd><p>Extended Kalman Filter class for handling nonlinear dynamics by
+incorporating functions for nonlinear state transitions and measurements.</p>
+<p>This subclass extends the base
+<a class="reference internal" href="filters.kalman.html#c4dynamics.filters.kalman.kalman" title="c4dynamics.filters.kalman.kalman"><code class="xref py py-class docutils literal notranslate"><span class="pre">kalman</span></code></a>
+class to handle cases where
+system dynamics or measurements are nonlinear. The Jacobian matrices
+<cite>F</cite> and <cite>H</cite> can be dynamically updated as linearizations of the
+nonlinear functions.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>X</strong> (<em>dict</em>) – Initial state variables and their values.</p></li>
-<li><p><strong>P0</strong> (<em>numpy.ndarray</em>) – Initial covariance matrix or standard deviations.</p></li>
-<li><p><strong>dt</strong> (<em>float</em><em>, </em><em>optional</em>) – Time step for the filter. Defaults to None.</p></li>
-<li><p><strong>G</strong> (<em>numpy.ndarray</em><em>, </em><em>optional</em>) – Control matrix. Defaults to None.</p></li>
+<li><p><strong>X</strong> (<em>dict</em>) – Initial state estimate dictionary, where key-value pairs
+represent state variables and their initial values.</p></li>
+<li><p><strong>P0</strong> (<em>np.ndarray</em>) – Initial error covariance matrix, defining the initial
+uncertainty for each state variable.</p></li>
+<li><p><strong>F</strong> (<em>np.ndarray</em><em>, </em><em>optional</em>) – State transition Jacobian matrix; defaults to an identity matrix
+if not provided, assuming a linear system model.</p></li>
+<li><p><strong>H</strong> (<em>np.ndarray</em><em>, </em><em>optional</em>) – Measurement Jacobian matrix; defaults to a zero matrix if not
+provided.</p></li>
+<li><p><strong>G</strong> (<em>np.ndarray</em><em>, </em><em>optional</em>) – Control input matrix, mapping control inputs to the state.</p></li>
+<li><p><strong>Q</strong> (<em>np.ndarray</em><em>, </em><em>optional</em>) – Process noise covariance matrix.</p></li>
+<li><p><strong>R</strong> (<em>np.ndarray</em><em>, </em><em>optional</em>) – Measurement noise covariance matrix.</p></li>
 </ul>
 </dd>
 </dl>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="Filters.html#module-c4dynamics.filters" title="c4dynamics.filters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filters</span></code></a>, <a class="reference internal" href="filters.kalman.html#c4dynamics.filters.kalman.kalman" title="c4dynamics.filters.kalman.kalman"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kalman</span></code></a>, <a class="reference internal" href="filters.lpf.html#c4dynamics.filters.lowpass.lowpass" title="c4dynamics.filters.lowpass.lowpass"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lowpass</span></code></a>, <a class="reference internal" href="sensors.seeker.html#c4dynamics.sensors.seeker.seeker" title="c4dynamics.sensors.seeker.seeker"><code class="xref py py-obj docutils literal notranslate"><span class="pre">seeker</span></code></a>, <a class="reference internal" href="utils.eqm.html#module-c4dynamics.eqm" title="c4dynamics.eqm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">eqm</span></code></a></p>
-</div>
 <p class="rubric">Example</p>
-<p>TODO complete</p>
+<p>A detailed example can be found in the introduction
+to the c4dynamics.filters module.
+The mechanism of this class is similar to
+the <a class="reference internal" href="filters.kalman.html#c4dynamics.filters.kalman.kalman" title="c4dynamics.filters.kalman.kalman"><code class="xref py py-class docutils literal notranslate"><span class="pre">kalman</span></code></a>,
+so the examples provided there may serve as
+inspiration for using <cite>ekf</cite>.</p>
 <p><strong>Methods</strong></p>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/ekf/c4dynamics.filters.ekf.ekf.predict.html#c4dynamics.filters.ekf.ekf.predict" title="c4dynamics.filters.ekf.ekf.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ekf.predict</span></code></a>(F, Qk[, fx, dt, u])</p></td>
-<td><p>Predicts the next state and covariance based on the given parameters.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ekf/c4dynamics.filters.ekf.ekf.predict.html#c4dynamics.filters.ekf.ekf.predict" title="c4dynamics.filters.ekf.ekf.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ekf.predict</span></code></a>([F, fx, dt, u, Q])</p></td>
+<td><p>Predicts the next state of the system based on the current state and an optional nonlinear state transition function.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/ekf/c4dynamics.filters.ekf.ekf.update.html#c4dynamics.filters.ekf.ekf.update" title="c4dynamics.filters.ekf.ekf.update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ekf.update</span></code></a>(z, H, Rk[, hx])</p></td>
-<td><p>Updates the state estimate based on the given measurements.</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ekf/c4dynamics.filters.ekf.ekf.update.html#c4dynamics.filters.ekf.ekf.update" title="c4dynamics.filters.ekf.ekf.update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ekf.update</span></code></a>(z[, H, hx, R])</p></td>
+<td><p>Updates the state estimate based on the latest measurement, using an optional nonlinear measurement function.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/ekf/c4dynamics.filters.ekf.ekf.store.html#c4dynamics.filters.ekf.ekf.store" title="c4dynamics.filters.ekf.ekf.store"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ekf.store</span></code></a>([t])</p></td>
 <td><p>Stores the current state and diagonal elements of the covariance matrix.</p></td>
@@ -551,7 +570,7 @@ By C4dynamics
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Oct 07, 2024.
+  Last updated on Nov 10, 2024.
   <br/>
 </p>
   </div>

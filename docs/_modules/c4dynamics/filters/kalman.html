@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>c4dynamics.filters.kalman &#8212; c4dynamics &lt;span class=&#34;project-version&#34;&gt;1.2&lt;/span&gt;</title>
+    <title>c4dynamics.filters.kalman &#8212; C4DYNAMICS v1.2 Manual</title>
   
   
   
@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/style.css?v=f9876931" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/style.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
@@ -48,7 +48,7 @@
     <link rel="search" title="Search" href="../../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Oct 07, 2024"/>
+    <meta name="docbuild:last-update" content="Nov 10, 2024"/>
   </head>
   
   
@@ -134,7 +134,7 @@
   
   
   
-    <p class="title logo__title">c4dynamics <span class="project-version">1.2</span></p>
+    <p class="title logo__title">C4DYNAMICS v1.2 Manual</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -154,13 +154,15 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../../index.html">
-                    C4DYNAMICS
+                    Home
                 </a>
             </li>
         </ul>
         <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../gettingstarted.html">Getting Started</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../api/index.html">API Reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/States.html">State objects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/States.html">State Objects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/states.state.html">The state class</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/generated/state/c4dynamics.states.state.state.X.html">c4dynamics.states.state.state.X</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/generated/state/c4dynamics.states.state.state.X0.html">c4dynamics.states.state.state.X0</a></li>
@@ -229,7 +231,7 @@
 </details></li>
 </ul>
 </details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/Utils.html">Utils</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/Routines.html">Routines</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/utils.eqm.html">Equations of motion solvers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/generated/eqm/c4dynamics.eqm.derivs.eqm3.html">c4dynamics.eqm.derivs.eqm3</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/generated/eqm/c4dynamics.eqm.derivs.eqm6.html">c4dynamics.eqm.derivs.eqm6</a></li>
@@ -246,6 +248,9 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../api/generated/rotmat/c4dynamics.rotmat.animate.animate.html">c4dynamics.rotmat.animate.animate</a></li>
 </ul>
 </details></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/Utils.html">Utils</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/utils.math.html">Math functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/utils.const.html">Constants</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/utils.misc.html">Misc</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -381,11 +386,6 @@ document.write(`
 <span class="kn">import</span> <span class="nn">warnings</span> 
 
 
-<span class="k">def</span> <span class="nf">_noncontwarning</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> 
-  <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;The system is not continuous.&quot;&quot;&quot;</span>
-                  <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span><span class="se">\n</span><span class="s2">Did you mean </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">?&quot;&quot;&quot;</span> 
-                    <span class="p">,</span> <span class="n">c4d</span><span class="o">.</span><span class="n">c4warn</span><span class="p">)</span>
-
 
 <div class="viewcode-block" id="kalman">
 <a class="viewcode-back" href="../../../api/filters.kalman.html#c4dynamics.filters.kalman.kalman">[docs]</a>
@@ -393,9 +393,11 @@ document.write(`
 <span class="w">  </span><span class="sd">&#39;&#39;&#39; </span>
 <span class="sd">    Kalman Filter.</span>
 
-<span class="sd">    Kalman Filter class for state estimation. </span>
-<span class="sd">    :class:`kalman` provides methods for prediction and update</span>
-<span class="sd">    phases of the Kalman filter, including both discrete and continuous systems.</span>
+<span class="sd">    </span>
+<span class="sd">    Discrete linear Kalman filter class for state estimation.</span>
+<span class="sd">     </span>
+<span class="sd">    :class:`kalman` provides methods for prediction and update (correct)</span>
+<span class="sd">    phases of the filter.</span>
 
 <span class="sd">    For background material, implementation, and examples, </span>
 <span class="sd">    please refer to :mod:`filters &lt;c4dynamics.filters&gt;`. </span>
@@ -406,31 +408,23 @@ document.write(`
 <span class="sd">    ==========</span>
 <span class="sd">    X : dict</span>
 <span class="sd">        Initial state variables and their values.</span>
-<span class="sd">    dt : float, optional </span>
-<span class="sd">        Time step for the filter. Mandatory if continuous-time matrices are provided. </span>
-<span class="sd">    P0 : numpy.ndarray, optional</span>
-<span class="sd">        Covariance matrix, or standard deviations array, of the </span>
-<span class="sd">        initial estimation error. Mandatory if steadystate is False.</span>
-<span class="sd">    FIXME how a scalar is interpreted?? </span>
-<span class="sd">    </span>
+<span class="sd">    F : numpy.ndarray</span>
+<span class="sd">        Discrete-time state transition matrix. Defaults to None.</span>
+<span class="sd">    H : numpy.ndarray</span>
+<span class="sd">        Discrete-time measurement matrix. Defaults to None.</span>
 <span class="sd">    steadystate : bool, optional</span>
 <span class="sd">        Flag to indicate if the filter is in steady-state mode. Defaults to False.</span>
-<span class="sd">    A : numpy.ndarray, optional</span>
-<span class="sd">        Continuous-time state transition matrix. Defaults to None.</span>
-<span class="sd">    B : numpy.ndarray, optional</span>
-<span class="sd">        Continuous-time control matrix. Defaults to None.</span>
-<span class="sd">    C : numpy.ndarray, optional</span>
-<span class="sd">        Continuous-time measurement matrix. Defaults to None.</span>
+<span class="sd">    G : numpy.ndarray, optional</span>
+<span class="sd">        Discrete-time control matrix. Defaults to None.</span>
+<span class="sd">    P0 : numpy.ndarray, optional</span>
+<span class="sd">        Covariance matrix, or standard deviations array, of the </span>
+<span class="sd">        initial estimation error. Mandatory if `steadystate` is False.</span>
+<span class="sd">        If P0 is one-dimensional array, standard deviation values are </span>
+<span class="sd">        expected. Otherwise, variance values are expected.  </span>
 <span class="sd">    Q : numpy.ndarray, optional</span>
 <span class="sd">        Process noise covariance matrix. Defaults to None.</span>
 <span class="sd">    R : numpy.ndarray, optional</span>
 <span class="sd">        Measurement noise covariance matrix. Defaults to None.</span>
-<span class="sd">    F : numpy.ndarray, optional</span>
-<span class="sd">        Discrete-time state transition matrix. Defaults to None.</span>
-<span class="sd">    G : numpy.ndarray, optional</span>
-<span class="sd">        Discrete-time control matrix. Defaults to None.</span>
-<span class="sd">    H : numpy.ndarray, optional</span>
-<span class="sd">        Discrete-time measurement matrix. Defaults to None.</span>
 <span class="sd">          </span>
 <span class="sd">    Notes </span>
 <span class="sd">    =====</span>
@@ -439,22 +433,12 @@ document.write(`
 <span class="sd">    Hence, `X` is a dictionary of variables and their initial values, for example:</span>
 <span class="sd">    ``X = {&#39;x&#39;: x0, &#39;y&#39;: y0, &#39;z&#39;: z0}``.</span>
 
-<span class="sd">    2. The filter may be initialized with either continuous-time matrices</span>
-<span class="sd">    or with discrete-time matrices. </span>
-<span class="sd">    However, all the necessary parameters, </span>
-<span class="sd">    i.e. `A` and `B` (for continuous system) or `F` and `G` </span>
-<span class="sd">    (for discrete system) must be provided consistently.</span>
-
-<span class="sd">    3. If continuous-time matrices are provided, then a time step parameter `dt` </span>
-<span class="sd">    has to be provided for the integration of the system at the </span>
-<span class="sd">    :meth:`predict` stage. </span>
-
-<span class="sd">    4. Steady-state mode: if the underlying system is linear time-invariant (LTI), </span>
-<span class="sd">    and also the noise covariance matrices are time-invariant, </span>
-<span class="sd">    then a steady-state mode of the Kalman filter can be utilized. </span>
+<span class="sd">    2. Steady-state mode: if the underlying system is linear time-invariant (`LTI`), </span>
+<span class="sd">    and the noise covariance matrices are time-invariant, </span>
+<span class="sd">    then a steady-state mode of the Kalman filter can be employed. </span>
 <span class="sd">    In steady-state mode the Kalman gain (`K`) and the estimation covariance matrix </span>
-<span class="sd">    (`P`) are computed once and are constant (&#39;steady-state&#39;) for the entire run-time, </span>
-<span class="sd">    performs as well as the time-varying filter.   </span>
+<span class="sd">    (`P`) are computed once and remain constant (&#39;steady-state&#39;) for the entire run-time, </span>
+<span class="sd">    performing as well as the time-varying filter.   </span>
 
 
 
@@ -465,7 +449,7 @@ document.write(`
 <span class="sd">    ValueError: </span>
 <span class="sd">        If P0 is not provided when steadystate is False.</span>
 <span class="sd">    ValueError: </span>
-<span class="sd">        If neither continuous nor discrete system matrices are fully provided.</span>
+<span class="sd">        If system matrices are not fully provided.</span>
 
 
 <span class="sd">        </span>
@@ -486,531 +470,132 @@ document.write(`
 <span class="sd">    The examples in the introduction to the </span>
 <span class="sd">    :mod:`filters &lt;c4dynamics.filters&gt;`</span>
 <span class="sd">    module demonstrate the operations of </span>
-<span class="sd">    the Kalman filter </span>
-<span class="sd">    for inputs from  </span>
+<span class="sd">    the Kalman filter for inputs from  </span>
 <span class="sd">    electromagnetic devices, such as an altimeter, </span>
 <span class="sd">    which measures the altitude. </span>
 
-<span class="sd">    In the following set of examples, we run a Kalman filter </span>
-<span class="sd">    to demonstrate smooth and continuous tracking of vehicles </span>
-<span class="sd">    across video frames. </span>
-<span class="sd">    </span>
 
-<span class="sd">    **1. Setup** </span>
-
-<span class="sd">    The process model assumes linear motion with constant velocity </span>
-<span class="sd">    where the system matrix</span>
-<span class="sd">    </span>
-
-<span class="sd">    .. math::</span>
-
-<span class="sd">      A = \\begin{bmatrix}</span>
-<span class="sd">            0   &amp;   0   &amp;   0   &amp;   0   &amp;   1   &amp;   0   \\\\</span>
-<span class="sd">            0   &amp;   0   &amp;   0   &amp;   0   &amp;   0   &amp;   1   \\\\</span>
-<span class="sd">            0   &amp;   0   &amp;   0   &amp;   0   &amp;   0   &amp;   0   \\\\</span>
-<span class="sd">            0   &amp;   0   &amp;   0   &amp;   0   &amp;   0   &amp;   0   \\\\</span>
-<span class="sd">            0   &amp;   0   &amp;   0   &amp;   0   &amp;   0   &amp;   0   \\\\</span>
-<span class="sd">            0   &amp;   0   &amp;   0   &amp;   0   &amp;   0   &amp;   0 </span>
-<span class="sd">          \\end{bmatrix}  </span>
-<span class="sd">      </span>
-
-<span class="sd">    represents the linear ordinary differential equations: </span>
-
-<span class="sd">    .. math:: </span>
-
-<span class="sd">      \\dot{x} = v_x  \\\\</span>
-<span class="sd">      \\dot{y} = v_y  \\\\</span>
-<span class="sd">      \\dot{w} = 0    \\\\</span>
-<span class="sd">      \\dot{h} = 0    \\\\</span>
-<span class="sd">      \\dot{v}_x = 0  \\\\</span>
-<span class="sd">      \\dot{v}_y = 0  </span>
 
 <span class="sd">    </span>
-<span class="sd">    It is therefore obvious that </span>
-<span class="sd">    the system state vector is given by:</span>
-
-<span class="sd">    .. math::</span>
-
-<span class="sd">      x = [x, y, w, h, v_x, v_y]^T</span>
-
-<span class="sd">    Where :math:`x, y` are pixel coordinates, :math:`w, h` are bounding box dimensions, and :math:`v_x, v_y` are velocities. </span>
-
+<span class="sd">    An accurate Japaneese train travels 150 meters in one second </span>
+<span class="sd">    (:math:`F = 1, u = 1, G = 150, Q = 0.05`). </span>
+<span class="sd">    A sensor measures the train position with noise </span>
+<span class="sd">    variance of :math:`200m^2` (:math:`H = 1, R = 200`).</span>
+<span class="sd">    The initial position of the train is known with uncertainty </span>
+<span class="sd">    of :math:`0.5m` (:math:`P0 = 0.5^2`).</span>
 <span class="sd">    </span>
-<span class="sd">    As measurement for the vehicle position and </span>
-<span class="sd">    box size we use the `YOLOv3` object detection model.</span>
-<span class="sd">    YOLOv3 is incorporated in the c4dynamics&#39; class </span>
-<span class="sd">    :class:`yolov3 &lt;c4dynamics.detectors.yolo3_opencv.yolov3&gt;`. </span>
 
-<span class="sd">    The method :meth:`yolov3.detect &lt;c4dynamics.detectors.yolo3_opencv.yolov3.detect&gt;` </span>
-<span class="sd">    returns a :class:`pixelpoint &lt;c4dynamics.states.lib.pixelpoint.pixelpoint&gt;` instance </span>
-<span class="sd">    for each detected object: </span>
+<span class="sd">    **Note** </span>
+
+<span class="sd">    The system may be interpreted as follows: </span>
 <span class="sd">    </span>
-<span class="sd">    .. code:: </span>
-
-<span class="sd">      &gt;&gt;&gt; from c4dynamics import pixelpoint </span>
-<span class="sd">      &gt;&gt;&gt; print(pixelpoint())</span>
-<span class="sd">      [ x  y  w  h ]</span>
-
+<span class="sd">    - :math:`F = 1`             - constant position</span>
 <span class="sd">    </span>
-<span class="sd">    That is, the measurements fed into the Kalman filter are </span>
-<span class="sd">    directly the first four variables of the state. </span>
-
-<span class="sd">    From this, we can directly derive the </span>
-<span class="sd">    measurement matrix that forms the </span>
-<span class="sd">    relation between the measurements and the state:</span>
-
-
-<span class="sd">    .. math::</span>
-
-<span class="sd">      C = \\begin{bmatrix}</span>
-<span class="sd">            1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\\\</span>
-<span class="sd">            0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\\\</span>
-<span class="sd">            0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\\\</span>
-<span class="sd">            0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 </span>
-<span class="sd">          \\end{bmatrix}  </span>
+<span class="sd">    - :math:`u = 1, G = 150`    - constant velocity control input </span>
+<span class="sd">    </span>
+<span class="sd">    The advantage of this model is in its being first order. </span>
+<span class="sd">    However, a slight difference between the actual dynamics and </span>
+<span class="sd">    the modeled process will result in a lag with the tracked object.</span>
 
 
-<span class="sd">    This also implies that the system is observable but to be on the safe side </span>
-<span class="sd">    let&#39;s examine the rank of the observability matrix.</span>
 
-<span class="sd">    First, import the required packages for the code </span>
-<span class="sd">    in this snippet and the ones that follow: </span>
+<span class="sd">    Import required packages: </span>
 
 <span class="sd">    .. code:: </span>
 
-<span class="sd">      &gt;&gt;&gt; import c4dynamics as c4d </span>
-<span class="sd">      &gt;&gt;&gt; from matplotlib import pyplot as plt </span>
-<span class="sd">      &gt;&gt;&gt; from scipy.linalg import expm </span>
-<span class="sd">      &gt;&gt;&gt; import numpy as np </span>
-<span class="sd">      &gt;&gt;&gt; import cv2 </span>
+<span class="sd">      &gt;&gt;&gt; from c4dynamics.filters import kalman </span>
+<span class="sd">      &gt;&gt;&gt; from matplotlib import pyplot as plt  </span>
+<span class="sd">      &gt;&gt;&gt; import c4dynamics as c4d</span>
 <span class="sd"> </span>
-<span class="sd">      </span>
-<span class="sd">    Let&#39;s define the system matrices:</span>
-
-<span class="sd">    .. code::</span>
 <span class="sd">    </span>
-<span class="sd">      &gt;&gt;&gt; A = np.zeros((6, 6))</span>
-<span class="sd">      &gt;&gt;&gt; A[0, 4] = A[1, 5] = 1</span>
-<span class="sd">      &gt;&gt;&gt; C = np.zeros((4, 6))</span>
-<span class="sd">      &gt;&gt;&gt; C[0, 0] = C[1, 1] = C[2, 2] = C[3, 3] = 1</span>
+<span class="sd">    Let&#39;s run a filter.</span>
 
-<span class="sd">    Now, build the observability matrix and check the rank: </span>
-
-<span class="sd">    </span>
-<span class="sd">    .. code:: </span>
-<span class="sd">    </span>
-<span class="sd">      &gt;&gt;&gt; obsv = C</span>
-<span class="sd">      &gt;&gt;&gt; n = len(A)</span>
-<span class="sd">      &gt;&gt;&gt; for i in range(1, n):</span>
-<span class="sd">      ...   obsv = np.vstack((obsv, C @ np.linalg.matrix_power(A, i)))</span>
-<span class="sd">      &gt;&gt;&gt; rank = np.linalg.matrix_rank(obsv)</span>
-<span class="sd">      &gt;&gt;&gt; c4d.cprint(f&#39;The system is observable (rank = n = {n}).&#39; if rank == n else &#39;The system is not observable (rank = {rank), n = {n}).&#39;, &#39;y&#39;)</span>
-<span class="sd">      The system is observable </span>
-<span class="sd">    </span>
-<span class="sd">    In each estimation, the `box` function converts the state coordinates to rectangle </span>
-<span class="sd">    corners to draw a bounding box: </span>
-
-<span class="sd">    .. code:: </span>
-<span class="sd">    </span>
-<span class="sd">      &gt;&gt;&gt; def box(X):</span>
-<span class="sd">      ...   # top left</span>
-<span class="sd">      ...   xtl = int(X[0] - X[2] / 2)</span>
-<span class="sd">      ...   ytl = int(X[1] - X[3] / 2)</span>
-<span class="sd">      ...   # bottom right </span>
-<span class="sd">      ...   xbr = int(X[0] + X[2] / 2)</span>
-<span class="sd">      ...   ybr = int(X[1] + X[3] / 2)</span>
-<span class="sd">      ...   return [(xtl, ytl), (xbr, ybr)]</span>
-
-
-<span class="sd">      </span>
-<span class="sd">    The video in the following examples is used </span>
-<span class="sd">    by kind permission of `Abed Ismail &lt;https://www.pexels.com/@abed-ismail&gt;`_</span>
-
-<span class="sd">    The video can be fetched using the c4dynamics&#39; </span>
-<span class="sd">    datasets module (see :mod:`c4dynamics.datasets`): </span>
+<span class="sd">    First, since the covariance matrices are </span>
+<span class="sd">    constant we can utilize the steady state mode of the filter.</span>
+<span class="sd">    This requires initalization with the respective flag:</span>
 
 <span class="sd">    .. code:: </span>
 
-<span class="sd">      &gt;&gt;&gt; vidpath = c4d.datasets.video(&#39;drifting_car&#39;)</span>
-<span class="sd">      Fetched successfully</span>
-<span class="sd">      </span>
-<span class="sd">    Video setup: </span>
+<span class="sd">      &gt;&gt;&gt; v = 150</span>
+<span class="sd">      &gt;&gt;&gt; sensor_noise = 200 </span>
+<span class="sd">      &gt;&gt;&gt; kf = kalman({&#39;x&#39;: 0}, P0 = 0.5**2, F = 1, G = v, H = 1</span>
+<span class="sd">      ...                         , Q = 0.05, R = sensor_noise**2, steadystate = True)</span>
 
-<span class="sd">    .. code:: </span>
-<span class="sd">    </span>
-<span class="sd">      &gt;&gt;&gt; video_cap = cv2.VideoCapture(vidpath)</span>
-<span class="sd">      &gt;&gt;&gt; fps = video_cap.get(cv2.CAP_PROP_FPS)</span>
-<span class="sd">      &gt;&gt;&gt; dt_frame = 1 / fps </span>
-
-<span class="sd">    Let&#39;s take the prediction rate to be twice the frames rate:</span>
-
-<span class="sd">    .. code:: </span>
-
-<span class="sd">      &gt;&gt;&gt; dt = dt_frame / 2 </span>
-
-
-<span class="sd">    **2. Steady-state mode** </span>
-
-<span class="sd">    As start, let&#39;s take the noise matrices (:math:`Q_k` of the process, and </span>
-<span class="sd">    :math:`R_k` of the measurement) as constant. Since the system is </span>
-<span class="sd">    LTI (linear time invariant), the Kalman gain (`K`) and consequently the estimation covariance matrix </span>
-<span class="sd">    (`P`) are computed once and are constant (&#39;steady-state&#39;) for the entire run-time.</span>
-<span class="sd">    </span>
-<span class="sd">      </span>
-<span class="sd">    Dynamics model and noise matrices: </span>
 
 <span class="sd">    </span>
-<span class="sd">    # TODO im not sure anymore its needed to start with cont. </span>
-<span class="sd">    just add the cont matrices and explain why the covariances are the same.</span>
-<span class="sd">    # TODO my conclusion from all this is that it&#39;s not an example.</span>
-<span class="sd">    its a program. examples are short and straright froward and not </span>
-<span class="sd">    entail all this intro. </span>
-<span class="sd">    # maybe to separate between disc and cont only in the </span>
-<span class="sd">    sys matrices but in the covariance to leave it to the user consid. </span>
-<span class="sd">    # 3. instead of messing with all this maybe just show simple things.</span>
-<span class="sd">    things that relevant to the user and not to the fresh class studegnt of eng. </span>
-<span class="sd">    focus on seeing the state of the kalman. of initializaing. of storging. </span>
-<span class="sd">    much more important for this class. and move this example to programs==usecases. </span>
 
-<span class="sd">    .. code::</span>
-
-<span class="sd">      &gt;&gt;&gt; # process dynamics </span>
-<span class="sd">      &gt;&gt;&gt; A = np.zeros((6, 6))</span>
-<span class="sd">      &gt;&gt;&gt; A[0, 4] = A[1, 5] = 1</span>
-<span class="sd">      &gt;&gt;&gt; F = expm(A * dt)</span>
-<span class="sd">      &gt;&gt;&gt; # measurement model </span>
-<span class="sd">      &gt;&gt;&gt; H = np.zeros((4, 6))</span>
-<span class="sd">      &gt;&gt;&gt; H[0, 0] = H[1, 1] = H[2, 2] = H[3, 3] = 1</span>
-<span class="sd">      </span>
-
-<span class="sd">    From some exprerience with the objects detection model it is </span>
-<span class="sd">    a fair evaulation to give the model an average error of 4 pixels </span>
-<span class="sd">    both for position and box size. </span>
-<span class="sd">    Assuming that the uncertainty TODO ??</span>
-
-<span class="sd">    The selection of the noise errors: </span>
-
-<span class="sd">    .. code::</span>
-
-<span class="sd">      &gt;&gt;&gt; # covariance matrices </span>
-<span class="sd">      &gt;&gt;&gt; process_std = measure_std = 4 </span>
-<span class="sd">      &gt;&gt;&gt; Q = np.eye(6) * process_std**2   # process_noise</span>
-<span class="sd">      &gt;&gt;&gt; R = np.eye(4) * measure_std**2   # measure_noise</span>
-
-<span class="sd">    indicates that the errors associated with the process </span>
-<span class="sd">    and the errors associated with the measurement </span>
-<span class="sd">    have equal weight (a standard deviation of `4`, units depend on the</span>
-<span class="sd">    variable). </span>
-
-
-
-<span class="sd">    Kalman object definition. </span>
-<span class="sd">    The initialization includes the state variables, mode, and matrices:</span>
 
 <span class="sd">    .. code:: </span>
 
-<span class="sd">      &gt;&gt;&gt; kf = kalman({&#39;x&#39;: 0, &#39;y&#39;: 0, &#39;w&#39;: 0, &#39;h&#39;: 0, &#39;vx&#39;: 0, &#39;vy&#39;: 0}</span>
-<span class="sd">      ...                      , steadystate = True, F = F, H = H, Q = Q, R = R)</span>
-
-
-<span class="sd">    Object detection model: </span>
-<span class="sd">    </span>
-<span class="sd">    .. code:: </span>
-
-<span class="sd">      &gt;&gt;&gt; yolo3 = c4d.detectors.yolov3()</span>
-<span class="sd">      Fetched successfully </span>
-
-<span class="sd">      </span>
-<span class="sd">    Main loop. The first step, prediction, occurs in every cycle. </span>
-<span class="sd">    The second step, update (correction), occurs when a car detection is made:   </span>
-
-<span class="sd">    .. code:: </span>
-<span class="sd">      </span>
-<span class="sd">      &gt;&gt;&gt; t = 0</span>
-<span class="sd">      &gt;&gt;&gt; while video_cap.isOpened():</span>
-<span class="sd">      ...   t += dt</span>
-<span class="sd">      ...   # predict</span>
-<span class="sd">      ...   kf.predict()</span>
-<span class="sd">      ...   ret, frame = video_cap.read()</span>
-<span class="sd">      ...   if not ret: break</span>
-<span class="sd">      ...   d = yolo3.detect(frame)</span>
-<span class="sd">      ...   if d and d[0].class_id == &#39;car&#39;: </span>
-<span class="sd">      ...     # correct </span>
-<span class="sd">      ...     kf.update(d[0].X)</span>
-<span class="sd">      ...     kf.detect = d </span>
-<span class="sd">      ...     kf.storeparams(&#39;detect&#39;, t)</span>
+<span class="sd">      &gt;&gt;&gt; for t in range(1, 26): #  seconds. </span>
+<span class="sd">      ...   # store for later </span>
 <span class="sd">      ...   kf.store(t)</span>
-<span class="sd">      ...   _ = cv2.rectangle(frame, box(kf.X)[0], box(kf.X)[1], [0, 255, 0], 2)  </span>
-<span class="sd">      ...   cv2.imshow(&#39;&#39;, frame) </span>
-<span class="sd">      ...   cv2.waitKey(10)</span>
-<span class="sd">      &gt;&gt;&gt; cv2.destroyAllWindows()</span>
-<span class="sd">    </span>
-
-<span class="sd">    .. figure:: /_examples/kf/drifting_car.gif</span>
-<span class="sd">    </span>
-<span class="sd">    </span>
+<span class="sd">      ...   # predict + correct </span>
+<span class="sd">      ...   kf.predict(u = 1) </span>
+<span class="sd">      ...   kf.detect = v * t + np.random.randn() * sensor_noise </span>
+<span class="sd">      ...   kf.storeparams(&#39;detect&#39;, t)</span>
 
 <span class="sd">      </span>
-<span class="sd">    **3. Plotting** </span>
-<span class="sd">    </span>
-<span class="sd">    The :meth:`plot &lt;c4dynamics.states.state.state.plot&gt;` </span>
-<span class="sd">    method of the superclass :class:`state &lt;c4dynamics.states.state.state&gt;` </span>
-<span class="sd">    allows direct generation of the state variables. </span>
-<span class="sd">    The plot of the position `x` is given by: </span>
-
-<span class="sd">    .. code:: </span>
-
-<span class="sd">      &gt;&gt;&gt; kf.plot(&#39;x&#39;)</span>
-<span class="sd">      &gt;&gt;&gt; plt.show()</span>
-
-<span class="sd">    .. figure:: /_examples/kf/steadystate_x.png</span>
-<span class="sd">                  </span>
-
-<span class="sd">    </span>
-<span class="sd">    Now, since we also stored the detections (using </span>
-<span class="sd">    :meth:`storeparams &lt;c4dynamics.states.state.state.storeparams&gt;`), </span>
-<span class="sd">    we can add the detection marks on the state line: </span>
-
-
-<span class="sd">    .. code:: </span>
-<span class="sd">    </span>
-<span class="sd">      &gt;&gt;&gt; plt.plot(*kf.data(&#39;x&#39;), &#39;om&#39;, label = &#39;estimation&#39;)</span>
-<span class="sd">      &gt;&gt;&gt; plt.gca().plot(kf.data(&#39;detect&#39;)[0], np.vectorize(lambda d: d.x if isinstance(d, c4d.pixelpoint) else np.nan)(kf.data(&#39;detect&#39;)[1]), &#39;co&#39;, label = &#39;detection&#39;)</span>
-<span class="sd">      &gt;&gt;&gt; c4d.plotdefaults(plt.gca(), &#39;x - steady-state mode&#39;, &#39;Time&#39;, &#39;x&#39;, 8)</span>
-<span class="sd">      &gt;&gt;&gt; plt.legend()</span>
-
-<span class="sd">      </span>
-<span class="sd">    The first argument (:code:`kf.data(&#39;detect&#39;)[0]`) in the third line is </span>
-<span class="sd">    just the time series of the detections at the storing samples. </span>
-<span class="sd">    The second argument uses numpy&#39;s `vectorize` to extract the </span>
-<span class="sd">    `x` field from the detection data. </span>
-
-
-<span class="sd">    .. code:: </span>
-<span class="sd">    </span>
-<span class="sd">      &gt;&gt;&gt; plt.show()</span>
-<span class="sd">    </span>
-<span class="sd">      </span>
-<span class="sd">    .. figure:: /_examples/kf/steadystate_detections.png</span>
-
-<span class="sd">    By focusing on an arbitrary region the operation of the prediction is revealed. </span>
-<span class="sd">    While the frame rate is 30 frames per second, the main loop runs 60 frames </span>
-<span class="sd">    per second. </span>
-<span class="sd">    For every cycle where no image is taken, the prediction </span>
-<span class="sd">    estimates the object&#39;s position based on the dynamics model: </span>
-
-<span class="sd">    .. figure:: /_examples/kf/steadystate_detections_zoom.png</span>
-
-
-<span class="sd">    This is true also for the edges where the object is outside the frame and </span>
-<span class="sd">    wherever the detection model fails to identify the object in the frame. </span>
-<span class="sd">    In such cases, the Kalman filter provides </span>
-<span class="sd">    an optimal estimation of the objects&#39; current state. </span>
-<span class="sd">      </span>
-
-<span class="sd">    By default, kalman&#39;s :meth:`store` stores also samples of the </span>
-<span class="sd">    main diagonal of `P`, the covariance matrix. Each element </span>
-<span class="sd">    is named `Pii`, where `i` is the index of the variable in </span>
-<span class="sd">    the state. Here `x` is the first variable:</span>
+<span class="sd">    Recall that a :class:`kalman` object, as subclass of </span>
+<span class="sd">    the :class:`state &lt;c4dynamics.states.state.state&gt;`, </span>
+<span class="sd">    encapsulates the process state vector:</span>
 
 <span class="sd">    .. code:: </span>
 
 <span class="sd">      &gt;&gt;&gt; print(kf)</span>
-<span class="sd">      [ x  y  w  h  vx  vy ]</span>
-
+<span class="sd">      [ x ]</span>
+<span class="sd">    </span>
 <span class="sd">      </span>
-<span class="sd">    Then extracting the standard deviations of `x` from the storage </span>
-<span class="sd">    is possible by: </span>
-<span class="sd">      </span>
+<span class="sd">    It can also employ the </span>
+<span class="sd">    :meth:`plot &lt;c4dynamics.states.state.state.plot&gt;` </span>
+<span class="sd">    or any other method of the `state` class: </span>
+
+
+<span class="sd">    .. code::</span>
+
+<span class="sd">      &gt;&gt;&gt; kf.plot(&#39;x&#39;)  # doctest: +IGNORE_OUTPUT</span>
+<span class="sd">      &gt;&gt;&gt; plt.gca().plot(*kf.data(&#39;detect&#39;), &#39;co&#39;, label = &#39;detection&#39;)   # doctest: +IGNORE_OUTPUT</span>
+<span class="sd">      &gt;&gt;&gt; plt.gca().legend()    # doctest: +IGNORE_OUTPUT</span>
+<span class="sd">      &gt;&gt;&gt; plt.show() </span>
+
+<span class="sd">    .. figure:: /_examples/kf/steadystate.png</span>
+
+<span class="sd">    </span>
+<span class="sd">    Let&#39;s now assume that as the </span>
+<span class="sd">    train moves farther from the station, </span>
+<span class="sd">    the sensor measurements degrade. </span>
+
+<span class="sd">    The measurement covariance matrix therefore increases accordingly,</span>
+<span class="sd">    and the steady state mode cannot be used:</span>
+
 
 <span class="sd">    .. code:: </span>
 
-<span class="sd">      &gt;&gt;&gt; t_std, x_std = kf.data(&#39;P00&#39;)[0], np.sqrt(kf.data(&#39;P00&#39;)[1])</span>
-
-<span class="sd">    </span>
-<span class="sd">    As before, the first argument provides the </span>
-<span class="sd">    time series for the samples of `P00`. </span>
-<span class="sd">    In the second argument, we take </span>
-<span class="sd">    square root of the values of `P00` to convert the variances to standard deviations. </span>
-
-<span class="sd">    The standard deviations represent the estimation error. </span>
-<span class="sd">    It is therefore convinent to plot them alongside the state variables: </span>
-
-
-<span class="sd">    .. code:: </span>
-
-<span class="sd">      &gt;&gt;&gt; plt.gca().plot(t_std, kf.data(&#39;x&#39;)[1] - x_std, &#39;w&#39;, linewidth = 1, label = &#39;std&#39;)</span>
-<span class="sd">      &gt;&gt;&gt; plt.gca().plot(t_std, kf.data(&#39;x&#39;)[1] + x_std, &#39;w&#39;, linewidth = 1)</span>
-
-<span class="sd">      </span>
-<span class="sd">    .. figure:: /_examples/kf/steadystate_std.png</span>
-
-
-<span class="sd">    The nature of the steady-state mode is conveyed here </span>
-<span class="sd">    by the constant variance, which represents the error in the variable </span>
-<span class="sd">    </span>
-
-
-<span class="sd">    </span>
-
-
-<span class="sd">    **4. Discrete system** </span>
-<span class="sd">    </span>
-
-<span class="sd">    </span>
-<span class="sd">    In the previous example, we ran the filter in steady-state mode.</span>
-<span class="sd">    That means that the estimation error (the state covariance matrix `P`) </span>
-<span class="sd">    is calculated once and remains</span>
-<span class="sd">    constant during the filter runtime. </span>
-
-<span class="sd">    This mode is enabled when the covariance matrices </span>
-<span class="sd">    that describe the process noise (:math:`Q` or :math:`Q_k`) </span>
-<span class="sd">    and the measurement noise (:math:`R` or :math:`R_k`) are </span>
-<span class="sd">    themselves constant. </span>
-
-<span class="sd">    However, when the noise matrices are time-varying,  </span>
-<span class="sd">    steady-state mode is not feasible. </span>
-<span class="sd">    </span>
-<span class="sd">    The previous case may be improved by adjusting </span>
-<span class="sd">    the process noise matrix :math:`Q_k`.</span>
-<span class="sd">    </span>
-<span class="sd">    </span>
-<span class="sd">    Let&#39;s re-examine the plot of the x-coordinate over time: </span>
-
-<span class="sd">    .. figure:: /_examples/kf/steadystate_x.png</span>
-<span class="sd">    </span>
-<span class="sd">    The dynamics model assumes linear motion.</span>
-<span class="sd">    However, the actual motion in the x-coordinate </span>
-<span class="sd">    is approximately linear up to `4s`, but then </span>
-<span class="sd">    changes direction, continues linearly until </span>
-<span class="sd">    `7s`, and changes direction again until exit the frame. </span>
-
-<span class="sd">    In fact, in the vicinity of `t = 4s`, there is a </span>
-<span class="sd">    significant gap between the </span>
-<span class="sd">    estimation (magenta) and the detection measures (cyan): </span>
-<span class="sd">    </span>
-<span class="sd">    .. figure:: /_examples/kf/steadystate_std_zoom.png</span>
-
-<span class="sd">    The reason is that the filter relies on the process model </span>
-<span class="sd">    just as it trusts the measurements and therefore </span>
-<span class="sd">    averages the predictons and the measurements. </span>
-
-<span class="sd">    Recall that we used :math:`Q, R` a diagonal matrices with </span>
-<span class="sd">    a standard deviation of `4`:  </span>
-
-<span class="sd">    .. code:: </span>
-
-<span class="sd">      &gt;&gt;&gt; process_std = measure_std = 4 </span>
-<span class="sd">      &gt;&gt;&gt; Q = np.eye(6) * process_std**2 </span>
-<span class="sd">      &gt;&gt;&gt; R = np.eye(4) * measure_std**2 </span>
-
-<span class="sd">    To address the gap between the estimation and the detections, </span>
-<span class="sd">    let&#39;s make the process noise :math:`Q` less </span>
-<span class="sd">    tight around `t = 4s`:</span>
-
-
-<span class="sd">    .. math::</span>
-
-<span class="sd">      process std = \\begin{cases} </span>
-<span class="sd">                    8 &amp; \\text{3.9 &lt; t &lt; 4.15} \\\\ </span>
-<span class="sd">                    4 &amp; \\text{otherwise}</span>
-<span class="sd">                    \\end{cases}</span>
-<span class="sd">    </span>
-<span class="sd">    Namely, at `t = 4s`, the process error is high, and the filter </span>
-<span class="sd">    should place less weight on the process model.</span>
-
-<span class="sd">    In fact, since the filter recalculates the covariance at each time step, </span>
-<span class="sd">    it is better to reduce :math:`R` and :math:`Q` by a factor compared </span>
-<span class="sd">    to the steady state mode values. Here, the factor is set to `0.5`. </span>
-
-<span class="sd">    .. code:: </span>
-
-<span class="sd">      &gt;&gt;&gt; noisefactor = 0.5</span>
-<span class="sd">      &gt;&gt;&gt; Q *= noisefactor</span>
-<span class="sd">      &gt;&gt;&gt; R *= noisefactor</span>
-
-<span class="sd">      </span>
-
-
-<span class="sd">    The filter initialization is similar to the previous case, </span>
-<span class="sd">    with the steady-state flag omitted.</span>
-
-<span class="sd">    Discrete system kalman initalization: </span>
-
-<span class="sd">    .. code:: </span>
-
-<span class="sd">      &gt;&gt;&gt; kf = c4d.filters.kalman({&#39;x&#39;: 0, &#39;y&#39;: 0, &#39;w&#39;: 0, &#39;h&#39;: 0, &#39;vx&#39;: 0, &#39;vy&#39;: 0}</span>
-<span class="sd">                              , P0 = Q, F = F, H = H, Q = Q, R = R)</span>
-
-
-
-<span class="sd">    The main loop is only modified to include the change in :math:`Q_k`: </span>
-
-<span class="sd">    </span>
-
-<span class="sd">    .. code:: </span>
-
-<span class="sd">      &gt;&gt;&gt; t = 0</span>
-<span class="sd">      &gt;&gt;&gt; # main loop       </span>
-<span class="sd">      &gt;&gt;&gt; while video_cap.isOpened():</span>
+<span class="sd">      &gt;&gt;&gt; v = 150</span>
+<span class="sd">      &gt;&gt;&gt; kf = kalman({&#39;x&#39;: 0}, P0 = 0.5*2, F = 1, G = v, H = 1, Q = 0.05)</span>
+<span class="sd">      &gt;&gt;&gt; for t in range(1, 26): #  seconds. </span>
 <span class="sd">      ...   kf.store(t)</span>
-<span class="sd">      ...   t += dt</span>
-<span class="sd">      ...   if t &gt; 3.9 and t &lt; 4.15:</span>
-<span class="sd">      ...     Q = np.eye(6) * 8**2 * noisefactor</span>
-<span class="sd">      ...   else: </span>
-<span class="sd">      ...     Q = np.eye(6) * 4**2 * noisefactor</span>
-<span class="sd">      ...   kf.predict(Q = Q)</span>
-<span class="sd">      ...   if round(t / dt_frame, 1) % 1 &gt;= 1e-10: continue   </span>
-<span class="sd">      ...   # camera cycle:</span>
-<span class="sd">      ...   ret, frame = video_cap.read()</span>
-<span class="sd">      ...   if not ret: break</span>
-<span class="sd">      ...   d = yolo3.detect(frame)</span>
-<span class="sd">      ...   if d and (d[0].class_id == &#39;car&#39;):  </span>
-<span class="sd">      ...     kf.update(d[0].X)</span>
-<span class="sd">      ...     kf.detect = d </span>
-<span class="sd">      ...     kf.storeparams(&#39;detect&#39;, t)</span>
-<span class="sd">      ...   cv2.rectangle(frame, box(kf.X)[0], box(kf.X)[1], [0, 255, 0], 2) </span>
-<span class="sd">      ...   cv2.imshow(&#39;&#39;, frame)</span>
-<span class="sd">      ...   cv2.waitKey(10)</span>
-<span class="sd">      &gt;&gt;&gt; cv2.destroyAllWindows()</span>
+<span class="sd">      ...   sensor_noise = 200 + 8 * t </span>
+<span class="sd">      ...   kf.predict(u = 1)</span>
+<span class="sd">      ...   kf.detect = v * t + np.random.randn() * sensor_noise   </span>
+<span class="sd">      ...   kf.K = kf.update(kf.detect, R = sensor_noise**2) </span>
+<span class="sd">      ...   kf.storeparams(&#39;detect&#39;, t)</span>
 
+<span class="sd">      </span>
+<span class="sd">    .. figure:: /_examples/kf/varying_r.png</span>
 <span class="sd">    </span>
-<span class="sd">    Now, the measures should respond stronger </span>
-<span class="sd">    when the car changes direction at :math:`t \\approx 4s`: </span>
-<span class="sd">    </span>
-<span class="sd">    .. figure:: /_examples/kf/discrete_std_zoom.png</span>
 <span class="sd">    </span>
 
-<span class="sd">    </span>
-
-
-<span class="sd">    **5. Continuous system** </span>
-
-<span class="sd">    We can achieve the same result by running continuous system. </span>
-
-<span class="sd">    The respective system </span>
-
-<span class="sd">    Let: </span>
-
-<span class="sd">    .. code:: </span>
-
-<span class="sd">      ... </span>
-
-
-<span class="sd">    This however not suprising, as the class and its methods converts any input </span>
-<span class="sd">    system to a discerte represnation according to the inverse of the equations above </span>
-<span class="sd">    and run the filter. </span>
-<span class="sd">    </span>
 <span class="sd">  &#39;&#39;&#39;</span>
-  <span class="c1"># TODO maybe change &#39;time histories&#39; with &#39;time series&#39; or &#39;time evolution&#39; </span>
+  <span class="c1"># FIX maybe change &#39;time histories&#39; with &#39;time series&#39; or &#39;time evolution&#39; </span>
 
-  <span class="n">Kinf</span> <span class="o">=</span> <span class="kc">None</span> 
+  <span class="n">_Kinf</span> <span class="o">=</span> <span class="kc">None</span> 
+  <span class="n">_nonlinearF</span> <span class="o">=</span> <span class="kc">False</span> 
+  <span class="n">_nonlinearH</span> <span class="o">=</span> <span class="kc">False</span> 
 
-
-  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">dt</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">P0</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">steadystate</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
-                <span class="p">,</span> <span class="n">A</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">B</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">C</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
-                  <span class="p">,</span> <span class="n">F</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">G</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">H</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
-                    <span class="p">,</span> <span class="n">Q</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">R</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">F</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">H</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">steadystate</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+                  <span class="p">,</span> <span class="n">G</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">P0</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+                      <span class="p">,</span> <span class="n">Q</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">R</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
     <span class="c1"># </span>
     <span class="c1"># P0 is mandatory and it is either the initial state covariance matrix itself or </span>
     <span class="c1"># a vector of the diagonal standard deviations. </span>
@@ -1028,38 +613,46 @@ document.write(`
     <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">X</span><span class="p">)</span>
 
 
-    <span class="c1"># initialize cont or discrete system </span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">isdiscrete</span> <span class="o">=</span> <span class="kc">True</span> 
+    <span class="c1">#</span>
+    <span class="c1"># verify shapes consistency: </span>
+    <span class="c1">#   x = Fx + Gu + w</span>
+    <span class="c1">#   y = Hx + v</span>
+    <span class="c1"># X: nx1, F: nxn, G: nxm, u: mx1, y: 1xk, H: kxn</span>
+    <span class="c1"># P: nxn, Q: nxn, R: kxk </span>
+    <span class="c1"># state matrices should be 2dim array. </span>
+    <span class="c1">##  </span>
+    <span class="k">def</span> <span class="nf">vershape</span><span class="p">(</span><span class="n">M1name</span><span class="p">,</span> <span class="n">M1rows</span><span class="p">,</span> <span class="n">M2name</span><span class="p">,</span> <span class="n">M2columns</span><span class="p">):</span>
+      <span class="k">if</span> <span class="n">M1rows</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">M2columns</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> 
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The columns of </span><span class="si">{</span><span class="n">M2name</span><span class="si">}</span><span class="s2"> (= </span><span class="si">{</span><span class="n">M2columns</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">) must equal &quot;&quot;&quot;</span> 
+                            <span class="sa">f</span><span class="s2">&quot;the rows of </span><span class="si">{</span><span class="n">M1name</span><span class="si">}</span><span class="s2"> (= </span><span class="si">{</span><span class="n">M1rows</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+
     <span class="bp">self</span><span class="o">.</span><span class="n">G</span> <span class="o">=</span> <span class="kc">None</span> 
-    <span class="k">if</span> <span class="n">A</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">C</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-      <span class="c1"># continuous system </span>
-      <span class="c1"># </span>
-      <span class="bp">self</span><span class="o">.</span><span class="n">isdiscrete</span> <span class="o">=</span> <span class="kc">False</span>  
-      <span class="k">if</span> <span class="n">dt</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;dt is necessary for a continuous system&quot;&quot;&quot;</span><span class="p">)</span>
-
-      <span class="bp">self</span><span class="o">.</span><span class="n">dt</span> <span class="o">=</span> <span class="n">dt</span>
-      <span class="c1">#         </span>
-      <span class="bp">self</span><span class="o">.</span><span class="n">F</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">))</span> <span class="o">+</span> <span class="n">A</span> <span class="o">*</span> <span class="n">dt</span> 
-      <span class="bp">self</span><span class="o">.</span><span class="n">H</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="n">C</span><span class="p">)</span> 
-      <span class="k">if</span> <span class="n">B</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span> 
-        <span class="bp">self</span><span class="o">.</span><span class="n">G</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="n">B</span><span class="p">)</span> <span class="o">*</span> <span class="n">dt</span> 
-
-    <span class="k">elif</span> <span class="n">F</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">H</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">F</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">H</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
       <span class="c1"># discrete</span>
-      <span class="bp">self</span><span class="o">.</span><span class="n">F</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="n">F</span><span class="p">)</span> 
-      <span class="bp">self</span><span class="o">.</span><span class="n">H</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="n">H</span><span class="p">)</span> 
-      <span class="k">if</span> <span class="n">G</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span> 
-        <span class="bp">self</span><span class="o">.</span><span class="n">G</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> 
-    <span class="k">else</span><span class="p">:</span> 
-      <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;At least one set of matrices has to be provided entirely:&quot;&quot;&quot;</span>
-<span class="w">                          </span><span class="sd">&quot;&quot;&quot;\nFor a continuous system: A, C (B is optional). Where: x&#39; = A*x + B*u + w, y = C*x + v&quot;&quot;&quot;</span>
-<span class="w">                            </span><span class="sd">&quot;&quot;&quot;\nFor a dicscrete system: F, H (G is optional). Where: x(k) = F*x(k-1) + G*u(k-1) + w(k-1), y(k) = H*x(k) + v(k)&quot;&quot;&quot;</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">F</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="n">F</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+      <span class="n">vershape</span><span class="p">(</span><span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">F</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">F</span><span class="p">)</span>          <span class="c1"># F: nxn</span>
+      <span class="n">vershape</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">F</span><span class="p">)</span>        <span class="c1"># F: n columns </span>
 
+      <span class="bp">self</span><span class="o">.</span><span class="n">H</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="n">H</span><span class="p">)</span> 
+      <span class="n">vershape</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">)</span>        <span class="c1"># H: n columns  </span>
+
+      <span class="k">if</span> <span class="n">G</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">G</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="n">G</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">F</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># now G is necessarily a column vector. </span>
+        
+    <span class="k">else</span><span class="p">:</span> 
+      <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;F and H (G is optional) as a set of system matrices must be provided entirely:&quot;&quot;&quot;</span>
+<span class="w">                            </span><span class="sd">&quot;&quot;&quot;\nx(k) = F*x(k-1) + G*u(k-1) + w(k-1), y(k) = H*x(k) + v(k)&quot;&quot;&quot;</span><span class="p">)</span>
+    
+    <span class="bp">self</span><span class="o">.</span><span class="n">Q</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">R</span> <span class="o">=</span> <span class="kc">None</span> 
     <span class="k">if</span> <span class="n">Q</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
       <span class="bp">self</span><span class="o">.</span><span class="n">Q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span> 
+      <span class="n">vershape</span><span class="p">(</span><span class="s1">&#39;Q&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Q</span><span class="p">,</span> <span class="s1">&#39;Q&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Q</span><span class="p">)</span>                    <span class="c1"># Q: nxn </span>
+      <span class="n">vershape</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="s1">&#39;Q&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Q</span><span class="p">)</span>                  <span class="c1"># Q: n columns </span>
     <span class="k">if</span> <span class="n">R</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
       <span class="bp">self</span><span class="o">.</span><span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>  
+      <span class="n">vershape</span><span class="p">(</span><span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">R</span><span class="p">,</span> <span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">R</span><span class="p">)</span>                    <span class="c1"># R: kxk </span>
+      <span class="n">vershape</span><span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">,</span> <span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">R</span><span class="p">)</span>                    <span class="c1"># R: k columns </span>
       
     
     <span class="k">if</span> <span class="n">steadystate</span><span class="p">:</span> 
@@ -1068,159 +661,148 @@ document.write(`
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;In steady-state mode, the noise matrices Q and R must be provided.&quot;&quot;&quot;</span><span class="p">)</span>
 
       <span class="bp">self</span><span class="o">.</span><span class="n">P</span> <span class="o">=</span> <span class="n">solve_discrete_are</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">F</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Q</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">R</span><span class="p">)</span>
-      <span class="bp">self</span><span class="o">.</span><span class="n">Kinf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">P</span> <span class="o">@</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">H</span> <span class="o">@</span> <span class="bp">self</span><span class="o">.</span><span class="n">P</span> <span class="o">@</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="o">.</span><span class="n">T</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">R</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_Kinf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">P</span> <span class="o">@</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">H</span> <span class="o">@</span> <span class="bp">self</span><span class="o">.</span><span class="n">P</span> <span class="o">@</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="o">.</span><span class="n">T</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">R</span><span class="p">)</span>
 
     <span class="k">else</span><span class="p">:</span> <span class="c1"># steady state is off </span>
       <span class="k">if</span> <span class="n">P0</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="c1"># NOTE maybe init with zeros and raising warning is better solution. </span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;P0 is a necessary variable (optional only in steadystate mode)&#39;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;P0 must be provided (optional only in steadystate mode)&#39;</span><span class="p">)</span>
 
-      <span class="n">P0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="n">P0</span><span class="p">)</span>      
 
-      <span class="k">if</span> <span class="n">P0</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">P0</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>  
-        <span class="c1"># square matrix</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">P</span> <span class="o">=</span> <span class="n">P0</span>
+      <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">P0</span><span class="p">)</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> 
+        <span class="c1"># an array of standard deviations is provided </span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">P0</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
       <span class="k">else</span><span class="p">:</span>
-        <span class="c1"># only standard deviations are provided </span>
-        <span class="c1"># self.P = np.diag(P0.flatten()**2)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">P0</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">P0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="n">P0</span><span class="p">)</span>      
+        <span class="k">if</span> <span class="n">P0</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">P0</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>  
+          <span class="c1"># square matrix</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">P</span> <span class="o">=</span> <span class="n">P0</span>
 
     <span class="bp">self</span><span class="o">.</span><span class="n">_Pdata</span> <span class="o">=</span> <span class="p">[]</span>   
 
 
-
-  <span class="nd">@property</span>
-  <span class="k">def</span> <span class="nf">A</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">isdiscrete</span><span class="p">:</span> 
-      <span class="n">_noncontwarning</span><span class="p">(</span><span class="s1">&#39;F&#39;</span><span class="p">)</span>
-      <span class="k">return</span> <span class="kc">None</span>
-    
-    <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">F</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">F</span><span class="p">)))</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">dt</span> 
-    <span class="k">return</span> <span class="n">a</span> 
-
-  <span class="nd">@A</span><span class="o">.</span><span class="n">setter</span>
-  <span class="k">def</span> <span class="nf">A</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
-    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">isdiscrete</span><span class="p">:</span> 
-      <span class="n">_noncontwarning</span><span class="p">(</span><span class="s1">&#39;F&#39;</span><span class="p">)</span> 
-    <span class="k">else</span><span class="p">:</span> 
-      <span class="bp">self</span><span class="o">.</span><span class="n">F</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">))</span> <span class="o">+</span> <span class="n">a</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">dt</span> 
-
-
-  <span class="nd">@property</span> 
-  <span class="k">def</span> <span class="nf">B</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">isdiscrete</span><span class="p">:</span> 
-      <span class="n">_noncontwarning</span><span class="p">(</span><span class="s1">&#39;G&#39;</span><span class="p">)</span>
-      <span class="k">return</span> <span class="kc">None</span> 
-    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">G</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">dt</span> 
-  
-  <span class="nd">@B</span><span class="o">.</span><span class="n">setter</span>
-  <span class="k">def</span> <span class="nf">B</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">isdiscrete</span><span class="p">:</span> 
-      <span class="n">_noncontwarning</span><span class="p">(</span><span class="s1">&#39;G&#39;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span> 
-      <span class="bp">self</span><span class="o">.</span><span class="n">G</span> <span class="o">=</span> <span class="n">b</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">dt</span> 
-
-
-  <span class="nd">@property</span> 
-  <span class="k">def</span> <span class="nf">C</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">isdiscrete</span><span class="p">:</span> 
-      <span class="n">_noncontwarning</span><span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">)</span>
-      <span class="k">return</span> <span class="kc">None</span> 
-    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span> 
-  
-  <span class="nd">@C</span><span class="o">.</span><span class="n">setter</span>
-  <span class="k">def</span> <span class="nf">C</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
-    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">isdiscrete</span><span class="p">:</span> 
-      <span class="n">_noncontwarning</span><span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span> 
-      <span class="bp">self</span><span class="o">.</span><span class="n">H</span> <span class="o">=</span> <span class="n">c</span>
 
 
 <div class="viewcode-block" id="kalman.predict">
 <a class="viewcode-back" href="../../../api/generated/kalman/c4dynamics.filters.kalman.kalman.predict.html#c4dynamics.filters.kalman.kalman.predict">[docs]</a>
   <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">u</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">Q</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">      Predicts the next state and covariance based </span>
-<span class="sd">      on the current state and process model.</span>
+<span class="sd">      Predicts the filter&#39;s next state and covariance matrix based </span>
+<span class="sd">      on the current state and the process model.</span>
 <span class="sd">      </span>
 <span class="sd">      Parameters</span>
 <span class="sd">      ----------</span>
 <span class="sd">      u : numpy.ndarray, optional</span>
 <span class="sd">          Control input. Defaults to None.</span>
+<span class="sd">      Q : numpy.ndarray, optional</span>
+<span class="sd">          Process noise covariance matrix. Defaults to None.</span>
 
-
-<span class="sd">      FROM PIXELPOINT: </span>
-
-
-<span class="sd">      Gets and sets the frame size. </span>
-
-<span class="sd">      Parameters</span>
-<span class="sd">      ----------</span>
-<span class="sd">      fsize : tuple </span>
-<span class="sd">          Size of the frame in pixels (width, height).</span>
-<span class="sd">          - (width)  int : Frame width in pixels. </span>
-<span class="sd">          - (height) int : Frame height in pixels. </span>
-
-
-<span class="sd">      Returns</span>
-<span class="sd">      -------</span>
-<span class="sd">      out : tuple </span>
-<span class="sd">          A tuple of the frame size in pixels (width, height). </span>
-<span class="sd">          </span>
 
 <span class="sd">      Raises</span>
 <span class="sd">      ------</span>
 <span class="sd">      ValueError</span>
-<span class="sd">          If `fsize` doesn&#39;t have exactly two elements, a ValueError is raised.</span>
-
+<span class="sd">          If `Q` is not missing (neither provided </span>
+<span class="sd">          during construction nor passed to `predict`). </span>
+<span class="sd">      ValueError</span>
+<span class="sd">          If a control input is provided, but the number of elements in `u` </span>
+<span class="sd">          does not match the number of columns of the input matrix `G`. </span>
+<span class="sd">          </span>
 <span class="sd">          </span>
 <span class="sd">      Examples</span>
 <span class="sd">      --------</span>
-<span class="sd">      For detailed usage, </span>
+<span class="sd">      For more detailed usage, </span>
 <span class="sd">      see the examples in the introduction to </span>
+<span class="sd">      the :mod:`filters &lt;c4dynamics.filters&gt;` module and </span>
 <span class="sd">      the :class:`kalman` class.</span>
 
-<span class="sd">      define kalman:</span>
 <span class="sd">      </span>
 
-<span class="sd">      run in steadys tate: </span>
+<span class="sd">      </span>
+<span class="sd">      Import required packages: </span>
 
-<span class="sd">      run with control input</span>
+<span class="sd">      .. code:: </span>
 
-<span class="sd">      run with varying Q</span>
+<span class="sd">        &gt;&gt;&gt; from c4dynamics.filters import kalman </span>
 
 
-<span class="sd">          </span>
+
+<span class="sd">      Plain `predict` step </span>
+<span class="sd">      (predict in steady-state mode where the process variance matrix </span>
+<span class="sd">      remains constant </span>
+<span class="sd">      and is provided once to initialize the filter): </span>
+
+<span class="sd">      .. code:: </span>
+
+<span class="sd">        &gt;&gt;&gt; kf = kalman({&#39;x&#39;: 0}, P0 = 0.5**2, F = 1, H = 1, Q = 0.05, R = 200, steadystate = True)</span>
+<span class="sd">        &gt;&gt;&gt; print(kf)</span>
+<span class="sd">        [ x ]</span>
+<span class="sd">        &gt;&gt;&gt; kf.X          # doctest: +NUMPY_FORMAT</span>
+<span class="sd">        [0]</span>
+<span class="sd">        &gt;&gt;&gt; kf.P          # doctest: +NUMPY_FORMAT</span>
+<span class="sd">        [[3.187...]]</span>
+<span class="sd">        &gt;&gt;&gt; kf.predict()</span>
+<span class="sd">        &gt;&gt;&gt; kf.X          # doctest: +NUMPY_FORMAT</span>
+<span class="sd">        [0]</span>
+<span class="sd">        &gt;&gt;&gt; kf.P          # doctest: +NUMPY_FORMAT</span>
+<span class="sd">        [[3.187...]]</span>
+
+
+<span class="sd">      Predict with control input: </span>
+
+<span class="sd">      .. code:: </span>
+
+<span class="sd">        &gt;&gt;&gt; kf = kalman({&#39;x&#39;: 0}, P0 = 0.5**2, F = 1, G = 150, H = 1, R = 200, Q = 0.05)</span>
+<span class="sd">        &gt;&gt;&gt; kf.X  # doctest: +NUMPY_FORMAT</span>
+<span class="sd">        array([0])</span>
+<span class="sd">        &gt;&gt;&gt; kf.P        # doctest: +ELLIPSIS</span>
+<span class="sd">        array([[0.25...]])</span>
+<span class="sd">        &gt;&gt;&gt; kf.predict(u = 1)</span>
+<span class="sd">        &gt;&gt;&gt; kf.X      # doctest: +NUMPY_FORMAT</span>
+<span class="sd">        array([150]) </span>
+<span class="sd">        &gt;&gt;&gt; kf.P</span>
+<span class="sd">        array([[0.3]])</span>
+
+
+<span class="sd">        </span>
+<span class="sd">      Predict with updated process noise covariance matrix: </span>
+
+<span class="sd">      .. code:: </span>
+
+<span class="sd">        &gt;&gt;&gt; kf = kalman({&#39;x&#39;: 0}, P0 = 0.5**2, F = 1, G = 150, H = 1, R = 200, Q = 0.05)</span>
+<span class="sd">        &gt;&gt;&gt; kf.X  # doctest: +NUMPY_FORMAT</span>
+<span class="sd">        array([0])</span>
+<span class="sd">        &gt;&gt;&gt; kf.P</span>
+<span class="sd">        array([[0.25]])</span>
+<span class="sd">        &gt;&gt;&gt; kf.predict(u = 1, Q = 0.01)</span>
+<span class="sd">        &gt;&gt;&gt; kf.X  # doctest: +NUMPY_FORMAT</span>
+<span class="sd">        array([150])</span>
+<span class="sd">        &gt;&gt;&gt; kf.P</span>
+<span class="sd">        array([[0.26]])</span>
+
 
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="c1"># TODO test the size of the objects. </span>
-    <span class="c1"># test the type. </span>
-    <span class="c1"># make sure the user is working with c4d modules. </span>
-    <span class="c1"># actually only u should be tested here all the other need be tested at the init stage. </span>
-	  <span class="c1"># this F must be linear, but it can be linearized once for the entire</span>
-    <span class="c1"># process (regular kalman), or linearized and delivered at each step (extended kalman)</span>
   
 
-    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">Kinf</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Kinf</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
 
       <span class="k">if</span> <span class="n">Q</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span> 
         <span class="bp">self</span><span class="o">.</span><span class="n">Q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span> 
       <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">Q</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> 
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Q must be provided in every call to predict() (optional only in steadystate mode)&#39;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Q is missing. It can be provided once at construction &quot;&quot;&quot;</span>
+<span class="w">                         </span><span class="sd">&quot;&quot;&quot;or in every call to predict() &quot;&quot;&quot;</span><span class="p">)</span>
 
       <span class="bp">self</span><span class="o">.</span><span class="n">P</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">F</span> <span class="o">@</span> <span class="bp">self</span><span class="o">.</span><span class="n">P</span> <span class="o">@</span> <span class="bp">self</span><span class="o">.</span><span class="n">F</span><span class="o">.</span><span class="n">T</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">Q</span>
          
-    <span class="c1"># this F can be either linear or nonlinear function of x. </span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">X</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">F</span> <span class="o">@</span> <span class="bp">self</span><span class="o">.</span><span class="n">X</span> 
+    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nonlinearF</span><span class="p">:</span> 
+      <span class="bp">self</span><span class="o">.</span><span class="n">X</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">F</span> <span class="o">@</span> <span class="bp">self</span><span class="o">.</span><span class="n">X</span> 
 
-    <span class="k">if</span> <span class="n">u</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-      
+    <span class="k">if</span> <span class="n">u</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span> 
       <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">G</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span><span class="se">\n</span><span class="s2">Warning: u=</span><span class="si">{</span><span class="n">u</span><span class="si">}</span><span class="s2"> is introduced as control input but the input matrix is zero! (G for discrete system or B for continuous).&quot;&quot;&quot;</span><span class="p">,</span> <span class="n">c4d</span><span class="o">.</span><span class="n">c4warn</span><span class="p">)</span> 
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span><span class="se">\n</span><span class="s2">Warning: u=</span><span class="si">{</span><span class="n">u</span><span class="si">}</span><span class="s2"> is introduced as control input but the input matrix G is zero!&quot;&quot;&quot;</span><span class="p">,</span> <span class="n">c4d</span><span class="o">.</span><span class="n">c4warn</span><span class="p">)</span> 
       <span class="k">else</span><span class="p">:</span>   
         <span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>      
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
-          <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;The number of elements in u must equal the number of columns of the input matrix (B or G), </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span><span class="si">}</span><span class="s2"> != </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+          <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;The number of elements in u must equal the number of columns of the input matrix G, </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span><span class="si">}</span><span class="s2"> != </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">X</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">G</span> <span class="o">@</span> <span class="n">u</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span> </div>
 
 
@@ -1230,64 +812,192 @@ document.write(`
 <a class="viewcode-back" href="../../../api/generated/kalman/c4dynamics.filters.kalman.kalman.update.html#c4dynamics.filters.kalman.kalman.update">[docs]</a>
   <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">R</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">      Updates the state estimate based on the given measurements.</span>
+<span class="sd">      Updates (corrects) the state estimate based on the given measurements.</span>
 <span class="sd">      </span>
 <span class="sd">      Parameters</span>
 <span class="sd">      ----------</span>
 <span class="sd">      z : numpy.ndarray</span>
 <span class="sd">          Measurement vector.</span>
+<span class="sd">      R : numpy.ndarray, optional</span>
+<span class="sd">          Measurement noise covariance matrix. Defaults to None.</span>
+
+<span class="sd">      Returns</span>
+<span class="sd">      -------</span>
+<span class="sd">      K : numpy.ndarray </span>
+<span class="sd">          Kalman gain. </span>
+
+
+<span class="sd">      Raises</span>
+<span class="sd">      ------</span>
+<span class="sd">      ValueError</span>
+<span class="sd">          If the number of elements in `z` does not match </span>
+<span class="sd">          the number of rows in the measurement matrix H. </span>
+<span class="sd">      ValueError</span>
+<span class="sd">          If `R` is missing (neither provided </span>
+<span class="sd">          during construction </span>
+<span class="sd">          nor passed to `update`). </span>
+<span class="sd">          </span>
+<span class="sd">      Examples</span>
+<span class="sd">      --------</span>
+<span class="sd">      For more detailed usage, </span>
+<span class="sd">      see the examples in the introduction to </span>
+<span class="sd">      the :mod:`filters &lt;c4dynamics.filters&gt;` module and </span>
+<span class="sd">      the :class:`kalman` class.</span>
+
+<span class="sd">      </span>
+<span class="sd">      </span>
+<span class="sd">      Import required packages: </span>
+
+<span class="sd">      .. code:: </span>
+
+<span class="sd">        &gt;&gt;&gt; from c4dynamics.filters import kalman </span>
 
 
 
+<span class="sd">      Plain update step </span>
+<span class="sd">      (update in steady-state mode </span>
+<span class="sd">      where the measurement covariance matrix remains </span>
+<span class="sd">      and is provided once during filter initialization): </span>
 
-<span class="sd">    </span>
-<span class="sd">      define kalman:</span>
+<span class="sd">      .. code:: </span>
 
-<span class="sd">      run in steadys tate: </span>
+<span class="sd">        &gt;&gt;&gt; kf = kalman({&#39;x&#39;: 0}, P0 = 0.5**2, F = 1, H = 1, Q = 0.05, R = 200, steadystate = True)</span>
+<span class="sd">        &gt;&gt;&gt; print(kf)</span>
+<span class="sd">        [ x ]</span>
+<span class="sd">        &gt;&gt;&gt; kf.X   # doctest: +NUMPY_FORMAT</span>
+<span class="sd">        array([0])</span>
+<span class="sd">        &gt;&gt;&gt; kf.P                # doctest: +NUMPY_FORMAT</span>
+<span class="sd">        [[3.187...]]     </span>
+<span class="sd">        &gt;&gt;&gt; kf.update(z = 100)  # returns Kalman gain   # doctest: +NUMPY_FORMAT</span>
+<span class="sd">        [[0.0156...]]</span>
+<span class="sd">        &gt;&gt;&gt; kf.X                # doctest: +NUMPY_FORMAT</span>
+<span class="sd">        [1.568...]   </span>
+<span class="sd">        &gt;&gt;&gt; kf.P                # doctest: +NUMPY_FORMAT</span>
+<span class="sd">        [[3.187...]]</span>
 
-<span class="sd">      run with varying R</span>
+
+<span class="sd">        </span>
+<span class="sd">      Update with modified measurement noise covariance matrix: </span>
+
+<span class="sd">      .. code:: </span>
+
+<span class="sd">        &gt;&gt;&gt; kf = kalman({&#39;x&#39;: 0}, P0 = 0.5**2, F = 1, G = 150, H = 1, R = 200, Q = 0.05)</span>
+<span class="sd">        &gt;&gt;&gt; kf.X   # doctest: +NUMPY_FORMAT</span>
+<span class="sd">        array([0])</span>
+<span class="sd">        &gt;&gt;&gt; kf.P</span>
+<span class="sd">        array([[0.25]])</span>
+<span class="sd">        &gt;&gt;&gt; K = kf.update(z = 150, R = 0)</span>
+<span class="sd">        &gt;&gt;&gt; K   # doctest: +NUMPY_FORMAT</span>
+<span class="sd">        array([[1]])</span>
+<span class="sd">        &gt;&gt;&gt; kf.X  # doctest: +NUMPY_FORMAT</span>
+<span class="sd">        array([150])</span>
+<span class="sd">        &gt;&gt;&gt; kf.P  # doctest: +NUMPY_FORMAT</span>
+<span class="sd">        array([[0]])</span>
+
 <span class="sd">          </span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
     
-    <span class="c1"># this H must be linear, but as F may it be linearized once about an equilibrium point for </span>
+    <span class="c1"># this H must be linear, but like F may it be linearized once about an equilibrium point for </span>
     <span class="c1"># the entire process (regular kalman) or at each </span>
     <span class="c1"># iteration about the current state (ekf). </span>
     <span class="c1"># TODO add Mahalanobis optional test </span>
     <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
       <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;The number of elements in the input z must equal &quot;&quot;&quot;</span>
-                          <span class="sa">f</span><span class="s2">&quot;&quot;&quot;the number of rows of the measurement matrix (C or H), &quot;&quot;&quot;</span>
+                          <span class="sa">f</span><span class="s2">&quot;&quot;&quot;the number of rows of the measurement matrix H, &quot;&quot;&quot;</span>
                               <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span><span class="si">}</span><span class="s2"> != </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
     
-    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">Kinf</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Kinf</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
       <span class="k">if</span> <span class="n">R</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span> 
         <span class="bp">self</span><span class="o">.</span><span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
       <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">R</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> 
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;R must be provided in every call to update() (optional only in steadystate mode)&#39;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;R is missing. It can be provided once at construction &quot;&quot;&quot;</span>
+<span class="w">                         </span><span class="sd">&quot;&quot;&quot;or in every call to update() &quot;&quot;&quot;</span><span class="p">)</span>
 
       <span class="n">K</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">P</span> <span class="o">@</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">H</span> <span class="o">@</span> <span class="bp">self</span><span class="o">.</span><span class="n">P</span> <span class="o">@</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="o">.</span><span class="n">T</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">R</span><span class="p">)</span>
       <span class="bp">self</span><span class="o">.</span><span class="n">P</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">P</span> <span class="o">-</span> <span class="n">K</span> <span class="o">@</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span> <span class="o">@</span> <span class="bp">self</span><span class="o">.</span><span class="n">P</span>
     <span class="k">else</span><span class="p">:</span> 
-      <span class="n">K</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Kinf</span>
+      <span class="n">K</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Kinf</span>
 
+    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nonlinearH</span><span class="p">:</span>
+      <span class="n">hx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span> <span class="o">@</span> <span class="bp">self</span><span class="o">.</span><span class="n">X</span>
+      
     <span class="c1"># this H can be expressed as either linear or nonlinear function of x.  </span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">X</span> <span class="o">+=</span> <span class="n">K</span> <span class="o">@</span> <span class="p">(</span><span class="n">z</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span> <span class="o">@</span> <span class="bp">self</span><span class="o">.</span><span class="n">X</span><span class="p">)</span></div>
+    <span class="bp">self</span><span class="o">.</span><span class="n">X</span> <span class="o">+=</span> <span class="n">K</span> <span class="o">@</span> <span class="p">(</span><span class="n">z</span> <span class="o">-</span> <span class="n">hx</span><span class="p">)</span> <span class="c1"># type: ignore # nx1 = nxm @ (mx1 - mxn @ nx1)</span>
+    <span class="k">return</span> <span class="n">K</span> </div>
 
     
-    
+
 <div class="viewcode-block" id="kalman.store">
 <a class="viewcode-back" href="../../../api/generated/kalman/c4dynamics.filters.kalman.kalman.store.html#c4dynamics.filters.kalman.kalman.store">[docs]</a>
   <span class="k">def</span> <span class="nf">store</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39; </span>
-<span class="sd">    Stores the current state and diagonal elements of the covariance matrix.</span>
-<span class="sd">        </span>
-<span class="sd">    Parameters</span>
-<span class="sd">    ----------</span>
-
-<span class="sd">    t : int, optional</span>
-<span class="sd">        Time step for storing the state. Defaults to -1.</span>
+<span class="sd">      Stores the current state and diagonal elements of the covariance matrix.</span>
+<span class="sd">          </span>
+<span class="sd">      The :meth:`store` method captures the current state of the Kalman filter, </span>
+<span class="sd">      storing the state vector (`X`) and the error covariance matrix (`P`) </span>
+<span class="sd">      at the specified time. </span>
 <span class="sd">      </span>
+
+<span class="sd">      Parameters</span>
+<span class="sd">      ----------</span>
+<span class="sd">      t : int, optional</span>
+<span class="sd">          The current time at which the state is being stored. Defaults to -1.</span>
+<span class="sd">      </span>
+
+<span class="sd">      Notes</span>
+<span class="sd">      -----</span>
+<span class="sd">      1. The stored data can be accessed via :meth:`data &lt;c4dynamics.states.state.state.data&gt;` </span>
+<span class="sd">         or other methods for </span>
+<span class="sd">         post-analysis or visualization.</span>
+<span class="sd">      2. The elements on the main diagonal of the covariance matrix are named </span>
+<span class="sd">         according to their position, starting with &#39;P&#39; followed by their row and column indices. </span>
+<span class="sd">         For example, the first element is named &#39;P00&#39;, and so on.</span>
+<span class="sd">      3. See also :meth:`store &lt;c4dynamics.states.state.state.store&gt;` </span>
+<span class="sd">         and :meth:`data &lt;c4dynamics.states.state.state.data&gt;` </span>
+<span class="sd">         for more details. </span>
+
+<span class="sd">      Examples</span>
+<span class="sd">      -------- </span>
+<span class="sd">      For more detailed usage, </span>
+<span class="sd">      see the examples in the introduction to </span>
+<span class="sd">      the :mod:`filters &lt;c4dynamics.filters&gt;` module and </span>
+<span class="sd">      the :class:`kalman &lt;c4dynamics.filters.kalman.kalman&gt;` class.</span>
+
+<span class="sd">        </span>
+
+<span class="sd">        </span>
+<span class="sd">      Import required packages: </span>
+
+<span class="sd">      .. code:: </span>
+
+<span class="sd">        &gt;&gt;&gt; from c4dynamics.filters import kalman </span>
+
+
+<span class="sd">      </span>
+<span class="sd">      .. code:: </span>
+
+<span class="sd">        &gt;&gt;&gt; kf = kalman({&#39;x&#39;: 0}, P0 = 0.5**2, F = 1, H = 1, Q = 0.05, R = 200)</span>
+<span class="sd">        &gt;&gt;&gt; # store initial conditions</span>
+<span class="sd">        &gt;&gt;&gt; kf.store() </span>
+<span class="sd">        &gt;&gt;&gt; kf.predict()</span>
+<span class="sd">        &gt;&gt;&gt; # store X after prediction</span>
+<span class="sd">        &gt;&gt;&gt; kf.store() </span>
+<span class="sd">        &gt;&gt;&gt; kf.update(z = 100)  # doctest: +ELLIPSIS </span>
+<span class="sd">        array([[0.00149...]])</span>
+<span class="sd">        &gt;&gt;&gt; # store X after correct</span>
+<span class="sd">        &gt;&gt;&gt; kf.store() </span>
+
+<span class="sd">      Access stored data: </span>
+<span class="sd">      </span>
+<span class="sd">      .. code:: </span>
+
+<span class="sd">        &gt;&gt;&gt; kf.data(&#39;x&#39;)[1]  # doctest: +NUMPY_FORMAT</span>
+<span class="sd">        [0  0  0.15])</span>
+<span class="sd">        &gt;&gt;&gt; kf.data(&#39;P00&#39;)[1]  # doctest: +NUMPY_FORMAT</span>
+<span class="sd">        [0.25  0.3  0.299])</span>
+<span class="sd">          </span>
 <span class="sd">    &#39;&#39;&#39;</span>
     
     <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">store</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="c1"># store state </span>
@@ -1348,8 +1058,26 @@ document.write(`
 
     <span class="n">kf</span> <span class="o">=</span> <span class="n">kalman</span><span class="p">({</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;vx&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;vy&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
                           <span class="p">,</span> <span class="n">steadystate</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">F</span> <span class="o">=</span> <span class="n">F</span><span class="p">,</span> <span class="n">H</span> <span class="o">=</span> <span class="n">H</span><span class="p">,</span> <span class="n">Q</span> <span class="o">=</span> <span class="n">Q</span><span class="p">,</span> <span class="n">R</span> <span class="o">=</span> <span class="n">R</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">kf</span> </div>
+    <span class="k">return</span> <span class="n">kf</span> 
 
+
+  <span class="nd">@staticmethod</span>
+  <span class="k">def</span> <span class="nf">nees</span><span class="p">(</span><span class="n">kf</span><span class="p">,</span> <span class="n">true_obj</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39; normalized estimated error squared &#39;&#39;&#39;</span>
+
+    <span class="n">Ptimes</span> <span class="o">=</span> <span class="n">kf</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;P00&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">err</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">kf</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">):</span>
+
+      <span class="n">xkf</span> <span class="o">=</span> <span class="n">kf</span><span class="o">.</span><span class="n">timestate</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+      <span class="n">xtrain</span> <span class="o">=</span> <span class="n">true_obj</span><span class="o">.</span><span class="n">timestate</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+      <span class="n">idx</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">Ptimes</span><span class="p">)),</span> <span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="nb">abs</span><span class="p">(</span><span class="n">Ptimes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">t</span><span class="p">))</span>
+      <span class="n">P</span> <span class="o">=</span> <span class="n">kf</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;P00&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span>
+
+      <span class="n">xerr</span> <span class="o">=</span> <span class="n">xtrain</span> <span class="o">-</span> <span class="n">xkf</span>
+      <span class="n">err</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">xerr</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">P</span><span class="p">)</span>  
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">err</span><span class="p">)</span></div>
 
 
 
@@ -1358,13 +1086,30 @@ document.write(`
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-  <span class="kn">import</span> <span class="nn">contextlib</span>
-  <span class="kn">import</span> <span class="nn">doctest</span>
 
-  <span class="c1"># Redirect both stdout and stderr to a file within this block</span>
-  <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;output.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="k">with</span> <span class="n">contextlib</span><span class="o">.</span><span class="n">redirect_stdout</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="n">contextlib</span><span class="o">.</span><span class="n">redirect_stderr</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
-      <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span>
+  <span class="kn">import</span> <span class="nn">doctest</span><span class="o">,</span> <span class="nn">contextlib</span><span class="o">,</span> <span class="nn">os</span>
+  <span class="kn">from</span> <span class="nn">c4dynamics</span> <span class="kn">import</span> <span class="n">IgnoreOutputChecker</span><span class="p">,</span> <span class="n">cprint</span>
+  
+  <span class="c1"># Register the custom OutputChecker</span>
+  <span class="n">doctest</span><span class="o">.</span><span class="n">OutputChecker</span> <span class="o">=</span> <span class="n">IgnoreOutputChecker</span>
+
+  <span class="n">tofile</span> <span class="o">=</span> <span class="kc">False</span> 
+  <span class="n">optionflags</span> <span class="o">=</span> <span class="n">doctest</span><span class="o">.</span><span class="n">FAIL_FAST</span>
+
+  <span class="k">if</span> <span class="n">tofile</span><span class="p">:</span> 
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;tests&#39;</span><span class="p">,</span> <span class="s1">&#39;_out&#39;</span><span class="p">,</span> <span class="s1">&#39;output.txt&#39;</span><span class="p">),</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+      <span class="k">with</span> <span class="n">contextlib</span><span class="o">.</span><span class="n">redirect_stdout</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="n">contextlib</span><span class="o">.</span><span class="n">redirect_stderr</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">(</span><span class="n">optionflags</span> <span class="o">=</span> <span class="n">optionflags</span><span class="p">)</span> 
+  <span class="k">else</span><span class="p">:</span> 
+    <span class="n">result</span> <span class="o">=</span> <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">(</span><span class="n">optionflags</span> <span class="o">=</span> <span class="n">optionflags</span><span class="p">)</span>
+
+  <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">failed</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">cprint</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;: all tests passed!&quot;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">failed</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+
  
 
 
@@ -1416,7 +1161,7 @@ By C4dynamics
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Oct 07, 2024.
+  Last updated on Nov 10, 2024.
   <br/>
 </p>
   </div>

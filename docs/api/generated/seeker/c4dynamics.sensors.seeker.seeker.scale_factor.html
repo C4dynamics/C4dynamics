@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>c4dynamics.sensors.seeker.seeker.scale_factor &#8212; c4dynamics &lt;span class=&#34;project-version&#34;&gt;1.2&lt;/span&gt;</title>
+    <title>c4dynamics.sensors.seeker.seeker.scale_factor &#8212; C4DYNAMICS v1.2 Manual</title>
   
   
   
@@ -31,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/style.css?v=f9876931" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/style.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
@@ -52,7 +52,7 @@
     <link rel="prev" title="c4dynamics.sensors.seeker.seeker.bias" href="c4dynamics.sensors.seeker.seeker.bias.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Oct 07, 2024"/>
+    <meta name="docbuild:last-update" content="Nov 10, 2024"/>
   </head>
   
   
@@ -136,7 +136,7 @@
   
   
   
-    <p class="title logo__title">c4dynamics <span class="project-version">1.2</span></p>
+    <p class="title logo__title">C4DYNAMICS v1.2 Manual</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -156,13 +156,15 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../../index.html">
-                    C4DYNAMICS
+                    Home
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../gettingstarted.html">Getting Started</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../../index.html">API Reference</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../States.html">State objects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../States.html">State Objects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../states.state.html">The state class</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../state/c4dynamics.states.state.state.X.html">c4dynamics.states.state.state.X</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../state/c4dynamics.states.state.state.X0.html">c4dynamics.states.state.state.X0</a></li>
@@ -231,7 +233,7 @@
 </details></li>
 </ul>
 </details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../Utils.html">Utils</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Routines.html">Routines</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../utils.eqm.html">Equations of motion solvers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../eqm/c4dynamics.eqm.derivs.eqm3.html">c4dynamics.eqm.derivs.eqm3</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../eqm/c4dynamics.eqm.derivs.eqm6.html">c4dynamics.eqm.derivs.eqm6</a></li>
@@ -248,6 +250,9 @@
 <li class="toctree-l4"><a class="reference internal" href="../rotmat/c4dynamics.rotmat.animate.animate.html">c4dynamics.rotmat.animate.animate</a></li>
 </ul>
 </details></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Utils.html">Utils</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../utils.math.html">Math functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../utils.const.html">Constants</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../utils.misc.html">Misc</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -460,13 +465,19 @@ or to override it, the user may call
 to a <cite>radar</cite> object too.
 Simply replace <code class="code docutils literal notranslate"><span class="pre">c4d.sensors.seeker(...)</span></code>
 with <code class="code docutils literal notranslate"><span class="pre">c4d.sensors.radar(...)</span></code>.</p>
-<p><strong>Auxiliary objects</strong></p>
+<p>Required packages:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">c4dynamics</span> <span class="k">as</span> <span class="nn">c4d</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+<p>Settings and initial conditions:</p>
 <p>(see <a class="reference internal" href="../../sensors.seeker.html#c4dynamics.sensors.seeker.seeker" title="c4dynamics.sensors.seeker.seeker"><code class="xref py py-class docutils literal notranslate"><span class="pre">seeker</span></code></a> or <a class="reference internal" href="../../sensors.radar.html#c4dynamics.sensors.radar.radar" title="c4dynamics.sensors.radar.radar"><code class="xref py py-class docutils literal notranslate"><span class="pre">radar</span></code></a>
 examples for more details):</p>
 <p>Target:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tgt</span> <span class="o">=</span> <span class="n">c4d</span><span class="o">.</span><span class="n">datapoint</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">vx</span> <span class="o">=</span> <span class="o">-</span><span class="mi">80</span> <span class="o">*</span> <span class="n">c4d</span><span class="o">.</span><span class="n">kmh2ms</span><span class="p">,</span> <span class="n">vy</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">c4d</span><span class="o">.</span><span class="n">kmh2ms</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">):</span>
-<span class="gp">... </span>  <span class="n">tgt</span><span class="o">.</span><span class="n">inteqm</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="mf">.01</span><span class="p">)</span>
+<span class="gp">... </span>  <span class="n">tgt</span><span class="o">.</span><span class="n">inteqm</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="mf">.01</span><span class="p">)</span> 
 <span class="gp">... </span>  <span class="n">tgt</span><span class="o">.</span><span class="n">store</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -484,13 +495,14 @@ and set it to <cite>1.2 (= 20%)</cite> to track a constant velocity target:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">skr</span> <span class="o">=</span> <span class="n">c4d</span><span class="o">.</span><span class="n">sensors</span><span class="o">.</span><span class="n">seeker</span><span class="p">(</span><span class="n">origin</span> <span class="o">=</span> <span class="n">pedestal</span><span class="p">,</span> <span class="n">bias_std</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">noise_std</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">skr</span><span class="o">.</span><span class="n">scale_factor</span> <span class="o">=</span> <span class="mf">1.2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">tgt</span><span class="o">.</span><span class="n">data</span><span class="p">():</span>
-<span class="gp">... </span>  <span class="n">skr</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="n">c4d</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:]),</span> <span class="n">t</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">store</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="gp">... </span>  <span class="n">skr_ideal</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="n">c4d</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:]),</span> <span class="n">t</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">store</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>  
+<span class="gp">... </span>  <span class="n">skr</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="n">c4d</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:]),</span> <span class="n">t</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">store</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>    
 </pre></div>
 </div>
 <p>Compare with the true target angles (ideal seeker):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">skr_ideal</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;az&#39;</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="n">c4d</span><span class="o">.</span><span class="n">r2d</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;target&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">skr</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;az&#39;</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="n">c4d</span><span class="o">.</span><span class="n">r2d</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;seeker&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">skr_ideal</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;az&#39;</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="n">c4d</span><span class="o">.</span><span class="n">r2d</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;target&#39;</span><span class="p">)</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">skr</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;az&#39;</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="n">c4d</span><span class="o">.</span><span class="n">r2d</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;seeker&#39;</span><span class="p">)</span>  
 </pre></div>
 </div>
 <figure class="align-default">
@@ -579,7 +591,7 @@ By C4dynamics
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Oct 07, 2024.
+  Last updated on Nov 10, 2024.
   <br/>
 </p>
   </div>

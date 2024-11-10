@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>c4dynamics.rotmat.animate &#8212; c4dynamics &lt;span class=&#34;project-version&#34;&gt;1.2&lt;/span&gt;</title>
+    <title>c4dynamics.rotmat.animate &#8212; C4DYNAMICS v1.2 Manual</title>
   
   
   
@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/style.css?v=f9876931" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/style.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
@@ -48,7 +48,7 @@
     <link rel="search" title="Search" href="../../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Oct 07, 2024"/>
+    <meta name="docbuild:last-update" content="Nov 10, 2024"/>
   </head>
   
   
@@ -134,7 +134,7 @@
   
   
   
-    <p class="title logo__title">c4dynamics <span class="project-version">1.2</span></p>
+    <p class="title logo__title">C4DYNAMICS v1.2 Manual</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -154,13 +154,15 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../../index.html">
-                    C4DYNAMICS
+                    Home
                 </a>
             </li>
         </ul>
         <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../gettingstarted.html">Getting Started</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../api/index.html">API Reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/States.html">State objects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/States.html">State Objects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/states.state.html">The state class</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/generated/state/c4dynamics.states.state.state.X.html">c4dynamics.states.state.state.X</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/generated/state/c4dynamics.states.state.state.X0.html">c4dynamics.states.state.state.X0</a></li>
@@ -229,7 +231,7 @@
 </details></li>
 </ul>
 </details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/Utils.html">Utils</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/Routines.html">Routines</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/utils.eqm.html">Equations of motion solvers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/generated/eqm/c4dynamics.eqm.derivs.eqm3.html">c4dynamics.eqm.derivs.eqm3</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/generated/eqm/c4dynamics.eqm.derivs.eqm6.html">c4dynamics.eqm.derivs.eqm6</a></li>
@@ -246,6 +248,9 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../api/generated/rotmat/c4dynamics.rotmat.animate.animate.html">c4dynamics.rotmat.animate.animate</a></li>
 </ul>
 </details></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/Utils.html">Utils</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/utils.math.html">Math functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/utils.const.html">Constants</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/utils.misc.html">Misc</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -372,16 +377,15 @@ document.write(`
                 <article class="bd-article">
                   
   <h1>Source code for c4dynamics.rotmat.animate</h1><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">os</span> 
+<span></span><span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span> 
 <span class="kn">import</span> <span class="nn">time</span> 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
 <span class="kn">import</span> <span class="nn">tkinter</span> <span class="k">as</span> <span class="nn">tk</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">c4dynamics</span> <span class="k">as</span> <span class="nn">c4d</span> 
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">List</span> 
+<span class="kn">import</span> <span class="nn">warnings</span>
 
-<span class="c1"># def animate(rb, modelpath, angle0 = [0, 0, 0] </span>
-<span class="c1">#               , modelcolor = None, dt = 1e-3 </span>
-<span class="c1">#                 , savedir = None, cbackground = [1, 1, 1]):</span>
 <div class="viewcode-block" id="animate">
 <a class="viewcode-back" href="../../../api/generated/rotmat/c4dynamics.rotmat.animate.animate.html#c4dynamics.rotmat.animate.animate">[docs]</a>
 <span class="k">def</span> <span class="nf">animate</span><span class="p">(</span><span class="n">rb</span><span class="p">,</span> <span class="n">modelpath</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">angle0</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> 
@@ -450,8 +454,8 @@ document.write(`
 <span class="sd">    .. code::</span>
 
 <span class="sd">      &gt;&gt;&gt; import open3d as o3d</span>
-<span class="sd">      &gt;&gt;&gt; pcd = o3d.io.read_point_cloud(&#39;model.ply&#39;)</span>
-<span class="sd">      &gt;&gt;&gt; o3d.io.write_point_cloud(&#39;model.pcd&#39;, pcd)</span>
+<span class="sd">      &gt;&gt;&gt; pcd = o3d.io.read_point_cloud(&#39;model.ply&#39;) # doctest: +IGNORE_OUTPUT</span>
+<span class="sd">      &gt;&gt;&gt; o3d.io.write_point_cloud(&#39;model.pcd&#39;, pcd) # doctest: +IGNORE_OUTPUT</span>
 <span class="sd">    </span>
 <span class="sd">    For more info see `Open3D documentation &lt;https://www.open3d.org/docs/release/tutorial/geometry/file_io.html&gt;`_</span>
 <span class="sd">  - Initial Euler angles :math:`[\\varphi, \\theta, \\psi]`, in radians, representing</span>
@@ -472,6 +476,10 @@ document.write(`
 <span class="sd">  The 3D models used in the following examples can be downloaded and </span>
 <span class="sd">  fetched by c4dynamics&#39; datasets: </span>
 
+<span class="sd">  .. code:: </span>
+
+<span class="sd">    &gt;&gt;&gt; import c4dynamics as c4d </span>
+
 <span class="sd">  .. code::</span>
 
 <span class="sd">    &gt;&gt;&gt; bunnypath = c4d.datasets.d3_model(&#39;bunny&#39;) # &#39;bunny.pcd&#39;: point cloud data file</span>
@@ -482,12 +490,6 @@ document.write(`
 <span class="sd">    Fetched successfully</span>
 
 <span class="sd">  For more details, refer to :mod:`c4dynamics.datasets`.</span>
-
-
-
-<span class="sd">  .. code:: </span>
-
-<span class="sd">    &gt;&gt;&gt; import c4dynamics as c4d </span>
 
 
 
@@ -542,7 +544,7 @@ document.write(`
 <span class="sd">    ...     f16.theta += dt * 180 * c4d.d2r / 3</span>
 <span class="sd">    ...   else:</span>
 <span class="sd">    ...     f16.phi -= dt * 180 * c4d.d2r / 3 </span>
-<span class="sd">    &gt;&gt;&gt;   f16.store(t)</span>
+<span class="sd">    ...   f16.store(t)</span>
 
 <span class="sd">  .. figure:: /_examples/animate/f16_eulers.png</span>
 <span class="sd">  </span>
@@ -581,17 +583,20 @@ document.write(`
 <span class="sd">  .. code::</span>
 
 <span class="sd">    &gt;&gt;&gt; import open3d as o3d</span>
+<span class="sd">    &gt;&gt;&gt; import os </span>
 
 
 <span class="sd">  .. code::</span>
 
 <span class="sd">    &gt;&gt;&gt; model = []</span>
-<span class="sd">    &gt;&gt;&gt; for f in sorted(os.listdir(&#39;f16&#39;)):</span>
-<span class="sd">    ...   mfilepath = os.path.join(&#39;f16&#39;, f)</span>
-<span class="sd">    ...   model.append(o3d.io.read_triangle_mesh(mfilepath))</span>
+<span class="sd">    &gt;&gt;&gt; for f in sorted(os.listdir(f16path)):</span>
+<span class="sd">    ...   mfilepath = os.path.join(f16path, f)</span>
+<span class="sd">    ...   m = o3d.io.read_triangle_mesh(mfilepath)</span>
+<span class="sd">    ...   m.compute_vertex_normals()</span>
+<span class="sd">    ...   model.append(m)</span>
 <span class="sd">    &gt;&gt;&gt; o3d.visualization.draw_geometries(model)</span>
 
-<span class="sd">  .. figure:: /_static/images/f16_static.png</span>
+<span class="sd">  .. figure:: /_examples/animate/f16_static.png</span>
 
 <span class="sd">  </span>
 <span class="sd">  It turns out that for 3-2-1 order of rotation (see :mod:`rotmat &lt;c4dynamics.rotmat&gt;`)</span>
@@ -639,7 +644,7 @@ document.write(`
 
 <span class="sd">  .. code::</span>
 
-<span class="sd">    &gt;&gt;&gt; f16.animate(f16path, savedir = outfol, angle0 = x0, modelcolor = [0, 0, 0], cbackground = np.array([230, 230, 255]) / 255)</span>
+<span class="sd">    &gt;&gt;&gt; f16.animate(f16path, angle0 = x0, modelcolor = [0, 0, 0], cbackground = np.array([230, 230, 255]) / 255)</span>
 
 <span class="sd">  .. figure:: /_examples/animate/f16_monochrome.gif</span>
 
@@ -649,10 +654,10 @@ document.write(`
 <span class="sd">  .. code::</span>
 
 <span class="sd">    &gt;&gt;&gt; f16colors = np.vstack(([255, 215, 0], [255, 215, 0]</span>
-<span class="sd">                                , [184, 134, 11], [0, 32, 38]</span>
-<span class="sd">                                    , [218, 165, 32], [218, 165, 32], [54, 69, 79]</span>
-<span class="sd">                                        , [205, 149, 12], [205, 149, 12])) / 255</span>
-<span class="sd">    &gt;&gt;&gt; outfol =&#39;out\\f16&#39;</span>
+<span class="sd">    ...                         , [184, 134, 11], [0, 32, 38]</span>
+<span class="sd">    ...                             , [218, 165, 32], [218, 165, 32], [54, 69, 79]</span>
+<span class="sd">    ...                                 , [205, 149, 12], [205, 149, 12])) / 255</span>
+<span class="sd">    &gt;&gt;&gt; outfol = os.path.join(&#39;tests&#39;, &#39;_out&#39;, &#39;f16a&#39;)</span>
 <span class="sd">    &gt;&gt;&gt; f16.animate(f16path, angle0 = x0, savedir = outfol, modelcolor = f16colors)</span>
 <span class="sd">    &gt;&gt;&gt; # the storage folder &#39;outfol&#39; is the source of images for the gif function</span>
 <span class="sd">    &gt;&gt;&gt; # the &#39;duration&#39; parameter sets the required length of the animation  </span>
@@ -669,7 +674,7 @@ document.write(`
 <span class="sd">  .. code::</span>
 
 <span class="sd">    &gt;&gt;&gt; gifpath = os.path.join(outfol, gifname)</span>
-<span class="sd">    &gt;&gt;&gt; Image(filename = gifpath) </span>
+<span class="sd">    &gt;&gt;&gt; Image(filename = gifpath) # doctest: +IGNORE_OUTPUT</span>
 
 <span class="sd">  .. figure:: /_examples/animate/f16_color2.gif</span>
 
@@ -682,6 +687,9 @@ document.write(`
           <span class="s2">&quot;Please install it by running &#39;pip install open3d&#39;.&quot;</span>
       <span class="p">)</span>
         
+  <span class="k">if</span> <span class="ow">not</span> <span class="n">rb</span><span class="o">.</span><span class="n">_data</span><span class="p">:</span>
+    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;No stored data for the given rigidbody.&quot;&quot;&quot;</span> <span class="p">,</span> <span class="n">c4d</span><span class="o">.</span><span class="n">c4warn</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">None</span>
 
   <span class="c1"># </span>
   <span class="c1"># load the model </span>
@@ -692,29 +700,44 @@ document.write(`
   <span class="c1">##</span>
 
   <span class="n">model</span> <span class="o">=</span> <span class="p">[]</span>
+  
 
   <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">modelpath</span><span class="p">):</span>
     <span class="n">modelpath</span><span class="p">,</span> <span class="n">files</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">modelpath</span><span class="p">)</span>
     <span class="n">files</span> <span class="o">=</span> <span class="p">[</span><span class="n">files</span><span class="p">]</span>
-  <span class="k">else</span><span class="p">:</span> 
+
+  <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">modelpath</span><span class="p">):</span>
     <span class="n">files</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">modelpath</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">files</span><span class="p">:</span> 
+      <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">modelpath</span><span class="si">}</span><span class="s2">&#39; is empty.&quot;</span><span class="p">)</span>
+
     <span class="n">files</span> <span class="o">=</span> <span class="p">[</span><span class="n">file</span> <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span> <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">modelpath</span><span class="p">,</span> <span class="n">file</span><span class="p">))]</span>
 
-  <span class="n">modelcolor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="n">modelcolor</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span> 
+    <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">modelpath</span><span class="si">}</span><span class="s2">&#39; doesn&#39;t exist.&quot;</span><span class="p">)</span>
 
-  <span class="k">if</span> <span class="n">modelcolor</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">modelcolor</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c1"># if one row array, duplicate </span>
-    <span class="n">modelcolor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">modelcolor</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">files</span><span class="p">),</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">))</span> 
+  <span class="k">if</span> <span class="n">modelcolor</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="c1"># user input </span>
 
-  <span class="c1"># c4d.cprint(modelcolor, &#39;m&#39;)</span>
-  <span class="c1"># c4d.cprint(type(modelcolor), &#39;r&#39;)  </span>
-  <span class="c1"># c4d.cprint(modelcolor.shape, &#39;c&#39;)</span>
+    <span class="c1"># if not 3 colums array, raise an error: </span>
+    <span class="n">modelcolor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="n">modelcolor</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">modelcolor</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>  <span class="c1"># Example condition: if modelcolor is empty</span>
+      <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;modelcolor must be three columns array for RGB.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># if one row, duplicate</span>
+    <span class="k">if</span> <span class="n">modelcolor</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">modelcolor</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>  
+      <span class="n">modelcolor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">modelcolor</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">files</span><span class="p">),</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">))</span> 
+
+
+
+
 
   <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">files</span><span class="p">)):</span>
 
     <span class="n">mfilepath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">modelpath</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
     <span class="n">ismesh</span> <span class="o">=</span> <span class="kc">True</span> <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;stl&#39;</span><span class="p">,</span> <span class="s1">&#39;obj&#39;</span><span class="p">,</span> <span class="s1">&#39;ply&#39;</span><span class="p">])</span> <span class="k">else</span> <span class="kc">False</span> 
     <span class="n">imodel</span> <span class="o">=</span> <span class="n">o3d</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_triangle_mesh</span><span class="p">(</span><span class="n">mfilepath</span><span class="p">)</span> <span class="k">if</span> <span class="n">ismesh</span> <span class="k">else</span> <span class="n">o3d</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_point_cloud</span><span class="p">(</span><span class="n">mfilepath</span><span class="p">)</span> 
-    <span class="k">if</span> <span class="n">modelcolor</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">modelcolor</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span> <span class="c1">#MAYBE WANTS TO SAY IS NOT NONE </span>
       <span class="n">imodel</span><span class="o">.</span><span class="n">paint_uniform_color</span><span class="p">(</span><span class="n">modelcolor</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
     <span class="k">if</span> <span class="n">ismesh</span><span class="p">:</span> 
       <span class="n">imodel</span><span class="o">.</span><span class="n">compute_vertex_normals</span><span class="p">()</span>
@@ -722,45 +745,6 @@ document.write(`
     <span class="n">model</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">imodel</span><span class="p">)</span>
 
     
-  <span class="c1"># if any(modelpath[-3:] == s for s in [&#39;stl&#39;, &#39;obj&#39;, &#39;ply&#39;]):</span>
-  <span class="c1">#   imodel = o3d.io.read_triangle_mesh(modelpath) </span>
-  <span class="c1"># else: </span>
-  <span class="c1">#   imodel = o3d.io.read_point_cloud(modelpath)</span>
-
-  <span class="c1"># if np.atleast_2d(modelcolor).shape[1] == 1: </span>
-  <span class="c1">#   model.append(imodel)</span>
-  <span class="c1"># else: </span>
-  <span class="c1">#   model.append(imodel.paint_uniform_color(modelcolor).compute_vertex_normals())</span>
-
-    
-    
-  <span class="c1"># for i, f in enumerate(sorted(os.listdir(modelpath))):</span>
-
-  <span class="c1">#   mfilepath = os.path.join(modelpath, f)</span>
-
-  <span class="c1">#   if any(f[-3:] == s for s in [&#39;stl&#39;, &#39;obj&#39;, &#39;ply&#39;]):</span>
-  <span class="c1">#     imodel = o3d.io.read_triangle_mesh(mfilepath)</span>
-  <span class="c1">#   else: </span>
-  <span class="c1">#     imodel = o3d.io.read_point_cloud(mfilepath)</span>
-      
-  <span class="c1">#   if np.atleast_2d(modelcolor).shape[1] == 1: </span>
-  <span class="c1">#     model.append(imodel)</span>
-  <span class="c1">#   elif np.atleast_2d(modelcolor).shape[0] == 1: </span>
-  <span class="c1">#     model.append(imodel.paint_uniform_color(modelcolor).compute_vertex_normals())</span>
-  <span class="c1">#   else: </span>
-  <span class="c1">#     model.append(imodel.paint_uniform_color(modelcolor[i]).compute_vertex_normals())</span>
-
-          
-  <span class="c1">#</span>
-  <span class="c1"># set the window form </span>
-  <span class="c1">##</span>
-  
-  <span class="c1"># # # find largest coordinate in the model</span>
-  <span class="c1"># max_coord = 0</span>
-  <span class="c1"># for i in range(len(model)): </span>
-  <span class="c1">#   # Extract coordinates</span>
-  <span class="c1">#   max_coord = max(max_coord, int(np.max(np.abs(np.asarray(m.points))))) </span>
-
 
 
 
@@ -772,7 +756,7 @@ document.write(`
   <span class="c1"># Close the dummy window</span>
   <span class="n">root</span><span class="o">.</span><span class="n">destroy</span><span class="p">()</span>
 
-  <span class="n">vis</span> <span class="o">=</span> <span class="n">o3d</span><span class="o">.</span><span class="n">visualization</span><span class="o">.</span><span class="n">Visualizer</span><span class="p">()</span>
+  <span class="n">vis</span> <span class="o">=</span> <span class="n">o3d</span><span class="o">.</span><span class="n">visualization</span><span class="o">.</span><span class="n">Visualizer</span><span class="p">()</span> <span class="c1"># type: ignore</span>
   <span class="n">vis</span><span class="o">.</span><span class="n">create_window</span><span class="p">(</span><span class="n">window_name</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span> 
                       <span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">screen_width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
                           <span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">screen_height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
@@ -836,6 +820,31 @@ document.write(`
 
 
 
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+
+  <span class="kn">import</span> <span class="nn">doctest</span><span class="o">,</span> <span class="nn">contextlib</span>
+  <span class="kn">from</span> <span class="nn">c4dynamics</span> <span class="kn">import</span> <span class="n">IgnoreOutputChecker</span><span class="p">,</span> <span class="n">cprint</span>
+  
+  <span class="c1"># Register the custom OutputChecker</span>
+  <span class="n">doctest</span><span class="o">.</span><span class="n">OutputChecker</span> <span class="o">=</span> <span class="n">IgnoreOutputChecker</span>
+
+  <span class="n">tofile</span> <span class="o">=</span> <span class="kc">False</span> 
+  <span class="n">optionflags</span> <span class="o">=</span> <span class="n">doctest</span><span class="o">.</span><span class="n">FAIL_FAST</span>
+
+  <span class="k">if</span> <span class="n">tofile</span><span class="p">:</span> 
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;tests&#39;</span><span class="p">,</span> <span class="s1">&#39;_out&#39;</span><span class="p">,</span> <span class="s1">&#39;output.txt&#39;</span><span class="p">),</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+      <span class="k">with</span> <span class="n">contextlib</span><span class="o">.</span><span class="n">redirect_stdout</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="n">contextlib</span><span class="o">.</span><span class="n">redirect_stderr</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">(</span><span class="n">optionflags</span> <span class="o">=</span> <span class="n">optionflags</span><span class="p">)</span> 
+  <span class="k">else</span><span class="p">:</span> 
+    <span class="n">result</span> <span class="o">=</span> <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">(</span><span class="n">optionflags</span> <span class="o">=</span> <span class="n">optionflags</span><span class="p">)</span>
+
+  <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">failed</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">cprint</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;: all tests passed!&quot;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">failed</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
 </pre></div>
 
                 </article>
@@ -883,7 +892,7 @@ By C4dynamics
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Oct 07, 2024.
+  Last updated on Nov 10, 2024.
   <br/>
 </p>
   </div>

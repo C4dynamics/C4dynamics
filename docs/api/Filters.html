@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Filters &#8212; c4dynamics &lt;span class=&#34;project-version&#34;&gt;1.2&lt;/span&gt;</title>
+    <title>Filters &#8212; C4DYNAMICS v1.2 Manual</title>
   
   
   
@@ -31,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../_static/style.css?v=f9876931" />
+    <link rel="stylesheet" type="text/css" href="../_static/style.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
@@ -52,7 +52,7 @@
     <link rel="prev" title="c4dynamics.detectors.yolo3_opencv.yolov3.detect" href="generated/yolov3/c4dynamics.detectors.yolo3_opencv.yolov3.detect.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Oct 07, 2024"/>
+    <meta name="docbuild:last-update" content="Nov 10, 2024"/>
   </head>
   
   
@@ -136,7 +136,7 @@
   
   
   
-    <p class="title logo__title">c4dynamics <span class="project-version">1.2</span></p>
+    <p class="title logo__title">C4DYNAMICS v1.2 Manual</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -156,13 +156,15 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../index.html">
-                    C4DYNAMICS
+                    Home
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted.html">Getting Started</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">API Reference</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 has-children"><a class="reference internal" href="States.html">State objects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="States.html">State Objects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3 has-children"><a class="reference internal" href="states.state.html">The state class</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="generated/state/c4dynamics.states.state.state.X.html">c4dynamics.states.state.state.X</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/state/c4dynamics.states.state.state.X0.html">c4dynamics.states.state.state.X0</a></li>
@@ -231,7 +233,7 @@
 </details></li>
 </ul>
 </details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="Utils.html">Utils</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="Routines.html">Routines</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3 has-children"><a class="reference internal" href="utils.eqm.html">Equations of motion solvers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="generated/eqm/c4dynamics.eqm.derivs.eqm3.html">c4dynamics.eqm.derivs.eqm3</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/eqm/c4dynamics.eqm.derivs.eqm6.html">c4dynamics.eqm.derivs.eqm6</a></li>
@@ -248,6 +250,9 @@
 <li class="toctree-l4"><a class="reference internal" href="generated/rotmat/c4dynamics.rotmat.animate.animate.html">c4dynamics.rotmat.animate.animate</a></li>
 </ul>
 </details></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="Utils.html">Utils</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="utils.math.html">Math functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="utils.const.html">Constants</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="utils.misc.html">Misc</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -439,7 +444,13 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Implementation (C4dynamics)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#low-pass-filter">Low-pass Filter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#low-pass-filter">Low-pass Filter</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frequency-domain">Frequency-Domain</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-constant">Time-Constant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-time">Discrete-Time</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Implementation (C4dynamics)</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filters-header">Filters</a></li>
 </ul>
             </nav>
@@ -475,14 +486,17 @@ represented by the class <a class="reference internal" href="states.state.html#c
 and a snapshot of its values is provided by
 the property <a class="reference internal" href="generated/state/c4dynamics.states.state.state.X.html#c4dynamics.states.state.state.X" title="c4dynamics.states.state.state.X"><code class="xref py py-attr docutils literal notranslate"><span class="pre">state.X</span></code></a>).</p>
 <p>When the coefficients of the state variables in the equations are constant, the
-state model represents a linear system. Otherwise, the system is nonlinear.</p>
+state model represents a linear system (LTI, linear time invariant).
+If the coefficients are
+linear functions of time, the system is considered linear time varying.
+Otherwise, the system is nonlinear.</p>
 </section>
 <section id="nonlinear-systems">
 <h3>Nonlinear Systems<a class="headerlink" href="#nonlinear-systems" title="Link to this heading">#</a></h3>
 <p>All systems are naturally nonlinear. When an equilibrium point
 representing the major operation part of the system can be found, then a
 linearization is performed about this point, and the system is regarded
-as linear.
+linear.
 When such a point cannot be easily found, more advanced approaches
 have to be considered to analyze and manipulate the system. Such
 an approach is the extended Kalman filter.</p>
@@ -495,22 +509,22 @@ an approach is the extended Kalman filter.</p>
 <li><p><span class="math notranslate nohighlight">\(x\)</span> is the system state vector</p></li>
 <li><p><span class="math notranslate nohighlight">\(t\)</span> is a time variable</p></li>
 <li><p><span class="math notranslate nohighlight">\(u\)</span> is the system input signal</p></li>
-<li><p><span class="math notranslate nohighlight">\(\omega\)</span> is the process noise with covariance matrix <span class="math notranslate nohighlight">\(Q\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega\)</span> is the process uncertainty with covariance matrix <span class="math notranslate nohighlight">\(Q_c\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(y\)</span> is the system output vector (the measure)</p></li>
 <li><p><span class="math notranslate nohighlight">\(h(\cdot)\)</span> is an arbitrary vector-valued function representing the measurement equations</p></li>
-<li><p><span class="math notranslate nohighlight">\(\nu\)</span> is the measure noise with covariance matrix <span class="math notranslate nohighlight">\(R\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\nu\)</span> is the measure noise with covariance matrix <span class="math notranslate nohighlight">\(R_c\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(x_0\)</span> is a vector of initial conditions</p></li>
 </ul>
 <p>The noise processes <span class="math notranslate nohighlight">\(\omega(t)\)</span> and <span class="math notranslate nohighlight">\(\nu(t)\)</span> are white, zero-mean, uncorrelated,
-and have known covariance matrices <span class="math notranslate nohighlight">\(Q\)</span> and <span class="math notranslate nohighlight">\(R\)</span>, respectively:</p>
+and have known covariance matrices <span class="math notranslate nohighlight">\(Q_c\)</span> and <span class="math notranslate nohighlight">\(R_c\)</span>, respectively:</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}\omega(t) \sim (0, Q)\\\nu(t) \sim (0, R)\\E[\omega(t) \cdot \omega^T(t)] = Q \cdot \delta(t)\\E[\nu(t) \cdot \nu^T(t)] = R \cdot \delta(t)\\E[\nu(t) \cdot \omega^T(t)] = 0\end{aligned}\end{align} \]</div>
+\[ \begin{align}\begin{aligned}\omega(t) \sim (0, Q_c)\\\nu(t) \sim (0, R_c)\\E[\omega(t) \cdot \omega^T(t)] = Q_c \cdot \delta(t)\\E[\nu(t) \cdot \nu^T(t)] = R_c \cdot \delta(t)\\E[\nu(t) \cdot \omega^T(t)] = 0\end{aligned}\end{align} \]</div>
 <p>Where:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\omega\)</span> is the process noise with covariance matrix <span class="math notranslate nohighlight">\(Q\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\nu\)</span> is the measure noise with covariance matrix <span class="math notranslate nohighlight">\(R\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(Q\)</span> is the process covariance matrix</p></li>
-<li><p><span class="math notranslate nohighlight">\(R\)</span> is the measurement covariance matrix</p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega\)</span> is the process uncertainty with covariance matrix <span class="math notranslate nohighlight">\(Q_c\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\nu\)</span> is the measure noise with covariance matrix <span class="math notranslate nohighlight">\(R_c\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Q_c\)</span> is the process covariance matrix</p></li>
+<li><p><span class="math notranslate nohighlight">\(R_c\)</span> is the measurement covariance matrix</p></li>
 <li><p><span class="math notranslate nohighlight">\(\sim\)</span> is the distribution operator. <span class="math notranslate nohighlight">\(\sim (\mu, \sigma)\)</span> means a normal distribution with mean <span class="math notranslate nohighlight">\(\mu\)</span> and standard deviation <span class="math notranslate nohighlight">\(\sigma\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(E(\cdot)\)</span> is the expectation operator</p></li>
 <li><p><span class="math notranslate nohighlight">\(\delta(\cdot)\)</span> is the Dirac delta function (<span class="math notranslate nohighlight">\(\delta(t) = \infty\)</span> if <span class="math notranslate nohighlight">\(t = 0\)</span>, and <span class="math notranslate nohighlight">\(\delta(t) = 0\)</span> if <span class="math notranslate nohighlight">\(t \neq 0\)</span>)</p></li>
@@ -533,7 +547,7 @@ an attempt to linearize the system.</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\Delta{x}\)</span> is the linear approximation of a small deviation of the state <span class="math notranslate nohighlight">\(x\)</span> from the nominal trajectory</p></li>
 <li><p><span class="math notranslate nohighlight">\(\Delta{u}\)</span> is the linear approximation of a small deviation of the input control <span class="math notranslate nohighlight">\(u\)</span> from the nominal trajectory</p></li>
-<li><p><span class="math notranslate nohighlight">\(\omega\)</span> is the process noise</p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega\)</span> is the process uncertainty</p></li>
 <li><p><span class="math notranslate nohighlight">\(\Delta{\nu}\)</span> is the linear approximation of a small deviation of the noise <span class="math notranslate nohighlight">\(\nu\)</span> from the nominal trajectory</p></li>
 <li><p><span class="math notranslate nohighlight">\({\partial{f} \over \partial{i}}\bigg|_{x_n, u_n}\)</span> is the partial derivative of <span class="math notranslate nohighlight">\(f\)</span> with respect to <span class="math notranslate nohighlight">\(i (i = x\)</span> or <span class="math notranslate nohighlight">\(u)\)</span> substituted by the nominal point <span class="math notranslate nohighlight">\({x_n, u_n}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\({\partial{h} \over \partial{x}}\bigg|_{x_n}\)</span> is the partial derivative of <span class="math notranslate nohighlight">\(h\)</span> with respect to <span class="math notranslate nohighlight">\(x\)</span>, substituted by the nominal point <span class="math notranslate nohighlight">\({x_n}\)</span></p></li>
@@ -552,21 +566,21 @@ an attempt to linearize the system.</p>
 <li><p><span class="math notranslate nohighlight">\(x\)</span> is the system state vector</p></li>
 <li><p><span class="math notranslate nohighlight">\(b\)</span> is the process input matrix</p></li>
 <li><p><span class="math notranslate nohighlight">\(u\)</span> is the system input signal</p></li>
-<li><p><span class="math notranslate nohighlight">\(\omega\)</span> is the process noise with covariance matrix <span class="math notranslate nohighlight">\(Q\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega\)</span> is the process uncertainty with covariance matrix <span class="math notranslate nohighlight">\(Q_c\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(y\)</span> is the system output vector (the measure)</p></li>
 <li><p><span class="math notranslate nohighlight">\(C\)</span> is the output matrix</p></li>
-<li><p><span class="math notranslate nohighlight">\(\nu\)</span> is the measure noise with covariance matrix <span class="math notranslate nohighlight">\(R\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\nu\)</span> is the measure noise with covariance matrix <span class="math notranslate nohighlight">\(R_c\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(x_0\)</span> is a vector of initial conditions</p></li>
-<li><p><span class="math notranslate nohighlight">\(Q\)</span> is the process covariance matrix</p></li>
-<li><p><span class="math notranslate nohighlight">\(R\)</span> is the measurement covariance matrix</p></li>
+<li><p><span class="math notranslate nohighlight">\(Q_c\)</span> is the process covariance matrix</p></li>
+<li><p><span class="math notranslate nohighlight">\(R_c\)</span> is the measurement covariance matrix</p></li>
 </ul>
 </section>
 <section id="sampled-systems">
 <h3>Sampled Systems<a class="headerlink" href="#sampled-systems" title="Link to this heading">#</a></h3>
 <p>The nonlinear system <a class="reference internal" href="#equation-nonlinearmodel">(1)</a> and its linearized form <a class="reference internal" href="#equation-linearmodel">(3)</a>
 are given in the continuous-time domain, which is the progressive manifestation of any physical system.
-However, the output of systems is sampled by digital devices in discrete time instances.</p>
-<p>Hence, In sampled-data systems the dynamics is described by a continuous-time differential equation,
+However, the output of a system is usually sampled by digital devices in discrete time instances.</p>
+<p>Hence, in sampled-data systems the dynamics is described by a continuous-time differential equation,
 but the output only changes at discrete time instants.</p>
 <p>Nonetheless, for numerical considerations the Kalman filter equations are usually given in the discrete-time domain
 not only at the stage of measure updates (<cite>update</cite> or <cite>correct</cite>) but also at the stage of the dynamics propagation (<cite>predict</cite>).</p>
@@ -579,7 +593,7 @@ not only at the stage of measure updates (<cite>update</cite> or <cite>correct</
 <li><p><span class="math notranslate nohighlight">\(F\)</span> is the discretized process dynamics matrix (actually a first order approximation of the state transition matrix <span class="math notranslate nohighlight">\(\Phi\)</span>)</p></li>
 <li><p><span class="math notranslate nohighlight">\(G\)</span> is the discretized process input matrix</p></li>
 <li><p><span class="math notranslate nohighlight">\(u\)</span> is the discretized process input signal</p></li>
-<li><p><span class="math notranslate nohighlight">\(\omega_k\)</span> is the process noise with covariance matrix <span class="math notranslate nohighlight">\(Q_k\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega_k\)</span> is the process uncertainty with covariance matrix <span class="math notranslate nohighlight">\(Q_k\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(y_k\)</span> is the discretized system output vector (the measurement)</p></li>
 <li><p><span class="math notranslate nohighlight">\(H\)</span> is the discrete measurement matrix</p></li>
 <li><p><span class="math notranslate nohighlight">\(\nu_k\)</span> is the measure noise with covariance matrix <span class="math notranslate nohighlight">\(R_k\)</span></p></li>
@@ -592,16 +606,17 @@ and have known covariance matrices <span class="math notranslate nohighlight">\(
 <p>The discretization of a system is based on the state-transition matrix <span class="math notranslate nohighlight">\(\Phi(t)\)</span>.
 For a matrix <span class="math notranslate nohighlight">\(A\)</span> the state transition matrix <span class="math notranslate nohighlight">\(\Phi(t)\)</span> is given by the matrix exponential <span class="math notranslate nohighlight">\(\Phi = e^{A \cdot t}\)</span>
 which can be expanded as a power series.</p>
-<p>An approximate representation of a continuous-time system by a series expansion up to the first-order is given by:</p>
+<p>An approximate representation of a continuous-time
+system by a series expansion up to the first-order is given by:</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}F = I + A \cdot dt\\G = B \cdot dt\\Q_k = Q \cdot dt\\R_k = R / dt\end{aligned}\end{align} \]</div>
+\[ \begin{align}\begin{aligned}F = I + A \cdot dt\\G = B \cdot dt\\Q = Q_c \cdot dt\\R = R_c / dt\end{aligned}\end{align} \]</div>
 <p>Where:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(x_k\)</span> is the discretized system state vector</p></li>
 <li><p><span class="math notranslate nohighlight">\(F\)</span> is the discretized process dynamics matrix (actually a first order approximation of the state transition matrix <span class="math notranslate nohighlight">\(\Phi\)</span>)</p></li>
 <li><p><span class="math notranslate nohighlight">\(G\)</span> is the discretized process input matrix</p></li>
 <li><p><span class="math notranslate nohighlight">\(u\)</span> is the discretized process input signal</p></li>
-<li><p><span class="math notranslate nohighlight">\(\omega_k\)</span> is the process noise with covariance matrix <span class="math notranslate nohighlight">\(Q_k\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega_k\)</span> is the process uncertainty with covariance matrix <span class="math notranslate nohighlight">\(Q_k\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(y_k\)</span> is the discretized system output vector (the measurement)</p></li>
 <li><p><span class="math notranslate nohighlight">\(H\)</span> is the discrete measurement matrix</p></li>
 <li><p><span class="math notranslate nohighlight">\(\nu_k\)</span> is the measure noise with covariance matrix <span class="math notranslate nohighlight">\(R_k\)</span></p></li>
@@ -612,10 +627,20 @@ which can be expanded as a power series.</p>
 <li><p><span class="math notranslate nohighlight">\(E(\cdot)\)</span> is the expectation operator</p></li>
 <li><p><span class="math notranslate nohighlight">\(\delta(\cdot)\)</span> is the Kronecker delta function (<span class="math notranslate nohighlight">\(\delta(k-j) = 1\)</span> if <span class="math notranslate nohighlight">\(k = j\)</span>, and <span class="math notranslate nohighlight">\(\delta_{k-j} = 0\)</span> if <span class="math notranslate nohighlight">\(k \neq j\)</span>)</p></li>
 <li><p>superscript T is the transpose operator</p></li>
-<li><p><span class="math notranslate nohighlight">\(Q_k\)</span> is the process covariance matrix</p></li>
-<li><p><span class="math notranslate nohighlight">\(R_k\)</span> is the measurement covariance matrix</p></li>
-<li><p><span class="math notranslate nohighlight">\(A, B, Q, R\)</span> are the continuous-time system variables of the system state matrix, system input vector, process covariance matrix, and measurement covariance matrix, respectively</p></li>
+<li><p><span class="math notranslate nohighlight">\(Q\)</span> is the process covariance matrix</p></li>
+<li><p><span class="math notranslate nohighlight">\(R\)</span> is the measurement covariance matrix</p></li>
+<li><p><span class="math notranslate nohighlight">\(A, B, Q_c, R_c\)</span> are the continuous-time system variables of the system state matrix, system input vector, process covariance matrix, and measurement covariance matrix, respectively</p></li>
 </ul>
+<p>Note that the covariance matrices may have been converted from
+the continuous-time system to discrete-time.
+However, in most cases, these parameters are determined through experimentation
+with the system in its final form.</p>
+<p>Additionally, measurements are sampled by digital devices at discrete time steps,
+and the noise properties are typically provided in that form.
+However, if the process noise applies to a kinematic system where the noise properties
+are specified in continuous terms, the above approximation can be used or
+the more exact expression for continuous white noise model
+<span class="math notranslate nohighlight">\(Q = \int_{0}^{dt} F \cdot Qc \cdot F^T \, dt\)</span></p>
 </section>
 <section id="system-covariance">
 <h3>System Covariance<a class="headerlink" href="#system-covariance" title="Link to this heading">#</a></h3>
@@ -645,7 +670,7 @@ current error covariance forward in time.</p>
 <p>Since the <cite>predict</cite> equations are calculated before a measure is taken (a priori), the new state <span class="math notranslate nohighlight">\(x\)</span> and the new covariance <span class="math notranslate nohighlight">\(P\)</span>
 are notated by <span class="math notranslate nohighlight">\((-)\)</span> superscript.</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}x_k^- = F \cdot x_{k-1}^+ + G \cdot u_{k-1}\\P_k^- = F \cdot P_{k-1}^+ \cdot F^T + Q_k\\x_0^+ = x_0\\P_0^+ = E[x_0 \cdot x_0^T]\end{aligned}\end{align} \]</div>
+\[ \begin{align}\begin{aligned}x_k^- = F \cdot x_{k-1}^+ + G \cdot u_{k-1}\\P_k^- = F \cdot P_{k-1}^+ \cdot F^T + Q\\x_0^+ = x_0\\P_0^+ = E[x_0 \cdot x_0^T]\end{aligned}\end{align} \]</div>
 <p>Where:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(x_k^-\)</span> is the estimate of the system state, <span class="math notranslate nohighlight">\(x_k\)</span>, before a measurement update.</p></li>
@@ -654,8 +679,8 @@ are notated by <span class="math notranslate nohighlight">\((-)\)</span> supersc
 <li><p><span class="math notranslate nohighlight">\(u_k\)</span> is the process input signal</p></li>
 <li><p><span class="math notranslate nohighlight">\(P_k^-\)</span> is the estimate of the system covariance matrix, <span class="math notranslate nohighlight">\(P_k\)</span>, before a measurement update</p></li>
 <li><p><span class="math notranslate nohighlight">\(P_{k-1}^+\)</span> is the system covariance matrix estimate, <span class="math notranslate nohighlight">\(P_k\)</span>, from previous measurement update</p></li>
-<li><p><span class="math notranslate nohighlight">\(Q_k\)</span> is the process covariance matrix</p></li>
-<li><p><span class="math notranslate nohighlight">\(R_k\)</span> is the measurement covariance matrix</p></li>
+<li><p><span class="math notranslate nohighlight">\(Q\)</span> is the process covariance matrix</p></li>
+<li><p><span class="math notranslate nohighlight">\(R\)</span> is the measurement covariance matrix</p></li>
 <li><p>superscript T is the transpose operator</p></li>
 <li><p><span class="math notranslate nohighlight">\(x_0\)</span> is the initial state estimation</p></li>
 <li><p><span class="math notranslate nohighlight">\(P_0\)</span> is the covariance matrix consisting of errors of the initial estimation</p></li>
@@ -672,13 +697,13 @@ Then the error covariance is updated to reflect the reduced uncertainty after in
 <p>The <cite>update</cite> equations are calculated after a measure is taken (a posteriori), and the new state <span class="math notranslate nohighlight">\(x\)</span> and the new covariance <span class="math notranslate nohighlight">\(P\)</span>
 are notated by <span class="math notranslate nohighlight">\((+)\)</span> superscript.</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}K = P_k^- \cdot H^T \cdot (H \cdot P_k^- \cdot H^T + R_k)^{-1}\\x_k^+ = x_k^- \cdot K \cdot (y - H \cdot x_k^-)\\P_k^+ = (I - K \cdot H) \cdot P_k^-\end{aligned}\end{align} \]</div>
+\[ \begin{align}\begin{aligned}K = P_k^- \cdot H^T \cdot (H \cdot P_k^- \cdot H^T + R)^{-1}\\x_k^+ = x_k^- \cdot K \cdot (y - H \cdot x_k^-)\\P_k^+ = (I - K \cdot H) \cdot P_k^-\end{aligned}\end{align} \]</div>
 <p>Where:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(K\)</span> is the Kalman gain</p></li>
 <li><p><span class="math notranslate nohighlight">\(P_k^-\)</span> is the estimate of the system covariance matrix, <span class="math notranslate nohighlight">\(P_k\)</span>, from the previous prediction</p></li>
 <li><p><span class="math notranslate nohighlight">\(H\)</span> is the discrete measurement matrix</p></li>
-<li><p><span class="math notranslate nohighlight">\(R_k\)</span> is the measurement covariance matrix</p></li>
+<li><p><span class="math notranslate nohighlight">\(R\)</span> is the measurement covariance matrix</p></li>
 <li><p><span class="math notranslate nohighlight">\(x_k^+\)</span> is the estimate of the system state, <span class="math notranslate nohighlight">\(x_k\)</span>, after a measurement update</p></li>
 <li><p><span class="math notranslate nohighlight">\(x_k^-\)</span> is the estimate of the system state, <span class="math notranslate nohighlight">\(x_k\)</span>, from the previous prediction</p></li>
 <li><p><span class="math notranslate nohighlight">\(y\)</span> is the measure</p></li>
@@ -689,8 +714,10 @@ are notated by <span class="math notranslate nohighlight">\((+)\)</span> supersc
 </section>
 <section id="implementation-c4dynamics">
 <span id="kalman-implementation"></span><h3>Implementation (C4dynamics)<a class="headerlink" href="#implementation-c4dynamics" title="Link to this heading">#</a></h3>
+<p><a class="reference internal" href="filters.kalman.html#c4dynamics.filters.kalman.kalman" title="c4dynamics.filters.kalman.kalman"><code class="xref py py-class docutils literal notranslate"><span class="pre">kalman</span></code></a>
+is a discrete linear Kalman filter model.</p>
 <p>Following the concept of separating <cite>predict</cite>
-and <cite>update</cite>, running a Kalman filter with <cite>c4dynamics</cite> is done
+and <cite>update</cite>, running a Kalman filter is done
 by constructing a Kalman filter with parameters as a
 <a class="reference internal" href="states.state.html#c4dynamics.states.state.state" title="c4dynamics.states.state.state"><code class="xref py py-class docutils literal notranslate"><span class="pre">state</span></code></a> object
 and calling the
@@ -705,11 +732,11 @@ the object uses parameters and values from previous calls.</p>
 <p>Every filter class in <cite>c4dynamics</cite> is a
 subclass of the state class.
 This means that the filter itself
-forms the estimated state vector:</p>
+encapsulates the estimated state vector:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">c4dynamics.filters</span> <span class="kn">import</span> <span class="n">kalman</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">kf</span> <span class="o">=</span> <span class="n">kalman</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;x1&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span> <span class="n">dt</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">P0</span> <span class="o">=</span> <span class="n">z</span><span class="p">,</span> <span class="n">A</span> <span class="o">=</span> <span class="n">z</span><span class="p">,</span> <span class="n">C</span> <span class="o">=</span> <span class="n">z</span><span class="p">,</span> <span class="n">Q</span> <span class="o">=</span> <span class="n">z</span><span class="p">,</span> <span class="n">R</span> <span class="o">=</span> <span class="n">z</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">kf</span> <span class="o">=</span> <span class="n">kalman</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;x1&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span> <span class="n">P0</span> <span class="o">=</span> <span class="n">z</span><span class="p">,</span> <span class="n">F</span> <span class="o">=</span> <span class="n">z</span><span class="p">,</span> <span class="n">H</span> <span class="o">=</span> <span class="n">z</span><span class="p">,</span> <span class="n">Q</span> <span class="o">=</span> <span class="n">z</span><span class="p">,</span> <span class="n">R</span> <span class="o">=</span> <span class="n">z</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">kf</span><span class="p">)</span>
 <span class="go">[ x1  x2 ]</span>
 </pre></div>
@@ -752,116 +779,139 @@ with measure noise of <span class="math notranslate nohighlight">\(\nu \sim (0, 
 <p>A Kalman filter shall reduce the noise and estimate the state variables.
 But at first it must be verified that the system is observable, otherwise the filter cannot
 fully estimate the state variables based on the output measurements.</p>
+<p><strong>Setup</strong></p>
+<p>Import required packages:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">c4dynamics.filters</span> <span class="kn">import</span> <span class="n">kalman</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">odeint</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">c4dynamics</span> <span class="k">as</span> <span class="nn">c4d</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+<p>Define system matrices:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Observability test:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">obsv</span> <span class="o">=</span> <span class="n">c</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">obsv</span> <span class="o">=</span> <span class="n">C</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-<span class="gp">... </span>  <span class="n">obsv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">obsv</span><span class="p">,</span> <span class="n">c</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">matrix_power</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">i</span><span class="p">)))</span>
+<span class="gp">... </span>  <span class="n">obsv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">obsv</span><span class="p">,</span> <span class="n">C</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">matrix_power</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">i</span><span class="p">)))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rank</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">matrix_rank</span><span class="p">(</span><span class="n">obsv</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c4d</span><span class="o">.</span><span class="n">cprint</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The system is observable (rank = n = </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1">).&#39;</span> <span class="k">if</span> <span class="n">rank</span> <span class="o">==</span> <span class="n">n</span> <span class="k">else</span> <span class="s1">&#39;The system is not observable (rank = {rank), n = </span><span class="si">{n}</span><span class="s1">).&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The system is observable (rank = n = </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1">).&#39;</span> <span class="k">if</span> <span class="n">rank</span> <span class="o">==</span> <span class="n">n</span> <span class="k">else</span> <span class="s1">&#39;The system is not observable (rank = {rank), n = </span><span class="si">{n}</span><span class="s1">).&#39;</span><span class="p">)</span>
 <span class="go">The system is observable (rank = n = 2).</span>
 </pre></div>
 </div>
-<p>Let’s start with a simulation of an ideal system.</p>
-<p>Variable initialization and dynamics definition:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dt</span><span class="p">,</span> <span class="n">tf</span> <span class="o">=</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">10</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">tspan</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">tf</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">]])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">Q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<p>Some constants and initialization of the scene:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dt</span><span class="p">,</span> <span class="n">tf</span> <span class="o">=</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">50</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tspan</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">tf</span> <span class="o">+</span> <span class="n">dt</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">Hf</span> <span class="o">=</span> <span class="mi">1000</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># target and altimeter definitions</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># reference target</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tgt</span> <span class="o">=</span> <span class="n">c4d</span><span class="o">.</span><span class="n">state</span><span class="p">(</span><span class="n">z</span> <span class="o">=</span> <span class="mi">1010</span><span class="p">,</span> <span class="n">gamma</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">altmtr</span> <span class="o">=</span> <span class="n">c4d</span><span class="o">.</span><span class="n">sensors</span><span class="o">.</span><span class="n">seeker</span><span class="p">(</span><span class="n">isideal</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The dynamics is defined by an ODE function to be solved using scipy’s ode integration:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">autopilot</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))):</span>
-<span class="gp">... </span>  <span class="k">return</span> <span class="n">A</span> <span class="o">@</span> <span class="n">y</span> <span class="o">+</span> <span class="n">B</span> <span class="o">*</span> <span class="n">u</span> <span class="o">+</span> <span class="n">Q</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">autopilot</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="p">)):</span>
+<span class="gp">... </span>  <span class="k">return</span> <span class="n">A</span> <span class="o">@</span> <span class="n">y</span> <span class="o">+</span> <span class="n">B</span> <span class="o">*</span> <span class="n">u</span> <span class="o">+</span> <span class="n">w</span>
+</pre></div>
+</div>
+<p><strong>Ideal system</strong></p>
+<p>Let’s start with a simulation of an ideal system.
+The process has no uncertainties and the radar is clean of measurement errors (<cite>isideal</cite> flag on):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">process_noise</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">altmtr</span> <span class="o">=</span> <span class="n">c4d</span><span class="o">.</span><span class="n">sensors</span><span class="o">.</span><span class="n">radar</span><span class="p">(</span><span class="n">isideal</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">dt</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Main loop:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tspan</span><span class="p">:</span>
 <span class="gp">... </span>  <span class="n">tgt</span><span class="o">.</span><span class="n">store</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-<span class="gp">... </span>  <span class="n">altmtr</span><span class="o">.</span><span class="n">store</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
 <span class="gp">... </span>  <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">Z</span> <span class="o">=</span> <span class="n">altmtr</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="n">tgt</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span> <span class="n">store</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-<span class="gp">... </span>  <span class="k">if</span> <span class="n">Z</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="k">continue</span>
-<span class="gp">... </span>  <span class="n">tgt</span><span class="o">.</span><span class="n">X</span> <span class="o">=</span> <span class="n">odeint</span><span class="p">(</span><span class="n">autopilot</span><span class="p">,</span> <span class="n">tgt</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="p">[</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span> <span class="o">+</span> <span class="n">dt</span><span class="p">],</span> <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">F</span> <span class="o">-</span> <span class="n">Z</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)))[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="gp">... </span>  <span class="k">if</span> <span class="n">Z</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">tgt</span><span class="o">.</span><span class="n">X</span> <span class="o">=</span> <span class="n">odeint</span><span class="p">(</span><span class="n">autopilot</span><span class="p">,</span> <span class="n">tgt</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="p">[</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span> <span class="o">+</span> <span class="n">dt</span><span class="p">],</span> <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">Hf</span> <span class="o">-</span> <span class="n">Z</span><span class="p">,</span> <span class="n">process_noise</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">2</span><span class="p">)))[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Plot the time histories of <span class="math notranslate nohighlight">\(z\)</span> and <span class="math notranslate nohighlight">\(\gamma\)</span>:</p>
+<p>The loop advances the target variables according to the <cite>autopilot</cite> (accurate) dynamics
+and the (ideal) measures of the radar.</p>
+<p>Plot the time histories of the target altitude (<span class="math notranslate nohighlight">\(z\)</span>) and flight path angle (<span class="math notranslate nohighlight">\(\gamma\)</span>):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># first axis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">tgt</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">),</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;true&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">altmtr</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;range&#39;</span><span class="p">),</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;altimeter&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">tgt</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">),</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;true&#39;</span><span class="p">)</span>                   
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">altmtr</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;range&#39;</span><span class="p">),</span> <span class="s1">&#39;.c&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;altimeter&#39;</span><span class="p">)</span>      
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c4d</span><span class="o">.</span><span class="n">plotdefaults</span><span class="p">(</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;Altitude&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;ft&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span> <span class="o">=</span> <span class="s1">&#39;small&#39;</span><span class="p">,</span> <span class="n">facecolor</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>                                                    
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># second axis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">tgt</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;gamma&#39;</span><span class="p">,</span> <span class="n">c4d</span><span class="o">.</span><span class="n">r2d</span><span class="p">),</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mf">1.5</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;true&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">tgt</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;gamma&#39;</span><span class="p">,</span> <span class="n">c4d</span><span class="o">.</span><span class="n">r2d</span><span class="p">),</span> <span class="s1">&#39;m&#39;</span><span class="p">)</span>                      
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c4d</span><span class="o">.</span><span class="n">plotdefaults</span><span class="p">(</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;Path Angle&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span> <span class="o">=</span> <span class="s1">&#39;small&#39;</span><span class="p">,</span> <span class="n">facecolor</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 <figure class="align-default">
-<img alt="../_images/filters_kalman_ideal.png" src="../_images/filters_kalman_ideal.png" />
+<img alt="../_images/ap_ideal.png" src="../_images/ap_ideal.png" />
 </figure>
-<p>The ideal altimeter measures precisely the aircraft altitude.
-Its samples used to control the flight that started
+<p>The ideal altimeter measures the aircraft altitude precisely.
+Its samples use to control the flight angle that started
 at an altitude of <span class="math notranslate nohighlight">\(10ft\)</span> above the required
-altitude and is closed after about <span class="math notranslate nohighlight">\(18s\)</span>.</p>
-<p>Now, let’s introduce the process noise and the measurement noise:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">([</span><span class="mf">0.5</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.1</span> <span class="o">*</span> <span class="n">c4d</span><span class="o">.</span><span class="n">d2r</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">tgt</span> <span class="o">=</span> <span class="n">c4d</span><span class="o">.</span><span class="n">state</span><span class="p">(</span><span class="n">z</span> <span class="o">=</span> <span class="mi">1010</span><span class="p">,</span> <span class="n">gamma</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">altmtr</span> <span class="o">=</span> <span class="n">c4d</span><span class="o">.</span><span class="n">sensors</span><span class="o">.</span><span class="n">seeker</span><span class="p">(</span><span class="n">rng_noise_std</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="mf">20e-3</span><span class="p">)</span>
+altitude (<span class="math notranslate nohighlight">\(Hf = 1000ft\)</span>) and is closed after about <span class="math notranslate nohighlight">\(18s\)</span>.</p>
+<p><strong>Noisy system</strong></p>
+<p>Now, let’s introduce the process uncertainty and measurement noise:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">process_noise</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">c4d</span><span class="o">.</span><span class="n">d2r</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">measure_noise</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># ft</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">altmtr</span> <span class="o">=</span> <span class="n">c4d</span><span class="o">.</span><span class="n">sensors</span><span class="o">.</span><span class="n">radar</span><span class="p">(</span><span class="n">rng_noise_std</span> <span class="o">=</span> <span class="n">measure_noise</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">dt</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Re-running the main loop yields:</p>
 <figure class="align-default">
-<img alt="../_images/filters_kalman_noisy.png" src="../_images/filters_kalman_noisy.png" />
+<img alt="../_images/ap_noisy.png" src="../_images/ap_noisy.png" />
 </figure>
 <p>Very bad.
 The errors corrupt the input that uses to control the altitude.
 The point in which the altitude converges to its steady-state is more
 than <span class="math notranslate nohighlight">\(10s\)</span> later than the ideal case.</p>
-<p>The Kalman filter should find optimized gains to minimize the mean squared error.
-For the estimated state let’s define a new target, <span class="math notranslate nohighlight">\(htgt\)</span>, where <cite>h</cite> stands for the
-hat estimation symbol. Let’s also add to the estimated target a Kalman filter object
-that consists of the Kalman attributes:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">htgt</span> <span class="o">=</span> <span class="n">c4d</span><span class="o">.</span><span class="n">state</span><span class="p">(</span><span class="n">z</span> <span class="o">=</span> <span class="n">tgt</span><span class="o">.</span><span class="n">z</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="n">gamma</span> <span class="o">=</span> <span class="n">tgt</span><span class="o">.</span><span class="n">gamma</span> <span class="o">+</span> <span class="mf">0.05</span> <span class="o">*</span> <span class="n">c4d</span><span class="o">.</span><span class="n">d2r</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">htgt</span><span class="o">.</span><span class="n">kf</span> <span class="o">=</span> <span class="n">c4d</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">kalman</span><span class="p">(</span><span class="n">P0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="mf">0.05</span> <span class="o">*</span> <span class="n">c4d</span><span class="o">.</span><span class="n">d2r</span><span class="p">]</span>
-<span class="gp">... </span>                              <span class="p">,</span> <span class="n">R</span> <span class="o">=</span> <span class="n">v</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">Q</span> <span class="o">=</span> <span class="n">Q</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">dt</span>
-<span class="gp">... </span>                                <span class="p">,</span> <span class="n">A</span> <span class="o">=</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span> <span class="o">=</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span> <span class="o">=</span> <span class="n">c</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Note that the Kalman filter was initialized here with continuous system matrices.
-However, it could be initialized with discrete system matrices. The only limit
-is that all the four necessary parameters, i.e. <span class="math notranslate nohighlight">\(A, B, Q, R\)</span> or <span class="math notranslate nohighlight">\(F, G, Qk, Rk\)</span>
-will be provided consistently and as a complete set:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">htgt</span><span class="o">.</span><span class="n">kf</span> <span class="o">=</span> <span class="n">c4d</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">kalman</span><span class="p">(</span><span class="n">P0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="mf">0.05</span> <span class="o">*</span> <span class="n">c4d</span><span class="o">.</span><span class="n">d2r</span><span class="p">]</span>
-<span class="gp">... </span>                               <span class="p">,</span> <span class="n">Rk</span> <span class="o">=</span> <span class="n">v</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mf">20e-3</span><span class="p">,</span> <span class="n">Qk</span> <span class="o">=</span> <span class="n">Q</span> <span class="o">*</span> <span class="n">dt</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">dt</span>
-<span class="gp">... </span>                                   <span class="p">,</span> <span class="n">F</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">A</span> <span class="o">*</span> <span class="n">dt</span><span class="p">,</span> <span class="n">G</span> <span class="o">=</span> <span class="n">B</span> <span class="o">*</span> <span class="n">dt</span><span class="p">,</span> <span class="n">H</span> <span class="o">=</span> <span class="n">c</span><span class="p">)</span>
+<p><strong>Filtered system</strong></p>
+<p>A Kalman filter should find optimized gains to minimize the mean squared error.
+For the estimated state let’s define a new object, <span class="math notranslate nohighlight">\(kf\)</span>,
+and initialize it with the estimated errors:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">z_err</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gma_err</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">c4d</span><span class="o">.</span><span class="n">d2r</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tgt</span> <span class="o">=</span> <span class="n">c4d</span><span class="o">.</span><span class="n">state</span><span class="p">(</span><span class="n">z</span> <span class="o">=</span> <span class="mi">1010</span><span class="p">,</span> <span class="n">gamma</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">kf</span> <span class="o">=</span> <span class="n">kalman</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;z&#39;</span><span class="p">:</span> <span class="n">tgt</span><span class="o">.</span><span class="n">z</span> <span class="o">+</span> <span class="n">z_err</span><span class="p">,</span> <span class="s1">&#39;gamma&#39;</span><span class="p">:</span> <span class="n">tgt</span><span class="o">.</span><span class="n">gamma</span> <span class="o">+</span> <span class="n">gma_err</span><span class="p">}</span>
+<span class="gp">... </span>                <span class="p">,</span> <span class="n">P0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">z_err</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">gma_err</span><span class="p">]</span>
+<span class="gp">... </span>                    <span class="p">,</span> <span class="n">R</span> <span class="o">=</span> <span class="n">measure_noise</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">dt</span><span class="p">,</span> <span class="n">Q</span> <span class="o">=</span> <span class="n">process_noise</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">dt</span>
+<span class="gp">... </span>                        <span class="p">,</span> <span class="n">F</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">A</span> <span class="o">*</span> <span class="n">dt</span><span class="p">,</span> <span class="n">G</span> <span class="o">=</span> <span class="n">B</span> <span class="o">*</span> <span class="n">dt</span><span class="p">,</span> <span class="n">H</span> <span class="o">=</span> <span class="n">C</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The main loop is changed to:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tspan</span><span class="p">:</span>
-<span class="gp">... </span> <span class="n">tgt</span><span class="o">.</span><span class="n">store</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-<span class="gp">... </span> <span class="n">htgt</span><span class="o">.</span><span class="n">store</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-<span class="gp">... </span> <span class="n">htgt</span><span class="o">.</span><span class="n">p11</span><span class="p">,</span> <span class="n">htgt</span><span class="o">.</span><span class="n">p22</span> <span class="o">=</span> <span class="n">htgt</span><span class="o">.</span><span class="n">kf</span><span class="o">.</span><span class="n">P</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">htgt</span><span class="o">.</span><span class="n">kf</span><span class="o">.</span><span class="n">P</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-<span class="gp">... </span> <span class="n">htgt</span><span class="o">.</span><span class="n">storeparams</span><span class="p">([</span><span class="s1">&#39;state&#39;</span><span class="p">,</span> <span class="s1">&#39;p11&#39;</span><span class="p">,</span> <span class="s1">&#39;p22&#39;</span><span class="p">],</span> <span class="n">t</span><span class="p">)</span>
-<span class="gp">... </span> <span class="n">altmtr</span><span class="o">.</span><span class="n">store</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-<span class="gp">... </span> <span class="n">tgt</span><span class="o">.</span><span class="n">X</span> <span class="o">=</span> <span class="n">odeint</span><span class="p">(</span><span class="n">autopilot</span><span class="p">,</span> <span class="n">tgt</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="p">[</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span> <span class="o">+</span> <span class="n">dt</span><span class="p">],</span> <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">Hf</span> <span class="o">-</span> <span class="n">htgt</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)))[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="gp">... </span> <span class="c1"># predict</span>
-<span class="gp">... </span> <span class="n">htgt</span><span class="o">.</span><span class="n">X</span> <span class="o">=</span> <span class="n">htgt</span><span class="o">.</span><span class="n">kf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">htgt</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="n">Hf</span> <span class="o">-</span> <span class="n">htgt</span><span class="o">.</span><span class="n">z</span><span class="p">)</span>
-<span class="gp">... </span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">Z</span> <span class="o">=</span> <span class="n">altmtr</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="n">tgt</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span> <span class="n">store</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-<span class="gp">... </span> <span class="k">if</span> <span class="n">Z</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="k">continue</span>
-<span class="gp">... </span> <span class="c1"># update</span>
-<span class="gp">... </span> <span class="n">htgt</span><span class="o">.</span><span class="n">X</span> <span class="o">=</span> <span class="n">htgt</span><span class="o">.</span><span class="n">kf</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">htgt</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">Z</span><span class="p">)</span>
+<span class="gp">... </span>  <span class="n">tgt</span><span class="o">.</span><span class="n">store</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="gp">... </span>  <span class="n">kf</span><span class="o">.</span><span class="n">store</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="gp">... </span>  <span class="n">tgt</span><span class="o">.</span><span class="n">X</span> <span class="o">=</span> <span class="n">odeint</span><span class="p">(</span><span class="n">autopilot</span><span class="p">,</span> <span class="n">tgt</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="p">[</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span> <span class="o">+</span> <span class="n">dt</span><span class="p">],</span> <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">Hf</span> <span class="o">-</span> <span class="n">kf</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="n">process_noise</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">2</span><span class="p">)))[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="gp">... </span>  <span class="n">kf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">u</span> <span class="o">=</span> <span class="n">Hf</span> <span class="o">-</span> <span class="n">kf</span><span class="o">.</span><span class="n">z</span><span class="p">)</span>
+<span class="gp">... </span>  <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">Z</span> <span class="o">=</span> <span class="n">altmtr</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="n">tgt</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span> <span class="n">store</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="gp">... </span>  <span class="k">if</span> <span class="n">Z</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">kf</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span> 
+</pre></div>
+</div>
+<p>Plot the state estimates on the true the target altitude (<span class="math notranslate nohighlight">\(z\)</span>) and flight path angle (<span class="math notranslate nohighlight">\(\gamma\)</span>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># first axis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">tgt</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">),</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;true&#39;</span><span class="p">)</span>                   
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">altmtr</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;range&#39;</span><span class="p">),</span> <span class="s1">&#39;.c&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;altimeter&#39;</span><span class="p">)</span>      
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">kf</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">),</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;kf&#39;</span><span class="p">)</span>                      
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c4d</span><span class="o">.</span><span class="n">plotdefaults</span><span class="p">(</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;Altitude&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;ft&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>                                                    
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># second axis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">tgt</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;gamma&#39;</span><span class="p">,</span> <span class="n">c4d</span><span class="o">.</span><span class="n">r2d</span><span class="p">),</span> <span class="s1">&#39;m&#39;</span><span class="p">)</span>                      
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">kf</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;gamma&#39;</span><span class="p">,</span> <span class="n">c4d</span><span class="o">.</span><span class="n">r2d</span><span class="p">),</span> <span class="s1">&#39;y&#39;</span><span class="p">)</span>                       
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c4d</span><span class="o">.</span><span class="n">plotdefaults</span><span class="p">(</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;Path Angle&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 <figure class="align-default">
-<img alt="../_images/filters_kalman_filtered.png" src="../_images/filters_kalman_filtered.png" />
+<img alt="../_images/ap_filtered.png" src="../_images/ap_filtered.png" />
 </figure>
-<p>The filtered altitude (<cite>htgt.z</cite>) is used as input to control the system and
+<p>The filtered altitude (<cite>kf.z</cite>) is used as input to control the system and
 generates results almost as good as the ideal case.</p>
 <p>Ultimately, the altimeter measuring the aircraft altitude
 operates through a two-step process: prediction and update.
@@ -903,7 +953,7 @@ and can use the exact nonlinear equations (<span class="math notranslate nohighl
 <li><p><span class="math notranslate nohighlight">\(f(\cdot)\)</span> is an arbitrary vector-valued function representing the system dynamics</p></li>
 <li><p><span class="math notranslate nohighlight">\(x\)</span> is the system state vector</p></li>
 <li><p><span class="math notranslate nohighlight">\(u\)</span> is the process input signal</p></li>
-<li><p><span class="math notranslate nohighlight">\(\omega\)</span> is the process noise with covariance matrix <span class="math notranslate nohighlight">\(Q\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega\)</span> is the process uncertainty with covariance matrix <span class="math notranslate nohighlight">\(Q\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(y\)</span> is the system output vector</p></li>
 <li><p><span class="math notranslate nohighlight">\(h(\cdot)\)</span> is an arbitrary vector-valued function representing the system output</p></li>
 <li><p><span class="math notranslate nohighlight">\(\nu\)</span> is the measure noise with covariance matrix <span class="math notranslate nohighlight">\(R\)</span></p></li>
@@ -915,7 +965,7 @@ and have known covariance matrices <span class="math notranslate nohighlight">\(
 \[ \begin{align}\begin{aligned}\omega(t) \sim (0, Q)\\\nu(t) \sim (0, R)\\E[\omega(t) \cdot \omega^T(t)] = Q \cdot \delta(t)\\E[\nu(t) \cdot \nu^T(t)] = R \cdot \delta(t)\\E[\nu(t) \cdot \omega^T(t)] = 0\end{aligned}\end{align} \]</div>
 <p>Where:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\omega\)</span> is the process noise with covariance matrix <span class="math notranslate nohighlight">\(Q\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega\)</span> is the process uncertainty with covariance matrix <span class="math notranslate nohighlight">\(Q\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\nu\)</span> is the measure noise with covariance matrix <span class="math notranslate nohighlight">\(R\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(Q\)</span> is the process covariance matrix</p></li>
 <li><p><span class="math notranslate nohighlight">\(R\)</span> is the measurement covariance matrix</p></li>
@@ -935,21 +985,19 @@ respect to <span class="math notranslate nohighlight">\(x\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[C = {\partial{h} \over \partial{x}}\bigg|_{x}\]</div>
 <p>A last final step before getting into the filter itself
-is to discretize these terms and the noise covariance matrices:</p>
+is to discretize these terms:</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}F = I + A \cdot dt\\H = C\\Q_k = Q \cdot dt\\R_k = R / dt\end{aligned}\end{align} \]</div>
+\[ \begin{align}\begin{aligned}F = I + A \cdot dt\\H = C\end{aligned}\end{align} \]</div>
 <p>Where:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(F\)</span> is the discretized process dynamics matrix (actually a first order approximation of the state transition matrix <span class="math notranslate nohighlight">\(\Phi\)</span>)</p></li>
-<li><p><span class="math notranslate nohighlight">\(G\)</span> is the discretized process input matrix</p></li>
 <li><p><span class="math notranslate nohighlight">\(H\)</span> is the discrete measurement matrix</p></li>
-<li><p><span class="math notranslate nohighlight">\(\nu_k\)</span> is the measure noise with covariance matrix <span class="math notranslate nohighlight">\(R_k\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(I\)</span> is the identity matrix</p></li>
 <li><p><span class="math notranslate nohighlight">\(dt\)</span> is the sampling time</p></li>
-<li><p><span class="math notranslate nohighlight">\(Q_k\)</span> is the process covariance matrix</p></li>
-<li><p><span class="math notranslate nohighlight">\(R_k\)</span> is the measurement covariance matrix</p></li>
-<li><p><span class="math notranslate nohighlight">\(A, C, Q, R\)</span> are the continuous-time system variables of the system state matrix, system outrput vector, process covariance matrix, and measurement covariance matrix, respectively</p></li>
+<li><p><span class="math notranslate nohighlight">\(A, C\)</span> are the continuous-time system dynamics and output matrices</p></li>
 </ul>
+<p>Note that <span class="math notranslate nohighlight">\(Q\)</span> and <span class="math notranslate nohighlight">\(R\)</span> refer to the covariance matrices
+representing the system noise in its final form, regardless of the time domain.</p>
 <p>Now the execution of the <cite>predict</cite> step and the <cite>update</cite> step is possible.</p>
 <section id="id5">
 <h3>Predict<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
@@ -963,7 +1011,7 @@ The first equation in the following
 set is the linearization of the process
 equations for the covariance calculation (third):</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}F = I + dt \cdot {\partial{f} \over \partial{x}}\bigg|_{x_{k-1}^+, u{k-1}}\\x_k^- = x_{k-1}^+ + dt \cdot f(x_{k-1}^+, u_{k-1})\\P_k^- = F \cdot P_{k-1}^+ \cdot F^T + Q_k\end{aligned}\end{align} \]</div>
+\[ \begin{align}\begin{aligned}F = I + dt \cdot {\partial{f} \over \partial{x}}\bigg|_{x_{k-1}^+, u{k-1}}\\x_k^- = x_{k-1}^+ + dt \cdot f(x_{k-1}^+, u_{k-1})\\P_k^- = F \cdot P_{k-1}^+ \cdot F^T + Q\end{aligned}\end{align} \]</div>
 <p>subject to initial conditions:</p>
 <div class="math notranslate nohighlight">
 \[ \begin{align}\begin{aligned}x_0^+ = x_0\\P_0^+ = E[x_0 \cdot x_0^T]\end{aligned}\end{align} \]</div>
@@ -977,7 +1025,7 @@ equations for the covariance calculation (third):</p>
 <li><p><span class="math notranslate nohighlight">\(u_k\)</span> is the process input signal</p></li>
 <li><p><span class="math notranslate nohighlight">\(P_k^-\)</span> is the estimate of the system covariance matrix, <span class="math notranslate nohighlight">\(P_k\)</span>, before a measurement update</p></li>
 <li><p><span class="math notranslate nohighlight">\(P_{k-1}^+\)</span> is the system covariance matrix estimate, <span class="math notranslate nohighlight">\(P_k\)</span>, from previous measurement update</p></li>
-<li><p><span class="math notranslate nohighlight">\(Q_k\)</span> is the process covariance matrix</p></li>
+<li><p><span class="math notranslate nohighlight">\(Q\)</span> is the process covariance matrix</p></li>
 <li><p>superscript T is the transpose operator</p></li>
 <li><p><span class="math notranslate nohighlight">\(x_0\)</span> is the initial state estimation</p></li>
 <li><p><span class="math notranslate nohighlight">\(P_0\)</span> is the covariance matrix consisting of errors of the initial estimation</p></li>
@@ -990,7 +1038,7 @@ linearized (<span class="math notranslate nohighlight">\(H\)</span>) before the 
 But the correction of the state vector is possible by using
 the nonlinear equations themselves (third equation):</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}H = {\partial{h} \over \partial{x}}\bigg|_{x_k^-}\\K = P_k^- \cdot H^T \cdot (H \cdot P_k^- \cdot H^T + R_k)^{-1}\\x_k^+ = x_k^- \cdot K \cdot (y - h(x))\\P_k^+ = (I - K \cdot H) \cdot P_k^-\end{aligned}\end{align} \]</div>
+\[ \begin{align}\begin{aligned}H = {\partial{h} \over \partial{x}}\bigg|_{x_k^-}\\K = P_k^- \cdot H^T \cdot (H \cdot P_k^- \cdot H^T + R)^{-1}\\x_k^+ = x_k^- \cdot K \cdot (y - h(x))\\P_k^+ = (I - K \cdot H) \cdot P_k^-\end{aligned}\end{align} \]</div>
 <p>Where:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(H\)</span> is the discrete measurement matrix</p></li>
@@ -998,7 +1046,7 @@ the nonlinear equations themselves (third equation):</p>
 <li><p><span class="math notranslate nohighlight">\(x_k^-\)</span> is the estimate of the system state, <span class="math notranslate nohighlight">\(x_k\)</span>, from the previous prediction</p></li>
 <li><p><span class="math notranslate nohighlight">\(K\)</span> is the Kalman gain</p></li>
 <li><p><span class="math notranslate nohighlight">\(P_k^-\)</span> is the estimate of the system covariance matrix, <span class="math notranslate nohighlight">\(P_k\)</span>, from the previous prediction</p></li>
-<li><p><span class="math notranslate nohighlight">\(R_k\)</span> is the measurement covariance matrix</p></li>
+<li><p><span class="math notranslate nohighlight">\(R\)</span> is the measurement covariance matrix</p></li>
 <li><p><span class="math notranslate nohighlight">\(x_k^+\)</span> is the estimate of the system state, <span class="math notranslate nohighlight">\(x_k\)</span>, after a measurement update</p></li>
 <li><p><span class="math notranslate nohighlight">\(y\)</span> is the measure</p></li>
 <li><p><span class="math notranslate nohighlight">\(I\)</span> is the identity matrix</p></li>
@@ -1053,16 +1101,16 @@ in a free fall where a noisy radar is tracking it.</p>
 <p>The process equations are:</p>
 <div class="math notranslate nohighlight">
 \[ \begin{align}\begin{aligned}\dot{z} = v_z\\\dot{v}_z = {\rho_0 \cdot e^{-z / k} \cdot v_z^2 \cdot g \over 2 \cdot \beta} - g\\\dot{\beta} = \omega_{\beta}\\y = z + \nu_k\end{aligned}\end{align} \]</div>
-<p>where</p>
+<p>Where:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\rho_0 = 0.0034\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(k = 22,000\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(g = 32.2 ft/sec^2\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\omega_{\beta} \sim ()\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega_{\beta} \sim (0, 300)\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\nu_k \sim (0, 500)\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(z\)</span> is the target altitude (ft)</p></li>
-<li><p><span class="math notranslate nohighlight">\(v_z\)</span> is the target vertical velocity (ft/sec)</p></li>
-<li><p><span class="math notranslate nohighlight">\(\beta\)</span> is the target ballistic coefficient (lb/ft^2)</p></li>
+<li><p><span class="math notranslate nohighlight">\(z\)</span> is the target altitude (<span class="math notranslate nohighlight">\(ft\)</span>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(v_z\)</span> is the target vertical velocity (<span class="math notranslate nohighlight">\(ft/sec\)</span>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> is the target ballistic coefficient (<span class="math notranslate nohighlight">\(lb/ft^2\)</span>)</p></li>
 <li><p><span class="math notranslate nohighlight">\(y\)</span> is the system measure</p></li>
 </ul>
 <p>Let:</p>
@@ -1090,7 +1138,7 @@ so these equations are already a linear function of the state.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dtsensor</span> <span class="o">=</span> <span class="mf">0.05</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rho0</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="mf">0.0034</span><span class="p">,</span> <span class="mi">22000</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tgt</span> <span class="o">=</span> <span class="n">c4d</span><span class="o">.</span><span class="n">state</span><span class="p">(</span><span class="n">z</span> <span class="o">=</span> <span class="mi">100000</span><span class="p">,</span> <span class="n">vz</span> <span class="o">=</span> <span class="o">-</span><span class="mi">6000</span><span class="p">,</span> <span class="n">beta</span> <span class="o">=</span> <span class="mi">500</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">altmtr</span> <span class="o">=</span> <span class="n">c4d</span><span class="o">.</span><span class="n">sensors</span><span class="o">.</span><span class="n">seeker</span><span class="p">(</span><span class="n">isideal</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">dt</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">altmtr</span> <span class="o">=</span> <span class="n">c4d</span><span class="o">.</span><span class="n">sensors</span><span class="o">.</span><span class="n">radar</span><span class="p">(</span><span class="n">isideal</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">dt</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Target equations of motion:</p>
@@ -1100,13 +1148,13 @@ so these equations are already a linear function of the state.</p>
 </div>
 <p>Main loop:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tspan</span><span class="p">:</span>
-<span class="gp">... </span>  <span class="n">tgt</span><span class="o">.</span><span class="n">X</span> <span class="o">=</span> <span class="n">odeint</span><span class="p">(</span><span class="n">ballistics</span><span class="p">,</span> <span class="n">tgt</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="p">[</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span> <span class="o">+</span> <span class="n">dt</span><span class="p">])[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="gp">... </span>  <span class="n">altmtr</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="n">tgt</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span> <span class="n">store</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 <span class="gp">... </span>  <span class="n">tgt</span><span class="o">.</span><span class="n">store</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="gp">... </span>  <span class="n">tgt</span><span class="o">.</span><span class="n">X</span> <span class="o">=</span> <span class="n">odeint</span><span class="p">(</span><span class="n">ballistics</span><span class="p">,</span> <span class="n">tgt</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="p">[</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span> <span class="o">+</span> <span class="n">dt</span><span class="p">])[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="gp">... </span>  <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">altmtr</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="n">tgt</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span> <span class="n">store</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 <figure class="align-default">
-<img alt="../_images/filters_ekf_ideal.png" src="../_images/filters_ekf_ideal.png" />
+<img alt="../_images/bal_ideal.png" src="../_images/bal_ideal.png" />
 </figure>
 <p>These figures show the time histories of the altitude, velocity,
 and ballistic coefficient, for a target in a free fall with ideal conditions.</p>
@@ -1118,15 +1166,15 @@ the spectral density of a continuous system, such that for flight time <span cla
 the standard deviation of the ballistic coefficient noise
 is <span class="math notranslate nohighlight">\(\omega_{\beta} = \sqrt{\beta_{err} \cdot t_f}\)</span>.
 The measurement noise is <span class="math notranslate nohighlight">\(\nu = \sqrt{500}\)</span>. These use
-for the noise covariance matrices <span class="math notranslate nohighlight">\(Q_k, R_k\)</span> as for
+for the noise covariance matrices <span class="math notranslate nohighlight">\(Q, R\)</span> as for
 the initialization of the state covariance matrix <span class="math notranslate nohighlight">\(P\)</span>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zerr</span><span class="p">,</span> <span class="n">vzerr</span><span class="p">,</span> <span class="n">betaerr</span> <span class="o">=</span> <span class="mi">25</span><span class="p">,</span> <span class="o">-</span><span class="mi">150</span><span class="p">,</span> <span class="mi">1000</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nu</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">p0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">([</span><span class="n">nu</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">vzerr</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">betaerr</span><span class="o">**</span><span class="mi">2</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">Rk</span> <span class="o">=</span> <span class="n">nu</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">dt</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">Qk</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">betaerr</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">tf</span> <span class="o">*</span> <span class="n">dt</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">R</span> <span class="o">=</span> <span class="n">nu</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">dt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">betaerr</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">tf</span> <span class="o">*</span> <span class="n">dt</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># altmeter and ekf construction:</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">altmtr</span> <span class="o">=</span> <span class="n">c4d</span><span class="o">.</span><span class="n">sensors</span><span class="o">.</span><span class="n">seeker</span><span class="p">(</span><span class="n">rng_noise_std</span> <span class="o">=</span> <span class="n">nu</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">dtsensor</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">altmtr</span> <span class="o">=</span> <span class="n">c4d</span><span class="o">.</span><span class="n">sensors</span><span class="o">.</span><span class="n">radar</span><span class="p">(</span><span class="n">rng_noise_std</span> <span class="o">=</span> <span class="n">nu</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">dtsensor</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ekf</span> <span class="o">=</span> <span class="n">c4d</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">ekf</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;z&#39;</span><span class="p">:</span> <span class="n">tgt</span><span class="o">.</span><span class="n">z</span> <span class="o">+</span> <span class="n">zerr</span><span class="p">,</span> <span class="s1">&#39;vz&#39;</span><span class="p">:</span> <span class="n">tgt</span><span class="o">.</span><span class="n">vz</span> <span class="o">+</span> <span class="n">vzerr</span>
 <span class="gp">... </span>                                    <span class="p">,</span> <span class="s1">&#39;beta&#39;</span><span class="p">:</span> <span class="n">tgt</span><span class="o">.</span><span class="n">beta</span> <span class="o">+</span> <span class="n">betaerr</span><span class="p">}</span>
 <span class="gp">... </span>                                        <span class="p">,</span> <span class="n">P0</span> <span class="o">=</span> <span class="n">p0</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">dt</span><span class="p">)</span>
@@ -1146,13 +1194,13 @@ here as the measurement is already linear), and calling the <cite>update</cite> 
 <span class="gp">... </span>  <span class="c1"># discretization</span>
 <span class="gp">... </span>  <span class="n">F</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">f2i</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span> <span class="o">*</span> <span class="n">dt</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="gp">... </span>  <span class="c1"># ekf predict</span>
-<span class="gp">... </span>  <span class="n">ekf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">Qk</span><span class="p">,</span> <span class="n">fx</span> <span class="o">=</span> <span class="n">fx</span><span class="p">)</span>
+<span class="gp">... </span>  <span class="n">ekf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">fx</span> <span class="o">=</span> <span class="n">fx</span><span class="p">)</span>
 <span class="gp">... </span>  <span class="c1"># take a measure</span>
 <span class="gp">... </span>  <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">Z</span> <span class="o">=</span> <span class="n">altmtr</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="n">tgt</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span> <span class="n">store</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 <span class="gp">... </span>  <span class="k">if</span> <span class="n">Z</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 <span class="gp">... </span>    <span class="n">H</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
 <span class="gp">... </span>    <span class="c1"># ekf update</span>
-<span class="gp">... </span>    <span class="n">ekf</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">Rk</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">ekf</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span>
 <span class="gp">... </span>  <span class="c1"># store states</span>
 <span class="gp">... </span>  <span class="n">tgt</span><span class="o">.</span><span class="n">store</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
 <span class="gp">... </span>  <span class="n">ekf</span><span class="o">.</span><span class="n">store</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
@@ -1163,100 +1211,74 @@ process matrix (<span class="math notranslate nohighlight">\(F\)</span>), the <c
 stores the introduced <cite>F</cite> to prove that
 the <cite>update</cite> step always comes after calling the <cite>predict</cite>.</p>
 <figure class="align-default">
-<img alt="../_images/filters_ekf_filtered.png" src="../_images/filters_ekf_filtered.png" />
+<img alt="../_images/bal_filtered.png" src="../_images/bal_filtered.png" />
 </figure>
 <p>A few steps to consider when designing a Kalman filter:</p>
 <ul class="simple">
-<li><p>If possible, find a nominal trajectory to linearize the system about.</p></li>
-<li><p>Identify the nonlinearity; there may be mixed situations:</p></li>
-<li><p>The process equations are nonlinear.</p></li>
-<li><p>The measurement equations are nonlinear.</p></li>
-<li><p>Both are nonlinear.</p></li>
-<li><p>-&gt; Design your filter accordingly.</p></li>
-<li><p>The two major time-consuming activities are:</p></li>
-<li><p>Proving the dynamic model.</p></li>
-<li><p>Researching the weights for the noise matrices Q, R.</p></li>
+<li><p>Spend some time understanding the dynamics. It’s the basis of great filtering.</p></li>
+<li><p>If the system is nonlinear, identify the nonlinearity; is it in the process? in the measurement? both?</p></li>
+<li><p>Always prioriorotize linear Kalman. If possible, find a nominal trajectory to linearize the system about.</p></li>
+<li><p>The major time-consuming activity is researching the balance between the noise matrices <cite>Q</cite> and <cite>R</cite>.</p></li>
 <li><p>-&gt; Plan your time in advance.</p></li>
 <li><p>Use a framework that provides you with the most flexibility and control.</p></li>
-<li><p>Make fun.</p></li>
+<li><p>Make fun!</p></li>
 </ul>
 </section>
 </section>
 <section id="low-pass-filter">
 <h2>Low-pass Filter<a class="headerlink" href="#low-pass-filter" title="Link to this heading">#</a></h2>
-<p>A first-order lowpass filter.</p>
-<p>The kalman filter is a state observer. Namely it provides
-a full state estimation based on the partial measure of variables.</p>
-<p>The differential equation:</p>
+<p>A first-order low-pass filter is a fundamental component in signal processing
+and control systems, designed to allow low-frequency signals to pass while
+attenuating higher-frequency noise.</p>
+<p>This type of filter is represented by a simple differential equation
+and is commonly used for signal smoothing and noise reduction.</p>
+<p>A low-pass filter (LPF) can be described by the differential equation:</p>
 <div class="math notranslate nohighlight">
 \[\alpha \cdot \dot{y} + y = x\]</div>
-<p>represents a first-order lowpass filter, which allows low-frequency
-signals to pass while attenuating higher-frequency signals.</p>
-<p>In singal processing applications, it smooths signals by reducing high-frequency noise.</p>
-<p>In control system applications, it can use to describe
-a first-order lag.</p>
-<p>In the frequency-domain, the above diffential equation is represented by:</p>
-<div class="math notranslate nohighlight">
-\[H(s) = {Y(s) \over X(s)} = {1 \over \alpha \cdot s}\]</div>
-<p>where</p>
+<p>Where:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(H\)</span> is the transfer function</p></li>
-<li><p><span class="math notranslate nohighlight">\(Y\)</span> is the output signal</p></li>
-<li><p><span class="math notranslate nohighlight">\(X\)</span> is the input signal</p></li>
-<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> is the shaping parameter</p></li>
-<li><p><span class="math notranslate nohighlight">\(s\)</span> is the complex frequency variable in the Laplace transform, <span class="math notranslate nohighlight">\(s = j \cdot 2 \cdot \pi \cdot f\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> is the output signal</p></li>
+<li><p><span class="math notranslate nohighlight">\(x\)</span> is the input signal</p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> is a shaping parameter that influences the filter’s cutoff frequency</p></li>
 </ul>
-<p>Depending on the interpretation that alpha is given, the</p>
-<p>when <span class="math notranslate nohighlight">\(\alpha\)</span> represents the cutoff frequency:</p>
+<p>In signal processing, the LPF smooths signals by reducing high-frequency noise.
+In control systems, it is often used to model a first-order lag.</p>
+<section id="frequency-domain">
+<h3>Frequency-Domain<a class="headerlink" href="#frequency-domain" title="Link to this heading">#</a></h3>
+<p>In the frequency domain, the transfer function of a first-order low-pass filter is given by:</p>
 <div class="math notranslate nohighlight">
-\[s\]</div>
-<p>The frequency separating beween passing frequencies and attenuated
-frequencies is called the cutoff frequency.</p>
-<p>In the context of a first-order low-pass filter (LPF),
-the relationship between the time constant 𝜏
-τ and the cutoff frequency 𝑓𝑐f c​
-is important. The cutoff frequency is the frequency at which the
-output signal is attenuated to 122​ 1
-​
-(or approximately 0.707) of its maximum value.
-This frequency is also known as the -3dB point.</p>
-<p>The cutoff frequency 𝑓𝑐f c
-​
-(in Hertz) is related to the time constant 𝜏τ by the formula:
-𝑓𝑐=12𝜋𝜏f c​ = 2πτ1
-​
-Alternatively, the time constant can be expressed in terms of the cutoff frequency:
-𝜏=12𝜋𝑓𝑐τ 2πfc​1
-​</p>
-<p>When designing or simulating a first-order low-pass filter,
-you often start with a desired cutoff frequency and then calculate the
-corresponding time constant
-𝜏τ. In a discrete-time implementation, the filter’s
-behavior is determined by the sample rate and the cutoff frequency, which
-together define the filter coefficient 𝛼α.</p>
-<p>Let’s add tests for this additional context, ensuring that the
-lowpass class can initialize using a cutoff frequency and sample rate,
-and then use it to simulate a first-order system.</p>
-<p>There are different types of lowpass filters,
-including RC (resistor-capacitor) filters,
-LC (inductor-capacitor) filters,
-and active lowpass filters using operational amplifiers.</p>
-<p>A first-order lowpass filter is defined by:</p>
+\[H(s) = \frac{Y(s)}{X(s)} = \frac{1}{\alpha \cdot s + 1}\]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H(s)\)</span> is the transfer function</p></li>
+<li><p><span class="math notranslate nohighlight">\(Y(s)\)</span> and <span class="math notranslate nohighlight">\(X(s)\)</span> are the Laplace transforms of the output and input signals respectively</p></li>
+<li><p><span class="math notranslate nohighlight">\(s\)</span> is the complex frequency variable in the Laplace transform, defined as <span class="math notranslate nohighlight">\(s = j \cdot 2 \cdot \pi \cdot f\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> is a constant related to the cutoff frequency</p></li>
+</ul>
+</section>
+<section id="time-constant">
+<h3>Time-Constant<a class="headerlink" href="#time-constant" title="Link to this heading">#</a></h3>
+<p>The cutoff frequency <span class="math notranslate nohighlight">\(f_c\)</span> is the frequency at which the filter attenuates the signal to approximately 70.7% (-3dB) of its maximum value. It is related to the time constant <span class="math notranslate nohighlight">\(\tau\)</span> by:</p>
 <div class="math notranslate nohighlight">
-\[\dot{y}(t) = -{1 \over \tau} \cdot y(t) + {1 \over \tau} \cdot x(t)\]</div>
-<p>in the continuous-time domain, and by:</p>
+\[f_c = \frac{1}{2 \cdot \pi \cdot \tau}\]</div>
+<p>and equivalently,</p>
+<div class="math notranslate nohighlight">
+\[\tau = \frac{1}{2 \cdot \pi \cdot f_c}\]</div>
+<p>In practical applications, the desired cutoff frequency determines <span class="math notranslate nohighlight">\(\tau\)</span>, which in turn defines the filter behavior.</p>
+</section>
+<section id="discrete-time">
+<h3>Discrete-Time<a class="headerlink" href="#discrete-time" title="Link to this heading">#</a></h3>
+<p>In the discrete-time domain, a first-order low-pass filter is represented as:</p>
 <div class="math notranslate nohighlight">
 \[y_k = \alpha \cdot x_k + (1 - \alpha) \cdot y_{k-1}\]</div>
-<p>in the discrete-time domain.</p>
-<p>The differential equation of the continuous-time filter
-can be Euler-integrated with time constant <span class="math notranslate nohighlight">\(dt\)</span> as:</p>
-<div class="math notranslate nohighlight">
-\[y(t + dt) = y(t) + dt \cdot (-{1 \over \tau} \cdot y(t) + {1 \over \tau} \cdot x(t))\]</div>
-<p>We can substitute</p>
-<div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}k = t + dt\\\alpha = {dt \over \tau}\end{aligned}\end{align} \]</div>
-<p>we can derive one representation from the other.</p>
-<p>As such, <cite>c4dynamics</cite> allows each</p>
+<p>where <span class="math notranslate nohighlight">\(y_k\)</span> and <span class="math notranslate nohighlight">\(x_k\)</span> are the discrete output and input signals at sample index <cite>k</cite>, and <span class="math notranslate nohighlight">\(\alpha\)</span> is the filter coefficient derived from the sample rate and cutoff frequency.</p>
+</section>
+<section id="id10">
+<h3>Implementation (C4dynamics)<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<p>This filter class can be initialized with a
+cutoff frequency and sample rate, allowing users to simulate
+first-order systems.</p>
+<p class="rubric">References</p>
 <div role="list" class="citation-list">
 <div class="citation" id="sd" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span>SD<span class="fn-bracket">]</span></span>
@@ -1281,14 +1303,14 @@ American Institute of Aeronautics and Astronautics, 1990.</p>
 <div class="citation" id="mz" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">MZ</a><span class="fn-bracket">]</span></span>
 <p>Meri, Ziv,
-<a class="reference external" href="/_static/docs/PN_Stability_Extended_Lyapunov_and_Simulative_Investigations.pdf">Extended Lyapunov Analysis and Simulative
-Investigations in Stability of Proportional Navigation Guidance Systems</a>,
+<a class="reference external" href="/docs/source/_static/PN_Stability.pdf">Extended Lyapunov Analysis and Simulative Investigations in Stability of Proportional Navigation Guidance Systems</a>,
 MSc. Thesis supervised by prof. Grigory Agranovich, University of Ariel, 2020.</p>
 </div>
 </div>
 </section>
+</section>
 <section id="filters-header">
-<span id="id10"></span><h2>Filters<a class="headerlink" href="#filters-header" title="Link to this heading">#</a></h2>
+<span id="id11"></span><h2>Filters<a class="headerlink" href="#filters-header" title="Link to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="filters.kalman.html">Kalman filter</a></li>
@@ -1364,7 +1386,13 @@ MSc. Thesis supervised by prof. Grigory Agranovich, University of Ariel, 2020.</
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Implementation (C4dynamics)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#low-pass-filter">Low-pass Filter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#low-pass-filter">Low-pass Filter</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frequency-domain">Frequency-Domain</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-constant">Time-Constant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-time">Discrete-Time</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Implementation (C4dynamics)</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filters-header">Filters</a></li>
 </ul>
   </nav></div>
@@ -1399,7 +1427,7 @@ By C4dynamics
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Oct 07, 2024.
+  Last updated on Nov 10, 2024.
   <br/>
 </p>
   </div>

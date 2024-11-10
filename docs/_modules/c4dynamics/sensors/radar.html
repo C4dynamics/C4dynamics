@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>c4dynamics.sensors.radar &#8212; c4dynamics &lt;span class=&#34;project-version&#34;&gt;1.2&lt;/span&gt;</title>
+    <title>c4dynamics.sensors.radar &#8212; C4DYNAMICS v1.2 Manual</title>
   
   
   
@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/style.css?v=f9876931" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/style.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
@@ -48,7 +48,7 @@
     <link rel="search" title="Search" href="../../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Oct 07, 2024"/>
+    <meta name="docbuild:last-update" content="Nov 10, 2024"/>
   </head>
   
   
@@ -134,7 +134,7 @@
   
   
   
-    <p class="title logo__title">c4dynamics <span class="project-version">1.2</span></p>
+    <p class="title logo__title">C4DYNAMICS v1.2 Manual</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -154,13 +154,15 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../../index.html">
-                    C4DYNAMICS
+                    Home
                 </a>
             </li>
         </ul>
         <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../gettingstarted.html">Getting Started</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../api/index.html">API Reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/States.html">State objects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/States.html">State Objects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/states.state.html">The state class</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/generated/state/c4dynamics.states.state.state.X.html">c4dynamics.states.state.state.X</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/generated/state/c4dynamics.states.state.state.X0.html">c4dynamics.states.state.state.X0</a></li>
@@ -229,7 +231,7 @@
 </details></li>
 </ul>
 </details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/Utils.html">Utils</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/Routines.html">Routines</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/utils.eqm.html">Equations of motion solvers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/generated/eqm/c4dynamics.eqm.derivs.eqm3.html">c4dynamics.eqm.derivs.eqm3</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/generated/eqm/c4dynamics.eqm.derivs.eqm6.html">c4dynamics.eqm.derivs.eqm6</a></li>
@@ -246,6 +248,9 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../api/generated/rotmat/c4dynamics.rotmat.animate.animate.html">c4dynamics.rotmat.animate.animate</a></li>
 </ul>
 </details></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/Utils.html">Utils</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/utils.math.html">Math functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/utils.const.html">Constants</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/utils.misc.html">Misc</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -374,8 +379,12 @@ document.write(`
   <h1>Source code for c4dynamics.sensors.radar</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="c1"># from scipy.special import erfinv</span>
+<span class="kn">import</span> <span class="nn">sys</span> 
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">c4dynamics</span> <span class="k">as</span> <span class="nn">c4d</span> 
 <span class="kn">from</span> <span class="nn">c4dynamics.sensors.seeker</span> <span class="kn">import</span> <span class="n">seeker</span>
+<span class="kn">import</span> <span class="nn">warnings</span> 
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
 
 <span class="c1"># np.warnings.filterwarnings(&#39;ignore&#39;, category = np.VisibleDeprecationWarning)                 </span>
  
@@ -509,7 +518,7 @@ document.write(`
 <span class="sd">  - :math:`x_b` is the target-radar position vector in radar body frame</span>
 
 
-<span class="sd">  .. figure:: /_static/figures/radar/definitions.svg</span>
+<span class="sd">  .. figure:: /_static/rdr_definitions.svg</span>
 <span class="sd">    </span>
 <span class="sd">    Fig-1: Range and angles definition</span>
 
@@ -635,7 +644,7 @@ document.write(`
 
 <span class="sd">  .. code:: </span>
 
-<span class="sd">    rdr = c4d.sensors.radar()</span>
+<span class="sd">    &gt;&gt;&gt; rdr = c4d.sensors.radar()</span>
 
 <span class="sd">  Initialization of the instance does not require any </span>
 <span class="sd">  mandatory arguments, but the radar parameters can be </span>
@@ -647,6 +656,17 @@ document.write(`
 <span class="sd">  Examples </span>
 <span class="sd">  ========</span>
 
+<span class="sd">  </span>
+<span class="sd">  Import required packages:</span>
+
+<span class="sd">  .. code::</span>
+
+<span class="sd">    &gt;&gt;&gt; import c4dynamics as c4d </span>
+<span class="sd">    &gt;&gt;&gt; from matplotlib import pyplot as plt </span>
+<span class="sd">    &gt;&gt;&gt; import numpy as np</span>
+
+<span class="sd">    </span>
+
 <span class="sd">  **Target**</span>
 <span class="sd">  </span>
 
@@ -656,7 +676,7 @@ document.write(`
 
 <span class="sd">    &gt;&gt;&gt; tgt = c4d.datapoint(x = 1000, y = 0, vx = -80 * c4d.kmh2ms, vy = 10 * c4d.kmh2ms)</span>
 <span class="sd">    &gt;&gt;&gt; for t in np.arange(0, 60, 0.01):</span>
-<span class="sd">    ...   tgt.inteqm(np.zeros(3), .01)</span>
+<span class="sd">    ...   tgt.inteqm(np.zeros(3), .01) # doctest: +IGNORE_OUTPUT</span>
 <span class="sd">    ...   tgt.store(t)</span>
 
 <span class="sd">  The method :meth:`inteqm &lt;c4dynamics.states.lib.datapoint.datapoint.inteqm&gt;` </span>
@@ -697,7 +717,7 @@ document.write(`
 
 <span class="sd">    &gt;&gt;&gt; rdr_ideal = c4d.sensors.radar(origin = pedestal, isideal = True)</span>
 <span class="sd">    &gt;&gt;&gt; for x in tgt.data():</span>
-<span class="sd">    ...   rdr_ideal.measure(c4d.create(x[1:]), t = x[0], store = True)</span>
+<span class="sd">    ...   rdr_ideal.measure(c4d.create(x[1:]), t = x[0], store = True)  # doctest: +IGNORE_OUTPUT</span>
 <span class="sd">    </span>
 <span class="sd">  Comparing the radar measurements with the true target angles requires </span>
 <span class="sd">  converting the relative position to the radar body frame: </span>
@@ -722,15 +742,15 @@ document.write(`
 <span class="sd">    &gt;&gt;&gt; az_true = c4d.atan2d(Xb[:, 1], Xb[:, 0])</span>
 <span class="sd">    &gt;&gt;&gt; el_true = c4d.atan2d(Xb[:, 2], c4d.sqrt(Xb[:, 0]**2 + Xb[:, 1]**2))</span>
 <span class="sd">    &gt;&gt;&gt; # plot results</span>
-<span class="sd">    &gt;&gt;&gt; fig, axs = plt.subplots(2, 1)</span>
+<span class="sd">    &gt;&gt;&gt; fig, axs = plt.subplots(2, 1)  # doctest: +IGNORE_OUTPUT </span>
 <span class="sd">    &gt;&gt;&gt; # range</span>
-<span class="sd">    &gt;&gt;&gt; axs[0].plot(tgt.data(&#39;t&#39;), c4d.norm(Xb, axis = 1), label = &#39;target&#39;)</span>
-<span class="sd">    &gt;&gt;&gt; axs[0].plot(*rdr_ideal.data(&#39;range&#39;), label = &#39;radar&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; axs[0].plot(tgt.data(&#39;t&#39;), c4d.norm(Xb, axis = 1), label = &#39;target&#39;)  # doctest: +IGNORE_OUTPUT </span>
+<span class="sd">    &gt;&gt;&gt; axs[0].plot(*rdr_ideal.data(&#39;range&#39;), label = &#39;radar&#39;)  # doctest: +IGNORE_OUTPUT </span>
 <span class="sd">    &gt;&gt;&gt; # angles </span>
-<span class="sd">    &gt;&gt;&gt; axs[1].plot(tgt.data(&#39;t&#39;), c4d.atan2d(Xb[:, 1], Xb[:, 0]), label = &#39;target azimuth&#39;)</span>
-<span class="sd">    &gt;&gt;&gt; axs[1].plot(*rdr_ideal.data(&#39;az&#39;, scale = c4d.r2d), label = &#39;radar azimuth&#39;)</span>
-<span class="sd">    &gt;&gt;&gt; axs[1].plot(tgt.data(&#39;t&#39;), c4d.atan2d(Xb[:, 2], c4d.sqrt(Xb[:, 0]**2 + Xb[:, 1]**2)), label = &#39;target elevation&#39;)</span>
-<span class="sd">    &gt;&gt;&gt; axs[1].plot(*rdr_ideal.data(&#39;el&#39;, scale = c4d.r2d), label = &#39;radar elevation&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; axs[1].plot(tgt.data(&#39;t&#39;), c4d.atan2d(Xb[:, 1], Xb[:, 0]), label = &#39;target azimuth&#39;)  # doctest: +IGNORE_OUTPUT </span>
+<span class="sd">    &gt;&gt;&gt; axs[1].plot(*rdr_ideal.data(&#39;az&#39;, scale = c4d.r2d), label = &#39;radar azimuth&#39;)  # doctest: +IGNORE_OUTPUT </span>
+<span class="sd">    &gt;&gt;&gt; axs[1].plot(tgt.data(&#39;t&#39;), c4d.atan2d(Xb[:, 2], c4d.sqrt(Xb[:, 0]**2 + Xb[:, 1]**2)), label = &#39;target elevation&#39;)  # doctest: +IGNORE_OUTPUT </span>
+<span class="sd">    &gt;&gt;&gt; axs[1].plot(*rdr_ideal.data(&#39;el&#39;, scale = c4d.r2d), label = &#39;radar elevation&#39;)  # doctest: +IGNORE_OUTPUT </span>
 
 <span class="sd">  .. figure:: /_examples/radar/ideal.png</span>
 
@@ -745,25 +765,33 @@ document.write(`
 <span class="sd">  The radar&#39;s errors model introduces bias, scale factor, and </span>
 <span class="sd">  noise that corrupt the measurements: </span>
 
+<span class="sd">  </span>
+<span class="sd">  To reproduce the result, let&#39;s set the random generator seed (61 is arbitrary):</span>
+
+<span class="sd">  ... code::</span>
+
+<span class="sd">    &gt;&gt;&gt; np.random.seed(61)</span>
+
+
 <span class="sd">  .. code:: </span>
 
 <span class="sd">    &gt;&gt;&gt; rdr = c4d.sensors.radar(origin = pedestal)</span>
 <span class="sd">    &gt;&gt;&gt; for x in tgt.data():</span>
-<span class="sd">    ...   rdr.measure(c4d.create(x[1:]), t = x[0], store = True)</span>
+<span class="sd">    ...   rdr.measure(c4d.create(x[1:]), t = x[0], store = True)  # doctest: +IGNORE_OUTPUT</span>
 
-<span class="sd">  With respect to the ideal radar: </span>
+<span class="sd">  Results with respect to an ideal radar: </span>
 
 <span class="sd">  .. code:: </span>
 
 <span class="sd">    &gt;&gt;&gt; fig, axs = plt.subplots(2, 1)</span>
 <span class="sd">    &gt;&gt;&gt; # range     </span>
-<span class="sd">    &gt;&gt;&gt; axs[0].plot(*rdr_ideal.data(&#39;range&#39;), label = &#39;target&#39;)</span>
-<span class="sd">    &gt;&gt;&gt; axs[0].plot(*rdr.data(&#39;range&#39;), label = &#39;radar&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; axs[0].plot(*rdr_ideal.data(&#39;range&#39;), label = &#39;target&#39;) # doctest: +IGNORE_OUTPUT</span>
+<span class="sd">    &gt;&gt;&gt; axs[0].plot(*rdr.data(&#39;range&#39;), label = &#39;radar&#39;) # doctest: +IGNORE_OUTPUT</span>
 <span class="sd">    &gt;&gt;&gt; # angles  </span>
-<span class="sd">    &gt;&gt;&gt; axs[1].plot(*rdr_ideal.data(&#39;az&#39;, scale = c4d.r2d), label = &#39;target azimuth&#39;)</span>
-<span class="sd">    &gt;&gt;&gt; axs[1].plot(*rdr.data(&#39;az&#39;, scale = c4d.r2d), label = &#39;radar azimuth&#39;)</span>
-<span class="sd">    &gt;&gt;&gt; axs[1].plot(*rdr_ideal.data(&#39;el&#39;, scale = c4d.r2d), label = &#39;target elevation&#39;)</span>
-<span class="sd">    &gt;&gt;&gt; axs[1].plot(*rdr.data(&#39;el&#39;, scale = c4d.r2d), label = &#39;radar elevation&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; axs[1].plot(*rdr_ideal.data(&#39;az&#39;, scale = c4d.r2d), label = &#39;target azimuth&#39;) # doctest: +IGNORE_OUTPUT</span>
+<span class="sd">    &gt;&gt;&gt; axs[1].plot(*rdr.data(&#39;az&#39;, scale = c4d.r2d), label = &#39;radar azimuth&#39;) # doctest: +IGNORE_OUTPUT</span>
+<span class="sd">    &gt;&gt;&gt; axs[1].plot(*rdr_ideal.data(&#39;el&#39;, scale = c4d.r2d), label = &#39;target elevation&#39;) # doctest: +IGNORE_OUTPUT</span>
+<span class="sd">    &gt;&gt;&gt; axs[1].plot(*rdr.data(&#39;el&#39;, scale = c4d.r2d), label = &#39;radar elevation&#39;) # doctest: +IGNORE_OUTPUT</span>
 
 <span class="sd">  `target` labels mean the true position as measured by an ideal radar. </span>
 
@@ -775,14 +803,14 @@ document.write(`
 
 <span class="sd">  .. code::</span>
 
-<span class="sd">    &gt;&gt;&gt; rdr.rng_scale_factor </span>
-<span class="sd">    3</span>
-<span class="sd">    &gt;&gt;&gt; rdr.bias * c4d.r2d</span>
-<span class="sd">    0.4</span>
-<span class="sd">    &gt;&gt;&gt; rdr.scale_factor</span>
-<span class="sd">    1.07</span>
-<span class="sd">    &gt;&gt;&gt; rdr.noise_std</span>
-<span class="sd">    0.01</span>
+<span class="sd">    &gt;&gt;&gt; rdr.rng_noise_std # doctest: +ELLIPSIS</span>
+<span class="sd">    1.0</span>
+<span class="sd">    &gt;&gt;&gt; rdr.bias * c4d.r2d  # doctest: +ELLIPSIS </span>
+<span class="sd">    0.13...</span>
+<span class="sd">    &gt;&gt;&gt; rdr.scale_factor # doctest: +ELLIPSIS </span>
+<span class="sd">    0.96...</span>
+<span class="sd">    &gt;&gt;&gt; rdr.noise_std * c4d.r2d</span>
+<span class="sd">    0.8</span>
 
 <span class="sd">  Points to consider here: </span>
 
@@ -809,7 +837,7 @@ document.write(`
 <span class="sd">    &gt;&gt;&gt; rdr = c4d.sensors.radar(origin = pedestal)</span>
 <span class="sd">    &gt;&gt;&gt; for x in tgt.data():</span>
 <span class="sd">    ...   rdr.psi += .02 * c4d.d2r </span>
-<span class="sd">    ...   rdr.measure(c4d.create(x[1:]), t = x[0], store = True)</span>
+<span class="sd">    ...   rdr.measure(c4d.create(x[1:]), t = x[0], store = True)# doctest: +IGNORE_OUTPUT </span>
 <span class="sd">    ...   rdr.store(x[0])</span>
 
 <span class="sd">  The radar yaw angle: </span>
@@ -822,13 +850,13 @@ document.write(`
 
 <span class="sd">    &gt;&gt;&gt; fig, axs = plt.subplots(2, 1)</span>
 <span class="sd">    &gt;&gt;&gt; # range    </span>
-<span class="sd">    &gt;&gt;&gt; axs[0].plot(*rdr_ideal.data(&#39;range&#39;), label = &#39;ideal static&#39;)</span>
-<span class="sd">    &gt;&gt;&gt; axs[0].plot(*rdr.data(&#39;range&#39;),label = &#39;non-ideal yawing&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; axs[0].plot(*rdr_ideal.data(&#39;range&#39;), label = &#39;ideal static&#39;) # doctest: +IGNORE_OUTPUT </span>
+<span class="sd">    &gt;&gt;&gt; axs[0].plot(*rdr.data(&#39;range&#39;),label = &#39;non-ideal yawing&#39;) # doctest: +IGNORE_OUTPUT </span>
 <span class="sd">    &gt;&gt;&gt; # angles</span>
-<span class="sd">    &gt;&gt;&gt; axs[1].plot(*rdr_ideal.data(&#39;az&#39;, c4d.r2d), label = &#39;az: ideal static&#39;)</span>
-<span class="sd">    &gt;&gt;&gt; axs[1].plot(*rdr.data(&#39;az&#39;, c4d.r2d), label = &#39;az: non-ideal yawing&#39;)</span>
-<span class="sd">    &gt;&gt;&gt; axs[1].plot(*rdr_ideal.data(&#39;el&#39;, scale = c4d.r2d), label = &#39;el: ideal static&#39;)</span>
-<span class="sd">    &gt;&gt;&gt; axs[1].plot(*rdr.data(&#39;el&#39;, scale = c4d.r2d), label = &#39;el: non-ideal yawing&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; axs[1].plot(*rdr_ideal.data(&#39;az&#39;, c4d.r2d), label = &#39;az: ideal static&#39;) # doctest: +IGNORE_OUTPUT </span>
+<span class="sd">    &gt;&gt;&gt; axs[1].plot(*rdr.data(&#39;az&#39;, c4d.r2d), label = &#39;az: non-ideal yawing&#39;) # doctest: +IGNORE_OUTPUT </span>
+<span class="sd">    &gt;&gt;&gt; axs[1].plot(*rdr_ideal.data(&#39;el&#39;, scale = c4d.r2d), label = &#39;el: ideal static&#39;) # doctest: +IGNORE_OUTPUT </span>
+<span class="sd">    &gt;&gt;&gt; axs[1].plot(*rdr.data(&#39;el&#39;, scale = c4d.r2d), label = &#39;el: non-ideal yawing&#39;) # doctest: +IGNORE_OUTPUT </span>
 
 <span class="sd">  .. figure:: /_examples/radar/yawing.png</span>
 
@@ -848,16 +876,17 @@ document.write(`
 <span class="sd">  `last_t` is the last measurement time, and `dt` is the radar time-constant: </span>
 
 <span class="sd">  .. code:: </span>
-<span class="sd">  </span>
+
+<span class="sd">    &gt;&gt;&gt; np.random.seed(770)</span>
 <span class="sd">    &gt;&gt;&gt; tgt = c4d.datapoint(x = 100, y = 100)</span>
 <span class="sd">    &gt;&gt;&gt; rdr = c4d.sensors.radar(dt = 0.01)</span>
-<span class="sd">    &gt;&gt;&gt; for t in np.arange(0, .025, .005):</span>
-<span class="sd">    ...   print(f&#39;{t}: {rdr.measure(tgt, t = t)}&#39;)</span>
-<span class="sd">    0.0:    (0.71, 0.005, 141.2)</span>
-<span class="sd">    0.005:  (None, None, None)</span>
-<span class="sd">    0.01:   (0.74, -0.007, 140.7)</span>
-<span class="sd">    0.015:  (None, None, None)</span>
-<span class="sd">    0.02:   (0.73, -0.02, 142.2)</span>
+<span class="sd">    &gt;&gt;&gt; for t in np.arange(0, .025, .005):  # doctest: +ELLIPSIS</span>
+<span class="sd">    ...   print(f&#39;{t}: {rdr.measure(tgt, t = t)}&#39;) </span>
+<span class="sd">    0.0: (0.7..., 0.01..., 140.1...)</span>
+<span class="sd">    0.005: (None, None, None)</span>
+<span class="sd">    0.01: (0.72..., -0.04..., 142.1...)</span>
+<span class="sd">    0.015: (None, None, None)</span>
+<span class="sd">    0.02: (0.72..., -0.003..., 140.4...)</span>
 
 <span class="sd">    </span>
 <span class="sd">  **Random Distribution** </span>
@@ -894,8 +923,8 @@ document.write(`
 <span class="sd">    &gt;&gt;&gt; seekers = []</span>
 <span class="sd">    &gt;&gt;&gt; radars = []</span>
 <span class="sd">    &gt;&gt;&gt; for i in range(1000):</span>
-<span class="sd">    &gt;&gt;&gt; seekers.append(seeker().bias * c4d.r2d)</span>
-<span class="sd">    &gt;&gt;&gt; radars.append(radar().bias * c4d.r2d)</span>
+<span class="sd">    ...   seekers.append(seeker().bias * c4d.r2d)</span>
+<span class="sd">    ...   radars.append(radar().bias * c4d.r2d)</span>
 
 <span class="sd"> </span>
 <span class="sd">  The histogram highlights the broadening of the distribution </span>
@@ -903,24 +932,24 @@ document.write(`
 
 
 <span class="sd">    &gt;&gt;&gt; ax = plt.subplot()</span>
-<span class="sd">    &gt;&gt;&gt; ax.hist(seekers, 30, label = &#39;Seekers&#39;)</span>
-<span class="sd">    &gt;&gt;&gt; ax.hist(radars, 30, label = &#39;Radars&#39;) </span>
+<span class="sd">    &gt;&gt;&gt; ax.hist(seekers, 30, label = &#39;Seekers&#39;) # doctest: +IGNORE_OUTPUT </span>
+<span class="sd">    &gt;&gt;&gt; ax.hist(radars, 30, label = &#39;Radars&#39;)  # doctest: +IGNORE_OUTPUT </span>
 
 <span class="sd">  .. figure:: /_examples/radar/bias2.png</span>
 
 <span class="sd">  &#39;&#39;&#39;</span>
   
-  <span class="n">rng_noise_std</span> <span class="o">=</span> <span class="mi">0</span> 
+  <span class="n">rng_noise_std</span> <span class="o">=</span> <span class="mf">0.0</span>
 
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">origin</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">isideal</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 
     <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;radar&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span> 
     <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">origin</span> <span class="o">=</span> <span class="n">origin</span><span class="p">,</span> <span class="n">isideal</span> <span class="o">=</span> <span class="n">isideal</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">rng_noise_std</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;rng_noise_std&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">range</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">rng_noise_std</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;rng_noise_std&#39;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">range</span> <span class="o">=</span> <span class="mf">0.0</span>
 
     <span class="k">if</span> <span class="n">isideal</span><span class="p">:</span> 
-      <span class="bp">self</span><span class="o">.</span><span class="n">rng_noise_std</span> <span class="o">=</span> <span class="mi">0</span> 
+      <span class="bp">self</span><span class="o">.</span><span class="n">rng_noise_std</span> <span class="o">=</span> <span class="mf">0.0</span> 
 
 
 
@@ -928,7 +957,7 @@ document.write(`
 
 <div class="viewcode-block" id="radar.measure">
 <a class="viewcode-back" href="../../../api/generated/radar/c4dynamics.sensors.radar.radar.measure.html#c4dynamics.sensors.radar.radar.measure">[docs]</a>
-  <span class="k">def</span> <span class="nf">measure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">store</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+  <span class="k">def</span> <span class="nf">measure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="s1">&#39;c4d.state&#39;</span><span class="p">,</span> <span class="n">t</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">store</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]]:</span> <span class="c1"># type: ignore</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Measures range, azimuth and elevation between the radar and a `target`. </span>
 
@@ -946,8 +975,8 @@ document.write(`
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
-<span class="sd">    target : `cartesian_state`</span>
-<span class="sd">        A state object to measure by the radar, including at least one position coordinate (x, y, z).  </span>
+<span class="sd">    target : state</span>
+<span class="sd">        A Cartesian state object to measure by the radar, including at least one position coordinate (x, y, z).  </span>
 <span class="sd">    store : bool, optional</span>
 <span class="sd">        A flag indicating whether to store the measured values. Defaults `False`.</span>
 <span class="sd">    t : float, optional</span>
@@ -982,17 +1011,35 @@ document.write(`
 <span class="sd">    later use in plotting the results.  </span>
 
 <span class="sd">    </span>
+<span class="sd">    Import required packages:</span>
+
+<span class="sd">    .. code:: </span>
+
+<span class="sd">      &gt;&gt;&gt; import c4dynamics as c4d</span>
+<span class="sd">      &gt;&gt;&gt; from matplotlib import pyplot as plt </span>
+<span class="sd">      &gt;&gt;&gt; import numpy as np </span>
+
+
+
+<span class="sd">    Settings and initial conditions:</span>
+
 <span class="sd">    .. code:: </span>
 
 <span class="sd">      &gt;&gt;&gt; dt = 0.01</span>
+<span class="sd">      &gt;&gt;&gt; np.random.seed(321)</span>
 <span class="sd">      &gt;&gt;&gt; tgt = c4d.datapoint(x = 1000, vx = -80 * c4d.kmh2ms, vy = 10 * c4d.kmh2ms)</span>
 <span class="sd">      &gt;&gt;&gt; pedestal = c4d.rigidbody(z = 30, theta = -1 * c4d.d2r)</span>
 <span class="sd">      &gt;&gt;&gt; rdr = c4d.sensors.radar(origin = pedestal, dt = 0.05)</span>
 <span class="sd">      &gt;&gt;&gt; rdr_ideal = c4d.sensors.radar(origin = pedestal, isideal = True)</span>
+<span class="sd">   </span>
+<span class="sd">    Main loop:</span>
+<span class="sd">    </span>
+<span class="sd">    .. code:: </span>
+<span class="sd">          </span>
 <span class="sd">      &gt;&gt;&gt; for t in np.arange(0, 60, dt):</span>
-<span class="sd">      ...   tgt.inteqm(np.zeros(3), dt)</span>
-<span class="sd">      ...   rdr_ideal.measure(tgt, t = t, store = True)  </span>
-<span class="sd">      ...   rdr.measure(tgt, t = t, store = True)  </span>
+<span class="sd">      ...   tgt.inteqm(np.zeros(3), dt)  # doctest: +IGNORE_OUTPUT </span>
+<span class="sd">      ...   rdr_ideal.measure(tgt, t = t, store = True)    # doctest: +IGNORE_OUTPUT </span>
+<span class="sd">      ...   rdr.measure(tgt, t = t, store = True)    # doctest: +IGNORE_OUTPUT </span>
 <span class="sd">      ...   tgt.store(t)</span>
 
 <span class="sd">    Before viewing the results, let&#39;s examine the error parameters generated by </span>
@@ -1001,26 +1048,26 @@ document.write(`
 <span class="sd">    .. code::</span>
 
 <span class="sd">      &gt;&gt;&gt; rdr.rng_noise_std</span>
-<span class="sd">      1</span>
-<span class="sd">      &gt;&gt;&gt; rdr.bias * c4d.r2d</span>
-<span class="sd">      -0.025</span>
-<span class="sd">      &gt;&gt;&gt; rdr.scale_factor</span>
-<span class="sd">      0.99 </span>
+<span class="sd">      1.0</span>
+<span class="sd">      &gt;&gt;&gt; rdr.bias * c4d.r2d # doctest: +ELLIPSIS</span>
+<span class="sd">      0.49...</span>
+<span class="sd">      &gt;&gt;&gt; rdr.scale_factor # doctest: +ELLIPSIS</span>
+<span class="sd">      1.01...</span>
 <span class="sd">      &gt;&gt;&gt; rdr.noise_std * c4d.r2d</span>
-<span class="sd">      .8 </span>
+<span class="sd">      0.8</span>
 
 <span class="sd">    Then we excpect a constant bias of -0.02° and a &#39;compression&#39; or &#39;squeeze&#39; of `5%` with </span>
 <span class="sd">    respect to the target (as represented by the ideal radar):  </span>
 <span class="sd">    </span>
 <span class="sd">    .. code::</span>
 
-<span class="sd">      &gt;&gt;&gt; ax = plt.subplots(2, 1)</span>
+<span class="sd">      &gt;&gt;&gt; _, axs = plt.subplots(2, 1)  # doctest: +IGNORE_OUTPUT</span>
 <span class="sd">      &gt;&gt;&gt; # range      </span>
-<span class="sd">      &gt;&gt;&gt; axs[0].plot(*rdr_ideal.data(&#39;range&#39;), &#39;.m&#39;, label = &#39;target&#39;)</span>
-<span class="sd">      &gt;&gt;&gt; axs[0].plot(*rdr.data(&#39;range&#39;), &#39;.c&#39;, label = &#39;radar&#39;)</span>
+<span class="sd">      &gt;&gt;&gt; axs[0].plot(*rdr_ideal.data(&#39;range&#39;), &#39;.m&#39;, label = &#39;target&#39;)  # doctest: +IGNORE_OUTPUT</span>
+<span class="sd">      &gt;&gt;&gt; axs[0].plot(*rdr.data(&#39;range&#39;), &#39;.c&#39;, label = &#39;radar&#39;)  # doctest: +IGNORE_OUTPUT</span>
 <span class="sd">      &gt;&gt;&gt; # angles </span>
-<span class="sd">      &gt;&gt;&gt; axs[1].plot(*rdr_ideal.data(&#39;az&#39;, scale = c4d.r2d), &#39;.m&#39;, label = &#39;target&#39;)</span>
-<span class="sd">      &gt;&gt;&gt; axs[1].plot(*rdr.data(&#39;az&#39;, scale = c4d.r2d), &#39;.c&#39;, label = &#39;radar&#39;)</span>
+<span class="sd">      &gt;&gt;&gt; axs[1].plot(*rdr_ideal.data(&#39;az&#39;, scale = c4d.r2d), &#39;.m&#39;, label = &#39;target&#39;)  # doctest: +IGNORE_OUTPUT</span>
+<span class="sd">      &gt;&gt;&gt; axs[1].plot(*rdr.data(&#39;az&#39;, scale = c4d.r2d), &#39;.c&#39;, label = &#39;radar&#39;)  # doctest: +IGNORE_OUTPUT</span>
 <span class="sd">      </span>
 <span class="sd">    .. figure:: /_examples/radar/measure.png</span>
 
@@ -1050,142 +1097,31 @@ document.write(`
     
     
 
-<span class="k">class</span> <span class="nc">dzradar</span><span class="p">:</span>
-<span class="w">  </span><span class="sd">&#39;&#39;&#39; </span>
-<span class="sd">  altitude radar</span>
-<span class="sd">  </span>
-<span class="sd">  Parameters</span>
-<span class="sd">  ==========</span>
-<span class="sd">  TODO complete </span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
 
-<span class="sd">  </span>
-<span class="sd">  an electromagnetic radar </span>
-<span class="sd">  meausres target vertical position.</span>
-<span class="sd">  vk: noise variance  </span>
-
-<span class="sd">  TODO change this to be `sensor` namely a general sensor </span>
-<span class="sd">  that measure any magnitude following an error model </span>
-<span class="sd">  (starting simply with bias sf.). </span>
-<span class="sd">  then remove the range measure from the seeker and </span>
-<span class="sd">  use this that here. </span>
-
-<span class="sd">  &#39;&#39;&#39;</span>
+  <span class="kn">import</span> <span class="nn">doctest</span><span class="o">,</span> <span class="nn">contextlib</span><span class="o">,</span> <span class="nn">os</span>
+  <span class="kn">from</span> <span class="nn">c4dynamics</span> <span class="kn">import</span> <span class="n">IgnoreOutputChecker</span><span class="p">,</span> <span class="n">cprint</span>
   
-  <span class="c1"># </span>
-  <span class="c1"># state vector</span>
-  <span class="c1">#   r position (in one dimension range)</span>
-  <span class="c1">#   v velocity </span>
-  <span class="c1">#   b ballistic coefficient </span>
-  <span class="c1">##</span>
-  <span class="n">r</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># measured range </span>
-  <span class="c1"># vx = 0 # velocity </span>
-  
-  
-  <span class="n">ts</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># 50e-3                        # sample time </span>
-  <span class="n">q33</span> <span class="o">=</span> <span class="mi">0</span>
-  <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>   <span class="c1"># time, z target, v target, beta target </span>
-  
-  <span class="c1"># luenberger gains </span>
-  <span class="n">L</span> <span class="o">=</span> <span class="mi">0</span>
-  
-  <span class="c1"># </span>
-  <span class="c1"># seeker errors </span>
-  <span class="c1">##</span>
-  <span class="n">bias</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># deg</span>
-  <span class="n">sf</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># scale factor error -10%</span>
-  <span class="n">noise</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">500</span> <span class="o">*</span> <span class="n">c4d</span><span class="o">.</span><span class="n">ft2m</span><span class="p">)</span> <span class="c1"># 1 sigma </span>
-  <span class="c1"># misalignment = 0.01 # deg</span>
+  <span class="c1"># Register the custom OutputChecker</span>
+  <span class="n">doctest</span><span class="o">.</span><span class="n">OutputChecker</span> <span class="o">=</span> <span class="n">IgnoreOutputChecker</span>
 
-  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">filtype</span><span class="p">,</span> <span class="n">ts</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">      initial estimate: </span>
-<span class="sd">      100025 ft    25ft error</span>
-<span class="sd">      6150 ft/s    150ft/s error</span>
-<span class="sd">      800 lb/ft^2  300lb/ft^2 </span>
-<span class="sd">    &#39;&#39;&#39;</span>
-    <span class="n">obj</span><span class="o">.</span><span class="n">ts</span> <span class="o">=</span> <span class="n">ts</span>
-    <span class="k">if</span> <span class="n">filtype</span> <span class="o">==</span> <span class="n">c4d</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">filtertype</span><span class="o">.</span><span class="n">ex_kalman</span><span class="p">:</span>
-      <span class="n">obj</span><span class="o">.</span><span class="n">ifilter</span> <span class="o">=</span> <span class="n">c4d</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">kalman</span><span class="p">(</span><span class="n">x0</span>
-                                           <span class="p">,</span> <span class="p">[</span><span class="n">obj</span><span class="o">.</span><span class="n">noise</span>
-                                              <span class="p">,</span> <span class="mf">141.42</span> <span class="o">*</span> <span class="n">c4d</span><span class="o">.</span><span class="n">ft2m</span>
-                                              <span class="p">,</span> <span class="mi">300</span> <span class="o">*</span> <span class="n">c4d</span><span class="o">.</span><span class="n">lbft2tokgm2</span><span class="p">]</span>
-                                           <span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">ts</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">filtype</span> <span class="o">==</span> <span class="n">c4d</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">filtertype</span><span class="o">.</span><span class="n">luenberger</span><span class="p">:</span>
-      <span class="c1"># linear model</span>
-      <span class="n">beta0</span> <span class="o">=</span> <span class="n">x0</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-      <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="mf">0.0034</span> <span class="o">*</span> <span class="n">c4d</span><span class="o">.</span><span class="n">g_ms2</span> <span class="o">/</span> <span class="n">beta0</span><span class="p">)</span>
-                                <span class="p">,</span> <span class="o">-</span><span class="n">c4d</span><span class="o">.</span><span class="n">g_ms2</span> <span class="o">/</span> <span class="n">beta0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
-      <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-      <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-      <span class="n">obj</span><span class="o">.</span><span class="n">ifilter</span> <span class="o">=</span> <span class="n">c4d</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">luenberger</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">filtype</span> <span class="o">==</span> <span class="n">c4d</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">filtertype</span><span class="o">.</span><span class="n">lowpass</span><span class="p">:</span>
-      <span class="n">obj</span><span class="o">.</span><span class="n">ifilter</span> <span class="o">=</span> <span class="n">c4d</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">lowpass</span><span class="p">(</span><span class="mf">.2</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">ts</span><span class="p">,</span> <span class="n">x0</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-      <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;filter type error&#39;</span><span class="p">)</span>
-      
-    <span class="n">obj</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  
-      
-      
-  <span class="k">def</span> <span class="nf">measure</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-    <span class="c1"># </span>
-    <span class="c1"># apply errors</span>
-    <span class="c1">##</span>
-    <span class="n">obj</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">obj</span><span class="o">.</span><span class="n">sf</span> <span class="o">+</span> <span class="n">obj</span><span class="o">.</span><span class="n">bias</span> <span class="o">+</span> <span class="n">obj</span><span class="o">.</span><span class="n">noise</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> 
-  
-      
-  <span class="k">def</span> <span class="nf">filter</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
-    
-    <span class="c1"># check that t is at time of operation </span>
-    
-    
-    <span class="k">if</span> <span class="p">(</span><span class="mi">1000</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span> <span class="o">%</span> <span class="p">(</span><span class="mi">1000</span> <span class="o">*</span> <span class="n">obj</span><span class="o">.</span><span class="n">ts</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">1e-6</span> <span class="ow">or</span> <span class="n">t</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
-      <span class="k">return</span>
-    
-    
-    <span class="c1"># print(t)</span>
-    <span class="n">rho</span> <span class="o">=</span> <span class="mf">.0034</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">obj</span><span class="o">.</span><span class="n">ifilter</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="mi">22000</span> <span class="o">/</span> <span class="n">c4d</span><span class="o">.</span><span class="n">ft2m</span><span class="p">)</span>
-    <span class="n">f21</span> <span class="o">=</span> <span class="o">-</span><span class="n">rho</span> <span class="o">*</span> <span class="n">c4d</span><span class="o">.</span><span class="n">g_ms2</span> <span class="o">*</span> <span class="n">obj</span><span class="o">.</span><span class="n">ifilter</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">44000</span> <span class="o">/</span> <span class="n">obj</span><span class="o">.</span><span class="n">ifilter</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> 
-    <span class="n">f22</span> <span class="o">=</span>  <span class="n">rho</span> <span class="o">*</span> <span class="n">c4d</span><span class="o">.</span><span class="n">g_ms2</span> <span class="o">*</span> <span class="n">obj</span><span class="o">.</span><span class="n">ifilter</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">obj</span><span class="o">.</span><span class="n">ifilter</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-    <span class="n">f23</span> <span class="o">=</span> <span class="o">-</span><span class="n">rho</span> <span class="o">*</span> <span class="n">c4d</span><span class="o">.</span><span class="n">g_ms2</span> <span class="o">*</span> <span class="n">obj</span><span class="o">.</span><span class="n">ifilter</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">/</span> <span class="n">obj</span><span class="o">.</span><span class="n">ifilter</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> 
-    
-    <span class="n">Phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">ifilter</span><span class="o">.</span><span class="n">dt</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> 
-                    <span class="p">[</span><span class="n">f21</span> <span class="o">*</span> <span class="n">obj</span><span class="o">.</span><span class="n">ifilter</span><span class="o">.</span><span class="n">dt</span><span class="p">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">f22</span> <span class="o">*</span> <span class="n">obj</span><span class="o">.</span><span class="n">ifilter</span><span class="o">.</span><span class="n">dt</span><span class="p">,</span> <span class="n">f23</span> <span class="o">*</span> <span class="n">obj</span><span class="o">.</span><span class="n">ifilter</span><span class="o">.</span><span class="n">dt</span><span class="p">],</span> 
-                    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
-    
-    <span class="n">Q</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> 
-                    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">q33</span> <span class="o">*</span> <span class="n">f23</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">obj</span><span class="o">.</span><span class="n">ifilter</span><span class="o">.</span><span class="n">dt</span><span class="o">**</span><span class="mi">3</span> <span class="o">/</span> <span class="mi">3</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">q33</span> <span class="o">*</span> <span class="n">f23</span> <span class="o">*</span> <span class="n">obj</span><span class="o">.</span><span class="n">ifilter</span><span class="o">.</span><span class="n">dt</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">2</span><span class="p">],</span> 
-                    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">q33</span> <span class="o">*</span> <span class="n">f23</span> <span class="o">*</span> <span class="n">obj</span><span class="o">.</span><span class="n">ifilter</span><span class="o">.</span><span class="n">dt</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">q33</span> <span class="o">*</span> <span class="n">obj</span><span class="o">.</span><span class="n">ifilter</span><span class="o">.</span><span class="n">dt</span><span class="p">]])</span>
+  <span class="n">tofile</span> <span class="o">=</span> <span class="kc">False</span> 
+  <span class="n">optionflags</span> <span class="o">=</span> <span class="n">doctest</span><span class="o">.</span><span class="n">FAIL_FAST</span>
 
-    <span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="n">c4d</span><span class="o">.</span><span class="n">sensors</span><span class="o">.</span><span class="n">dzradar</span><span class="o">.</span><span class="n">system_model</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">tofile</span><span class="p">:</span> 
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;tests&#39;</span><span class="p">,</span> <span class="s1">&#39;_out&#39;</span><span class="p">,</span> <span class="s1">&#39;output.txt&#39;</span><span class="p">),</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+      <span class="k">with</span> <span class="n">contextlib</span><span class="o">.</span><span class="n">redirect_stdout</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="n">contextlib</span><span class="o">.</span><span class="n">redirect_stderr</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">(</span><span class="n">optionflags</span> <span class="o">=</span> <span class="n">optionflags</span><span class="p">)</span> 
+  <span class="k">else</span><span class="p">:</span> 
+    <span class="n">result</span> <span class="o">=</span> <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">(</span><span class="n">optionflags</span> <span class="o">=</span> <span class="n">optionflags</span><span class="p">)</span>
 
-    <span class="c1">#</span>
-    <span class="c1"># prepare luenberger matrices</span>
-    <span class="c1">##</span>
+  <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">failed</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">cprint</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;: all tests passed!&quot;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">failed</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-<span class="w">    </span><span class="sd">&#39;&#39;&#39; predict &#39;&#39;&#39;</span>
-    <span class="n">obj</span><span class="o">.</span><span class="n">ifilter</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">Phi</span><span class="p">,</span> <span class="n">Q</span><span class="p">)</span>
-<span class="w">    </span><span class="sd">&#39;&#39;&#39; correct &#39;&#39;&#39;</span>    
-    <span class="n">x</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">ifilter</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">r</span><span class="p">)</span>  
- 
-    <span class="n">obj</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="c1">#</span>
-    <span class="c1"># store results </span>
-    <span class="c1">##</span>
- 
-    <span class="c1"># obj.data = np.concatenate((obj.data, np.expand_dims(np.insert(x, 0, t), axis = 0)), axis = 0)  </span>
-    <span class="n">obj</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">obj</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">t</span><span class="p">)))</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-    
-    <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">r</span>
 
-    
 
-  <span class="nd">@staticmethod</span>
-  <span class="k">def</span> <span class="nf">system_model</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="n">dx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="mi">1</span><span class="p">))</span>
-    <span class="n">dx</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-    <span class="n">dx</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">.0034</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float&#39;</span><span class="p">)</span> <span class="o">/</span> <span class="mi">22000</span> <span class="o">/</span> <span class="n">c4d</span><span class="o">.</span><span class="n">ft2m</span><span class="p">)</span> <span class="o">*</span> <span class="n">c4d</span><span class="o">.</span><span class="n">g_ms2</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">/</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">c4d</span><span class="o">.</span><span class="n">g_ms2</span>
-    <span class="n">dx</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">return</span> <span class="n">dx</span>
 
 </pre></div>
 
@@ -1234,7 +1170,7 @@ By C4dynamics
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Oct 07, 2024.
+  Last updated on Nov 10, 2024.
   <br/>
 </p>
   </div>

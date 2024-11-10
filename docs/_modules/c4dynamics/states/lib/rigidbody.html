@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>c4dynamics.states.lib.rigidbody &#8212; c4dynamics &lt;span class=&#34;project-version&#34;&gt;1.2&lt;/span&gt;</title>
+    <title>c4dynamics.states.lib.rigidbody &#8212; C4DYNAMICS v1.2 Manual</title>
   
   
   
@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=80d5e7a1" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/style.css?v=f9876931" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/style.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
@@ -48,7 +48,7 @@
     <link rel="search" title="Search" href="../../../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Oct 07, 2024"/>
+    <meta name="docbuild:last-update" content="Nov 10, 2024"/>
   </head>
   
   
@@ -134,7 +134,7 @@
   
   
   
-    <p class="title logo__title">c4dynamics <span class="project-version">1.2</span></p>
+    <p class="title logo__title">C4DYNAMICS v1.2 Manual</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -154,13 +154,15 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../../../index.html">
-                    C4DYNAMICS
+                    Home
                 </a>
             </li>
         </ul>
         <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../gettingstarted.html">Getting Started</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../../api/index.html">API Reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../api/States.html">State objects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../api/States.html">State Objects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../../api/states.state.html">The state class</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/generated/state/c4dynamics.states.state.state.X.html">c4dynamics.states.state.state.X</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/generated/state/c4dynamics.states.state.state.X0.html">c4dynamics.states.state.state.X0</a></li>
@@ -229,7 +231,7 @@
 </details></li>
 </ul>
 </details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../api/Utils.html">Utils</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../api/Routines.html">Routines</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../../api/utils.eqm.html">Equations of motion solvers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/generated/eqm/c4dynamics.eqm.derivs.eqm3.html">c4dynamics.eqm.derivs.eqm3</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/generated/eqm/c4dynamics.eqm.derivs.eqm6.html">c4dynamics.eqm.derivs.eqm6</a></li>
@@ -246,6 +248,9 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/generated/rotmat/c4dynamics.rotmat.animate.animate.html">c4dynamics.rotmat.animate.animate</a></li>
 </ul>
 </details></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../api/Utils.html">Utils</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/utils.math.html">Math functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/utils.const.html">Constants</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../../api/utils.misc.html">Misc</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -373,12 +378,10 @@ document.write(`
                   
   <h1>Source code for c4dynamics.states.lib.rigidbody</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="c1"># from scipy.integrate import solve_ivp </span>
+<span class="kn">import</span> <span class="nn">sys</span> 
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">c4dynamics</span> <span class="k">as</span> <span class="nn">c4d</span> 
 
-<span class="kn">import</span> <span class="nn">c4dynamics</span> <span class="k">as</span> <span class="nn">c4d</span>
-<span class="c1"># from c4dynamics.src.main.py.eqm.eqm6 import eqm6</span>
-<span class="kn">from</span> <span class="nn">c4dynamics.eqm</span> <span class="kn">import</span> <span class="n">eqm6</span>
-<span class="kn">from</span> <span class="nn">c4dynamics.rotmat</span> <span class="kn">import</span> <span class="n">dcm321</span>
 <span class="kn">from</span> <span class="nn">c4dynamics.states.lib.datapoint</span> <span class="kn">import</span> <span class="n">datapoint</span>
 
 <div class="viewcode-block" id="rigidbody">
@@ -440,8 +443,12 @@ document.write(`
 
 <span class="sd">  .. code::</span>
 
-<span class="sd">    &gt;&gt;&gt; rb = c4d.rigidbody(z = 1000, theta = 10 * c4d.d2r, q = 0.5 * c4d.d2r)</span>
-<span class="sd">    &gt;&gt;&gt; rb.X0</span>
+<span class="sd">    &gt;&gt;&gt; from c4dynamics import rigidbody</span>
+
+<span class="sd">  .. code::</span>
+
+<span class="sd">    &gt;&gt;&gt; rb = rigidbody(z = 1000, theta = 10 * c4d.d2r, q = 0.5 * c4d.d2r)</span>
+<span class="sd">    &gt;&gt;&gt; rb.X0 # doctest: +NUMPY_FORMAT</span>
 <span class="sd">    [0  0  1000  0  0  0  0  0.174  0  0  0.0087  0]</span>
 
 
@@ -488,9 +495,9 @@ document.write(`
 <span class="sd">  `scipy&#39;s odeint` is employed to solve the </span>
 <span class="sd">  dynamics equations and update the state vector `X`. </span>
 
+<span class="sd">  </span>
 <span class="sd">  import required packages: </span>
 
-<span class="sd">  </span>
 <span class="sd">  .. code:: </span>
 <span class="sd">  </span>
 <span class="sd">    &gt;&gt;&gt; import c4dynamics as c4d </span>
@@ -498,6 +505,8 @@ document.write(`
 <span class="sd">    &gt;&gt;&gt; from scipy.integrate import odeint</span>
 <span class="sd">    &gt;&gt;&gt; import numpy as np </span>
 <span class="sd">  </span>
+<span class="sd">    </span>
+<span class="sd">  Settings and initial conditions: </span>
 <span class="sd">    </span>
 <span class="sd">  .. code:: </span>
 <span class="sd">  </span>
@@ -515,9 +524,9 @@ document.write(`
 
 <span class="sd">  .. code:: </span>
 <span class="sd">    </span>
-<span class="sd">    &gt;&gt;&gt; f16.plot(&#39;z&#39;)</span>
-<span class="sd">    &gt;&gt;&gt; f16.plot(&#39;z&#39;, ax = ax[0])</span>
-<span class="sd">    &gt;&gt;&gt; ax[0].set(xlabel = &#39;&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; _, ax = plt.subplots(2, 1) </span>
+<span class="sd">    &gt;&gt;&gt; f16.plot(&#39;z&#39;, ax = ax[0])   # doctest: +IGNORE_OUTPUT</span>
+<span class="sd">    &gt;&gt;&gt; ax[0].set(xlabel = &#39;&#39;)  # doctest: +IGNORE_OUTPUT</span>
 <span class="sd">    &gt;&gt;&gt; f16.plot(&#39;theta&#39;, ax = ax[1], scale = c4d.r2d)</span>
 <span class="sd">    &gt;&gt;&gt; plt.show()</span>
 
@@ -532,6 +541,7 @@ document.write(`
 <span class="sd">  .. code:: </span>
 
 <span class="sd">    &gt;&gt;&gt; modelpath = c4d.datasets.d3_model(&#39;f16&#39;) </span>
+<span class="sd">    Fetched successfully</span>
 
 <span class="sd">  .. code:: </span>
 
@@ -541,6 +551,13 @@ document.write(`
 <span class="sd">  .. figure:: /_examples/rigidbody/rb_intro_ap.gif</span>
 
 <span class="sd">  &#39;&#39;&#39;</span>
+  <span class="n">phi</span><span class="p">:</span> <span class="nb">float</span>
+  <span class="n">theta</span><span class="p">:</span> <span class="nb">float</span>
+  <span class="n">psi</span><span class="p">:</span> <span class="nb">float</span>
+  <span class="n">p</span><span class="p">:</span> <span class="nb">float</span>
+  <span class="n">q</span><span class="p">:</span> <span class="nb">float</span>
+  <span class="n">r</span><span class="p">:</span> <span class="nb">float</span>
+  
 
   <span class="n">_ixx</span> <span class="o">=</span> <span class="mi">0</span>
   <span class="n">_iyy</span> <span class="o">=</span> <span class="mi">0</span>
@@ -618,34 +635,64 @@ document.write(`
 <span class="sd">    :math:`g` is the gravity acceleration, </span>
 <span class="sd">    and :math:`I` is the moment of inertia about :math:`y`, :math:`I_{yy1} = 0.5, I_{yy2} = 0.05`</span>
 
+<span class="sd">    </span>
+<span class="sd">    Import required packages: </span>
+
 <span class="sd">    .. code::</span>
 
+<span class="sd">      &gt;&gt;&gt; import c4dynamics as c4d</span>
+<span class="sd">      &gt;&gt;&gt; from matplotlib import pyplot as plt  </span>
 <span class="sd">      &gt;&gt;&gt; from scipy.integrate import odeint</span>
-<span class="sd">      &gt;&gt;&gt; b = .05</span>
-<span class="sd">      &gt;&gt;&gt; dt = .5e-3 </span>
+<span class="sd">      &gt;&gt;&gt; import numpy as np </span>
+
+<span class="sd">      </span>
+<span class="sd">    Settings and initial condtions: </span>
+
+<span class="sd">    .. code::</span>
+
+<span class="sd">      &gt;&gt;&gt; b = 0.5</span>
+<span class="sd">      &gt;&gt;&gt; dt = 0.01 </span>
 <span class="sd">      &gt;&gt;&gt; g = c4d.g_ms2 </span>
 <span class="sd">      &gt;&gt;&gt; theta0 = 80 * c4d.d2r</span>
 <span class="sd">      &gt;&gt;&gt; rb05  = c4d.rigidbody(theta = theta0)</span>
 <span class="sd">      &gt;&gt;&gt; rb05.I = [0, .5, 0] </span>
 <span class="sd">      &gt;&gt;&gt; rb005 = c4d.rigidbody(theta = theta0)</span>
 <span class="sd">      &gt;&gt;&gt; rb005.I = [0, .05, 0]</span>
-<span class="sd">      &gt;&gt;&gt; # physical pendulum dynamics </span>
+
+<span class="sd">      </span>
+
+<span class="sd">    Physical pendulum dynamics: </span>
+
+<span class="sd">    .. code::</span>
+
 <span class="sd">      &gt;&gt;&gt; def pendulum(yin, t, Iyy):</span>
 <span class="sd">      ...   theta, q = yin[7], yin[10]</span>
 <span class="sd">      ...   yout = np.zeros(12)</span>
-<span class="sd">      ...   yout[7]  =  q</span>
+<span class="sd">      ...   yout[7] = q</span>
 <span class="sd">      ...   yout[10] = -g * c4d.sin(theta) / Iyy - b * q</span>
 <span class="sd">      ...   return yout</span>
-<span class="sd">      &gt;&gt;&gt; # main loop </span>
-<span class="sd">      &gt;&gt;&gt; for ti in np.arange(0, 10, dt):</span>
+
+<span class="sd">      </span>
+
+<span class="sd">    Main loop </span>
+
+<span class="sd">    .. code::</span>
+
+<span class="sd">      &gt;&gt;&gt; for ti in np.arange(0, 5, dt):</span>
 <span class="sd">      ...   # Iyy = 0.5 </span>
 <span class="sd">      ...   rb05.X = odeint(pendulum, rb05.X, [ti, ti + dt], (rb05.I[1],))[1]</span>
 <span class="sd">      ...   rb05.store(ti)</span>
 <span class="sd">      ...   # Iyy = 0.05 </span>
-<span class="sd">      ...   rb005.X = odeint(pendulum, rb005.X, [ti, ti + dt], (rb005.I[1]))[1]</span>
+<span class="sd">      ...   rb005.X = odeint(pendulum, rb005.X, [ti, ti + dt], (rb005.I[1],))[1]</span>
 <span class="sd">      ...   rb005.store(ti)</span>
+
+<span class="sd">      </span>
+<span class="sd">    Plot results:</span>
+
+<span class="sd">    .. code::</span>
+
 <span class="sd">      &gt;&gt;&gt; rb05.plot(&#39;theta&#39;)</span>
-<span class="sd">      &gt;&gt;&gt; rb005.plot(&#39;theta&#39;, ax = plt.gca())</span>
+<span class="sd">      &gt;&gt;&gt; rb005.plot(&#39;theta&#39;, ax = plt.gca(), color = &#39;c&#39;)</span>
 <span class="sd">      &gt;&gt;&gt; plt.show()</span>
 <span class="sd">    </span>
 <span class="sd">    .. figure:: /_examples/rigidbody/Iyy_pendulum.png</span>
@@ -659,8 +706,6 @@ document.write(`
     <span class="bp">self</span><span class="o">.</span><span class="n">_ixx</span> <span class="o">=</span> <span class="n">I</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>   
     <span class="bp">self</span><span class="o">.</span><span class="n">_iyy</span> <span class="o">=</span> <span class="n">I</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  
     <span class="bp">self</span><span class="o">.</span><span class="n">_izz</span> <span class="o">=</span> <span class="n">I</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>  
-
-
 
 
   <span class="nd">@property</span>
@@ -688,7 +733,7 @@ document.write(`
 <span class="sd">    .. code:: </span>
 <span class="sd">    </span>
 <span class="sd">      &gt;&gt;&gt; rb = c4d.rigidbody(phi = 135)</span>
-<span class="sd">      &gt;&gt;&gt; rb.angles</span>
+<span class="sd">      &gt;&gt;&gt; rb.angles # doctest: +NUMPY_FORMAT </span>
 <span class="sd">      [135  0  0]</span>
 <span class="sd">    </span>
 <span class="sd">    &#39;&#39;&#39;</span>
@@ -721,14 +766,12 @@ document.write(`
 
 <span class="sd">      &gt;&gt;&gt; q0 = 30</span>
 <span class="sd">      &gt;&gt;&gt; rb = c4d.rigidbody(q = q0)</span>
-<span class="sd">      &gt;&gt;&gt; rb.ang_rates</span>
+<span class="sd">      &gt;&gt;&gt; rb.ang_rates # doctest: +NUMPY_FORMAT </span>
 <span class="sd">      [0  30  0]</span>
 
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">q</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">r</span><span class="p">])</span>
 
-
-  
 
   <span class="nd">@property</span>
   <span class="k">def</span> <span class="nf">BR</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> 
@@ -789,12 +832,12 @@ document.write(`
 <span class="sd">      &gt;&gt;&gt; v_inertial = [1, 0, 0]</span>
 <span class="sd">      &gt;&gt;&gt; rb = c4d.rigidbody(psi = 45 * c4d.d2r)</span>
 <span class="sd">      &gt;&gt;&gt; v_body = rb.BR @ v_inertial </span>
-<span class="sd">      &gt;&gt;&gt; v_body</span>
-<span class="sd">      [0.707  -0.707  0]</span>
+<span class="sd">      &gt;&gt;&gt; v_body  # doctest: +NUMPY_FORMAT  </span>
+<span class="sd">      [0.707  -0.707  0.0]</span>
 
 <span class="sd">    &#39;&#39;&#39;</span>
 
-    <span class="k">return</span> <span class="n">dcm321</span><span class="p">(</span><span class="n">phi</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">phi</span><span class="p">,</span> <span class="n">theta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">theta</span><span class="p">,</span> <span class="n">psi</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">psi</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">c4d</span><span class="o">.</span><span class="n">rotmat</span><span class="o">.</span><span class="n">dcm321</span><span class="p">(</span><span class="n">phi</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">phi</span><span class="p">,</span> <span class="n">theta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">theta</span><span class="p">,</span> <span class="n">psi</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">psi</span><span class="p">)</span>
 
 
   <span class="nd">@property</span> 
@@ -859,18 +902,16 @@ document.write(`
 <span class="sd">      &gt;&gt;&gt; v_body = [np.sqrt(3), 0, 1]</span>
 <span class="sd">      &gt;&gt;&gt; rb = c4d.rigidbody(theta = 30 * c4d.d2r)</span>
 <span class="sd">      &gt;&gt;&gt; v_inertial = rb.RB @ v_body</span>
-<span class="sd">      &gt;&gt;&gt; v_inertial</span>
-<span class="sd">      [2  0  0]</span>
+<span class="sd">      &gt;&gt;&gt; v_inertial   # doctest: +NUMPY_FORMAT </span>
+<span class="sd">      [2.0  0.0  0.0]</span>
 
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">BR</span><span class="p">)</span>
 
 
-
-
 <div class="viewcode-block" id="rigidbody.inteqm">
 <a class="viewcode-back" href="../../../../api/generated/rb/c4dynamics.states.lib.rigidbody.rigidbody.inteqm.html#c4dynamics.states.lib.rigidbody.rigidbody.inteqm">[docs]</a>
-  <span class="k">def</span> <span class="nf">inteqm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">forces</span><span class="p">,</span> <span class="n">moments</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
+  <span class="k">def</span> <span class="nf">inteqm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">forces</span><span class="p">,</span> <span class="n">moments</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span> <span class="c1"># type: ignore </span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Advances the state vector, :attr:`rigidbody.X &lt;c4dynamics.states.state.state.X&gt;`, </span>
 <span class="sd">    with respect to the input</span>
@@ -919,17 +960,40 @@ document.write(`
 <span class="sd">    A torque is applied by spacecraft thrusters to stabilize </span>
 <span class="sd">    the roll in a constant rate.  </span>
 
+<span class="sd">    Import required packages: </span>
+
+<span class="sd">    .. code::</span>
+
+<span class="sd">      &gt;&gt;&gt; import c4dynamics as c4d </span>
+<span class="sd">      &gt;&gt;&gt; from matplotlib import pyplot as plt </span>
+<span class="sd">      &gt;&gt;&gt; import numpy as np </span>
+
+<span class="sd">    </span>
+<span class="sd">    Settings and initial conditions: </span>
+
 <span class="sd">    .. code::</span>
 
 <span class="sd">      &gt;&gt;&gt; dt = 0.001</span>
 <span class="sd">      &gt;&gt;&gt; torque = [0.1, 0, 0]</span>
 <span class="sd">      &gt;&gt;&gt; rb = c4d.rigidbody()</span>
 <span class="sd">      &gt;&gt;&gt; rb.I = [0.5, 0, 0]  # Moment of inertia about x</span>
+
+<span class="sd">      </span>
+<span class="sd">    Main loop: </span>
+
+<span class="sd">    .. code::</span>
+
 <span class="sd">      &gt;&gt;&gt; for ti in np.arange(0, 5, dt):</span>
-<span class="sd">      ...   rb.inteqm(np.zeros(3), torque, dt)  </span>
+<span class="sd">      ...   rb.inteqm(np.zeros(3), torque, dt)  # doctest: +IGNORE_OUTPUT</span>
 <span class="sd">      ...   if rb.p &gt;= 10 * c4d.d2r:</span>
 <span class="sd">      ...     torque = [0, 0, 0]</span>
 <span class="sd">      ...   rb.store(ti)  </span>
+
+<span class="sd">      </span>
+<span class="sd">    Plot results: </span>
+
+<span class="sd">    .. code:: </span>
+
 <span class="sd">      &gt;&gt;&gt; rb.plot(&#39;p&#39;)</span>
 <span class="sd">      &gt;&gt;&gt; plt.show()</span>
 
@@ -937,8 +1001,10 @@ document.write(`
 <span class="sd">        </span>
 <span class="sd">    </span>
 <span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1"># from c4dynamics.eqm import eqm6</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">acc</span> <span class="o">=</span> <span class="n">c4d</span><span class="o">.</span><span class="n">eqm</span><span class="o">.</span><span class="n">int6</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">forces</span><span class="p">,</span> <span class="n">moments</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="n">derivs_out</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">acc</span> </div>
+
 
 
 <div class="viewcode-block" id="rigidbody.animate">
@@ -946,48 +1012,53 @@ document.write(`
   <span class="k">def</span> <span class="nf">animate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">modelpath</span><span class="p">,</span> <span class="n">angle0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> 
               <span class="p">,</span> <span class="n">modelcolor</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="mf">1e-3</span> 
                 <span class="p">,</span> <span class="n">savedir</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">cbackground</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]):</span>
+
     <span class="n">c4d</span><span class="o">.</span><span class="n">rotmat</span><span class="o">.</span><span class="n">animate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">modelpath</span><span class="p">,</span> <span class="n">angle0</span><span class="p">,</span> <span class="n">modelcolor</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="n">savedir</span><span class="p">,</span> <span class="n">cbackground</span><span class="p">)</span></div>
 </div>
 
 
 
 
-    
-  <span class="c1"># @property</span>
-  <span class="c1"># def xcm(self): </span>
-  <span class="c1">#   &#39;&#39;&#39; </span>
-  <span class="c1">#   Gets and sets the rigidbody center of mass. </span>
-
-  <span class="c1">#   Default: :math:`xcm = 0`. </span>
-
-  <span class="c1">#   Parameters</span>
-  <span class="c1">#   ----------</span>
-  <span class="c1">#   xcm : float or int </span>
-  <span class="c1">#       Center of mass of the rigidbody object. </span>
-
-  <span class="c1">#   Returns</span>
-  <span class="c1">#   -------</span>
-  <span class="c1">#   out : int or float  </span>
-  <span class="c1">#       A scalar representing the current center of mass of the object.  </span>
-  
-        
-  <span class="c1">#   Examples</span>
-  <span class="c1">#   --------</span>
-
-  <span class="c1">#   .. code:: </span>
-    
-  <span class="c1">#     &gt;&gt;&gt; rb = c4d.rigidbody(phi = 135 * c4d.d2r)</span>
-  <span class="c1">#     &gt;&gt;&gt; rb.angles * c4d.r2d</span>
-  <span class="c1">#     [135.   0.   0.]</span>
-    
-  <span class="c1">#   &#39;&#39;&#39;</span>
-
-  <span class="c1">#   return self._xcm </span>
-  
-  <span class="c1"># @xcm.setter</span>
-  <span class="c1"># def xcm(self, xcm): </span>
-  <span class="c1">#   self._xcm = xcm  </span>
 <span class="n">rigidbody</span><span class="o">.</span><span class="n">animate</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="n">c4d</span><span class="o">.</span><span class="n">rotmat</span><span class="o">.</span><span class="n">animate</span><span class="o">.</span><span class="vm">__doc__</span> 
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+
+  <span class="kn">import</span> <span class="nn">doctest</span><span class="o">,</span> <span class="nn">contextlib</span><span class="o">,</span> <span class="nn">os</span>
+  <span class="kn">from</span> <span class="nn">c4dynamics</span> <span class="kn">import</span> <span class="n">IgnoreOutputChecker</span><span class="p">,</span> <span class="n">cprint</span>
+  
+  <span class="c1"># Register the custom OutputChecker</span>
+  <span class="n">doctest</span><span class="o">.</span><span class="n">OutputChecker</span> <span class="o">=</span> <span class="n">IgnoreOutputChecker</span>
+
+  <span class="n">tofile</span> <span class="o">=</span> <span class="kc">False</span> 
+  <span class="n">optionflags</span> <span class="o">=</span> <span class="n">doctest</span><span class="o">.</span><span class="n">FAIL_FAST</span>
+
+
+  <span class="c1"># Filter out tests for the animate method by overriding the testmod.</span>
+  <span class="k">def</span> <span class="nf">custom_testmod</span><span class="p">(</span><span class="n">module</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">tests</span> <span class="o">=</span> <span class="n">doctest</span><span class="o">.</span><span class="n">DocTestFinder</span><span class="p">()</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">module</span><span class="p">)</span>
+    
+    <span class="n">tests</span> <span class="o">=</span> <span class="p">[</span><span class="n">test</span> <span class="k">for</span> <span class="n">test</span> <span class="ow">in</span> <span class="n">tests</span> <span class="k">if</span> <span class="n">test</span><span class="o">.</span><span class="n">name</span> <span class="o">!=</span> <span class="s2">&quot;__main__.rigidbody.animate&quot;</span><span class="p">]</span>  <span class="c1"># Exclude animate</span>
+
+    <span class="n">runner</span> <span class="o">=</span> <span class="n">doctest</span><span class="o">.</span><span class="n">DocTestRunner</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">test</span> <span class="ow">in</span> <span class="n">tests</span><span class="p">:</span>
+      <span class="n">runner</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">runner</span><span class="o">.</span><span class="n">summarize</span><span class="p">()</span>
+
+
+
+  <span class="k">if</span> <span class="n">tofile</span><span class="p">:</span> 
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;tests&#39;</span><span class="p">,</span> <span class="s1">&#39;_out&#39;</span><span class="p">,</span> <span class="s1">&#39;output.txt&#39;</span><span class="p">),</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+      <span class="k">with</span> <span class="n">contextlib</span><span class="o">.</span><span class="n">redirect_stdout</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="n">contextlib</span><span class="o">.</span><span class="n">redirect_stderr</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">custom_testmod</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">[</span><span class="vm">__name__</span><span class="p">],</span> <span class="n">optionflags</span><span class="o">=</span><span class="n">optionflags</span><span class="p">)</span> 
+  <span class="k">else</span><span class="p">:</span> 
+    <span class="n">result</span> <span class="o">=</span> <span class="n">custom_testmod</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">[</span><span class="vm">__name__</span><span class="p">],</span> <span class="n">optionflags</span><span class="o">=</span><span class="n">optionflags</span><span class="p">)</span>
+
+  <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">failed</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">cprint</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;: all tests passed!&quot;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">failed</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 
 
@@ -1039,7 +1110,7 @@ By C4dynamics
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Oct 07, 2024.
+  Last updated on Nov 10, 2024.
   <br/>
 </p>
   </div>

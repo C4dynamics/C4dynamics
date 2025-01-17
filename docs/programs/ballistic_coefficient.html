@@ -55,7 +55,7 @@
     <link rel="prev" title="6 Degrees Of Freedom Missile Guidance Simulation" href="dof6sim.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jan 09, 2025"/>
+    <meta name="docbuild:last-update" content="Jan 17, 2025"/>
   </head>
   
   
@@ -475,7 +475,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p>To download this notebook, click the download icon in the toolbar above and select the .ipynb format.</p>
+  <ul class="simple">
+<li><p>To download this notebook, click the download icon in the toolbar above and select the .ipynb format.</p></li>
+<li><p>For any questions or comments, please open an issue on the <a class="reference external" href="https://github.com/C4dynamics/C4dynamics/issues">c4dynamics issues page</a>.</p></li>
+</ul>
 <section id="Ballistic-Coefficient-Estimation-using-Extended-Kalman-Filter">
 <h1>Ballistic Coefficient Estimation using Extended Kalman Filter<a class="headerlink" href="#Ballistic-Coefficient-Estimation-using-Extended-Kalman-Filter" title="Link to this heading">#</a></h1>
 <p>An estimatation of the ballistic coefficient of a target in a free fall tracked by a noisy altimeter radar.</p>
@@ -494,8 +497,8 @@ document.write(`
 <h2>Extended Kalman Filter (EKF)<a class="headerlink" href="#Extended-Kalman-Filter-(EKF)" title="Link to this heading">#</a></h2>
 <p>The basics of EKF were covered in <a class="reference external" href="https://c4dynamics.github.io/C4dynamics/api/Filters.html#extended-kalman-filter-ekf">the filters introduction</a> to provide the background material required for the understanding and developing state estimation for nonlinear systems. Here is a brief recap:</p>
 <ul class="simple">
-<li><p>A linear Kalman filter (kalman) should be the first choice when designing a state observer. However, when a nominal trajectory cannot be found, the solution is to linearize the system at each cycle about the current estimated state.</p></li>
-<li><p>The linearization is required for the iterative solution to the algebraic Riccati equation using to calculate Kalman gain and the optimal covariance matrix.</p></li>
+<li><p>A linear Kalman filter (<a class="reference external" href="https://c4dynamics.github.io/C4dynamics/api/filters.kalman.html">kalman</a>) should be the first choice when designing a state observer. However, when a nominal trajectory cannot be found, the solution is to linearize the system at each cycle about the current estimated state (that is what the EKF does).</p></li>
+<li><p>The linearization is required for the iterative solution to the algebraic Riccati equation. The Riccati equation is using to calculate Kalman gain and the optimal covariance matrix.</p></li>
 <li><p>Similarly to the linear Kalman filter, a good approach to design an extended Kalman filter is to separate it to two steps: predict and update (correct).</p></li>
 <li><p>The calculation of the state vector both in the predict step (projection in time using the process equations) and in the update step (correction using the measure equations) does not have to use the approximated linear expressions and can use the exact nonlinear equations.</p></li>
 </ul>
@@ -503,7 +506,7 @@ document.write(`
 <section id="Setup">
 <h2>Setup<a class="headerlink" href="#Setup" title="Link to this heading">#</a></h2>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">c4dynamics</span> <span class="k">as</span> <span class="nn">c4d</span>
@@ -513,7 +516,7 @@ document.write(`
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dt</span><span class="p">,</span> <span class="n">tf</span> <span class="o">=</span> <span class="mf">.01</span><span class="p">,</span> <span class="mi">30</span>
@@ -569,7 +572,7 @@ v_z \\
 </div>
 <p>In the form of <code class="docutils literal notranslate"><span class="pre">ODE</span></code> function, these equations are given in the ballistic function:</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ballistics</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
@@ -592,7 +595,7 @@ v_z \\
 <section id="Setup-&amp;-Initial-Conditions">
 <h3>Setup &amp; Initial Conditions<a class="headerlink" href="#Setup-&-Initial-Conditions" title="Link to this heading">#</a></h3>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tgt</span> <span class="o">=</span> <span class="n">c4d</span><span class="o">.</span><span class="n">state</span><span class="p">(</span><span class="n">z</span> <span class="o">=</span> <span class="mi">100000</span><span class="p">,</span> <span class="n">vz</span> <span class="o">=</span> <span class="o">-</span><span class="mi">6000</span><span class="p">,</span> <span class="n">beta</span> <span class="o">=</span> <span class="mi">500</span><span class="p">)</span>
@@ -607,9 +610,9 @@ v_z \\
 </section>
 <section id="Main-Loop">
 <h3>Main Loop<a class="headerlink" href="#Main-Loop" title="Link to this heading">#</a></h3>
-<p>The main loop in the ideal does three things: 1. Stores the current state 2. Integrates the system equations of motion 3. Samples the radar</p>
+<p>The main loop in the ideal case does three things: 1. Stores the current state 2. Integrates the system equations of motion 3. Samples the radar</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tspan</span><span class="p">:</span>
@@ -623,10 +626,16 @@ v_z \\
 <section id="Plotting">
 <h3>Plotting<a class="headerlink" href="#Plotting" title="Link to this heading">#</a></h3>
 <p>Let’s write a plotting function to draw the results in the ideal case as well as in later cases.</p>
-<p>The parameters of the function <code class="docutils literal notranslate"><span class="pre">drawekf()</span></code> enable to control the elements of the components to draw: - <code class="docutils literal notranslate"><span class="pre">ekf</span></code>: estimated object - <code class="docutils literal notranslate"><span class="pre">trueobj</span></code>: ground truth reference to the estimation - <code class="docutils literal notranslate"><span class="pre">measure</span></code>: the raw samples of the sensor - <code class="docutils literal notranslate"><span class="pre">std</span></code>: the square root of the covariance matrix <span class="math notranslate nohighlight">\(P\)</span>, representing one standard deviation of the estimation error</p>
+<div class="line-block">
+<div class="line">The parameters of the function <code class="docutils literal notranslate"><span class="pre">drawekf()</span></code> enable to control the elements of the components to draw:</div>
+<div class="line">- <code class="docutils literal notranslate"><span class="pre">ekf</span></code>: estimated object</div>
+<div class="line">- <code class="docutils literal notranslate"><span class="pre">trueobj</span></code>: ground truth reference to the estimation</div>
+<div class="line">- <code class="docutils literal notranslate"><span class="pre">measure</span></code>: the raw samples of the sensor</div>
+<div class="line">- <code class="docutils literal notranslate"><span class="pre">std</span></code>: the square root of the covariance matrix <span class="math notranslate nohighlight">\(P\)</span>, representing one standard deviation of the estimation error</div>
+</div>
 <p>Each subplot calls <code class="docutils literal notranslate"><span class="pre">plotdefaults()</span></code> from c4dynamics <a class="reference external" href="https://c4dynamics.github.io/C4dynamics/api/generated/utils/c4dynamics.utils.plottools.plotdefaults.html">utils</a> to set default properties for an axis.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
@@ -711,7 +720,7 @@ v_z \\
 </div>
 <p>Now we can call <code class="docutils literal notranslate"><span class="pre">drawekf()</span></code> to plot the results of the ideal case:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drawekf</span><span class="p">(</span><span class="n">trueobj</span> <span class="o">=</span> <span class="n">tgt</span><span class="p">,</span> <span class="n">measures</span> <span class="o">=</span> <span class="n">altmtr</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Ideal&#39;</span><span class="p">,</span> <span class="n">txtcaption</span> <span class="o">=</span> <span class="s2">&quot;Figure 3: Time histories of the target altitude, velocity, and ballistic coefficient.</span><span class="se">\n</span><span class="s2">Magenta = true target, cyan = radar samples.&quot;</span><span class="p">);</span>
@@ -736,7 +745,7 @@ v_z \\
 <section id="id1">
 <h3>Setup &amp; Initial Conditions<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nu</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
@@ -749,7 +758,7 @@ v_z \\
 <section id="id2">
 <h3>Main Loop<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tspan</span><span class="p">:</span>
@@ -763,7 +772,7 @@ v_z \\
 <section id="Results">
 <h3>Results<a class="headerlink" href="#Results" title="Link to this heading">#</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">drawekf</span><span class="p">(</span><span class="n">trueobj</span> <span class="o">=</span> <span class="n">tgt</span><span class="p">,</span> <span class="n">measures</span> <span class="o">=</span> <span class="n">altmtr</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Noisy&#39;</span><span class="p">,</span> <span class="n">txtcaption</span> <span class="o">=</span> <span class="s2">&quot;Figure 4: Time histories of the target altitude, velocity, and ballistic coefficient.</span><span class="se">\n</span><span class="s2">Magenta = true target, cyan = samples by nonideal radar.&quot;</span><span class="p">)</span>
@@ -779,7 +788,7 @@ v_z \\
 </div>
 <p>To observe the effect of the radar’s realistic parameters, we need to focus on a small range of the altitude axis:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dpi</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span> <span class="n">gridspec_kw</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;left&#39;</span><span class="p">:</span> <span class="mf">.15</span><span class="p">,</span> <span class="s1">&#39;right&#39;</span><span class="p">:</span> <span class="mf">.95</span><span class="p">,</span> <span class="s1">&#39;top&#39;</span><span class="p">:</span> <span class="mf">.80</span><span class="p">,</span> <span class="s1">&#39;bottom&#39;</span><span class="p">:</span> <span class="mf">.15</span><span class="p">})</span>
@@ -830,7 +839,7 @@ v_z \\
 <h3>Initial Conditions<a class="headerlink" href="#Initial-Conditions" title="Link to this heading">#</a></h3>
 <p>Since the initial conditions are not precisely known, let us define the following errors:</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zerr</span> <span class="o">=</span> <span class="mi">25</span>       <span class="c1"># initial error in position</span>
@@ -851,7 +860,7 @@ v_z \\
       1 &amp; 0 &amp; 0
     \end{bmatrix}\]</div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
@@ -863,7 +872,7 @@ v_z \\
 <div class="line">We can use the errors that defined earlier to initialize the covariane matrix:</div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">P0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">([</span><span class="n">nu</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">vzerr</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">betaerr</span><span class="o">**</span><span class="mi">2</span><span class="p">])</span>
@@ -879,11 +888,11 @@ v_z \\
 </div>
 <p>The measurement noise is characterized by <span class="math notranslate nohighlight">\(\nu = \sqrt{500}\)</span>:</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R</span> <span class="o">=</span> <span class="n">nu</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">dt</span>
-<span class="n">Q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span> <span class="c1"># betaerr**2 / tf * dt])</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">betaerr</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">tf</span> <span class="o">*</span> <span class="n">dt</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -897,7 +906,7 @@ v_z \\
 <div class="line">Finally, it requires the constant system matrices, which in this case include all matrices except the process matrix.</div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tgt</span> <span class="o">=</span> <span class="n">c4d</span><span class="o">.</span><span class="n">state</span><span class="p">(</span><span class="n">z</span> <span class="o">=</span> <span class="mi">100000</span><span class="p">,</span> <span class="n">vz</span> <span class="o">=</span> <span class="o">-</span><span class="mi">6000</span><span class="p">,</span> <span class="n">beta</span> <span class="o">=</span> <span class="mi">500</span><span class="p">)</span>
@@ -932,14 +941,13 @@ v_z \\
 <p>Note that although the process is linearized, the nonlinear equations are still passed to the <code class="docutils literal notranslate"><span class="pre">predict()</span></code> function to integrate the derivatives using their exact expressions.</p>
 <p>All the steps described earlier appear in the following main loop with a comment line entitling every section:</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tspan</span><span class="p">:</span>
   <span class="c1"># store states</span>
   <span class="n">tgt</span><span class="o">.</span><span class="n">store</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
   <span class="n">ekf</span><span class="o">.</span><span class="n">store</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-  <span class="c1"># print(f&#39;{t}\t{ekf.X}&#39;)</span>
   <span class="c1"># target motion simulation</span>
   <span class="n">tgt</span><span class="o">.</span><span class="n">X</span> <span class="o">=</span> <span class="n">odeint</span><span class="p">(</span><span class="n">ballistics</span><span class="p">,</span> <span class="n">tgt</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="p">[</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span> <span class="o">+</span> <span class="n">dt</span><span class="p">])[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
   <span class="c1"># process linearization</span>
@@ -962,7 +970,7 @@ v_z \\
 <section id="id5">
 <h3>Results<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drawekf</span><span class="p">(</span><span class="n">trueobj</span> <span class="o">=</span> <span class="n">tgt</span><span class="p">,</span> <span class="n">measures</span> <span class="o">=</span> <span class="n">altmtr</span><span class="p">,</span> <span class="n">ekf</span> <span class="o">=</span>  <span class="n">ekf</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Filtered&#39;</span><span class="p">,</span> <span class="n">txtcaption</span> <span class="o">=</span> <span class="s2">&quot;Figure 6: Extended Kalman filter estimation of target position, velocity, and ballistic coefficient.</span><span class="se">\n</span><span class="s2">Magenta = true target, cyan = samples by nonideal radar, yellow = estimated target.&quot;</span><span class="p">);</span>
@@ -976,9 +984,19 @@ v_z \\
 <img alt="../_images/programs_ballistic_coefficient_69_0.png" src="../_images/programs_ballistic_coefficient_69_0.png" />
 </div>
 </div>
-<p>The position and velocity estimates are straightforward. The position and the velocity estimates are obvious. The velocity estimation starts with an error of <span class="math notranslate nohighlight">\(-150 ft/s\)</span>, as defined, and quickly converges to the true target velocity. The ballistic coefficient estimation begins with a relatively large error but converges to the true value after an initial overshoot.</p>
+<p>The position and velocity estimates are straightforward. The velocity estimation starts with an error of <span class="math notranslate nohighlight">\(−150 ft/s\)</span>, as defined, and quickly converges to the true target velocity. The ballistic coefficient estimation begins with a relatively large error but converges to the true value after an initial overshoot.</p>
+<p>The improvement at later times corresponds to a descent in altitude. It occurs at approximately <span class="math notranslate nohighlight">\(60 kft\)</span> altitude, below which the extended Kalman filter provides an excellent estimate of the target’s ballistic coefficient. For initial altitudes higher than <span class="math notranslate nohighlight">\(100 kft\)</span>, however, the EKF may struggle to achieve similar results. The ballistic coefficient is not observable, from position measurements alone, at high altitudes due to the absence of significant drag forces.</p>
+<div class="line-block">
+<div class="line">Another scenario where the filter may fail is when there is a relatively large error in the initial conditions. For example, we set <span class="math notranslate nohighlight">\(\beta_0 = 800\)</span>, which is <span class="math notranslate nohighlight">\(300\)</span> higher than the true coefficient value.</div>
+<div class="line">However, for errors as large as <span class="math notranslate nohighlight">\(1000\)</span>, the filter ultimately fails to estimate the state in time.</div>
+<div class="line">Unlike the linear Kalman filter, the performance of the extended Kalman filter is highly dependent on the initial conditions.</div>
+</div>
+<div class="line-block">
+<div class="line">To address these sensitivities, we introduced a nonzero process noise in the coefficient variable of the process noise matrix (<span class="math notranslate nohighlight">\(Q\)</span>). This adjustment adds flexibility to the filter dynamics and improves robustness.</div>
+<div class="line">The effect of this process noise can be observed in the following figure, where the estimated error (white lines) remains high and does not converge as a function of time.</div>
+</div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drawekf</span><span class="p">(</span><span class="n">trueobj</span> <span class="o">=</span> <span class="n">tgt</span><span class="p">,</span> <span class="n">measures</span> <span class="o">=</span> <span class="n">altmtr</span><span class="p">,</span> <span class="n">ekf</span> <span class="o">=</span>  <span class="n">ekf</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Filtered&#39;</span><span class="p">,</span> <span class="n">std</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">txtcaption</span> <span class="o">=</span> <span class="s2">&quot;Figure 7: Focus on an arbitrary part of the target altitude.</span><span class="se">\n</span><span class="s2">Magenta = true target, cyan = samples by nonideal radar, yellow = estimated target.&quot;</span><span class="p">);</span>
@@ -991,6 +1009,13 @@ v_z \\
 <div class="output_area docutils container">
 <img alt="../_images/programs_ballistic_coefficient_71_0.png" src="../_images/programs_ballistic_coefficient_71_0.png" />
 </div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Figure</span> <span class="pre">7</span></code> compares the actual error (the difference between the true target value — magenta — and the estimated target value — yellow) with the theoretical predictions of the covariance matrix (white).</p>
+<p>Here, we see that the actual error agrees with the theoretical predictions; that is, the actual errors do not exceed the bounds predicted by the system covariance (<span class="math notranslate nohighlight">\(P\)</span>).</p>
+<p>However, one drawback of the extended Kalman filter is the potential discrepancy between the actual errors and the covariance predictions.</p>
+<div class="line-block">
+<div class="line">This highlights a key limitation: the filter may not detect when it is failing.</div>
+<div class="line">Thus, while the covariance matrix is essential for computing the Kalman gain, its theoretical predictions are not always reliable for assessing filter performance.</div>
 </div>
 </section>
 </section>
@@ -1125,7 +1150,7 @@ By c4dynamics
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Jan 09, 2025.
+  Last updated on Jan 17, 2025.
   <br/>
 </p>
   </div>

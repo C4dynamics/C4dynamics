@@ -55,7 +55,7 @@
     <link rel="prev" title="6 Degrees Of Freedom Missile Guidance Simulation" href="dof6sim.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jan 17, 2025"/>
+    <meta name="docbuild:last-update" content="Jan 29, 2025"/>
   </head>
   
   
@@ -490,9 +490,8 @@ document.write(`
 <li><p>Zarchan <code class="docutils literal notranslate"><span class="pre">[1]</span></code> provides a great deal of detail about this example. Additional sources can be found in <code class="docutils literal notranslate"><span class="pre">[2]</span></code>.</p></li>
 </ol>
 <div style="text-align: center;"><p><img alt="alt text" src="../_images/ekf.drawio.png" /></p>
-<figcaption><p>Figure 1: Flowchart of the simulation</p>
-</figcaption></div><p>The target dynamics uses as a reference to the Kalman prediction and the radar measurements correct the estimates. When the loop is over, all the data is transmitted outside to plot results.</p>
-</section>
+<figcaption><p>Figure 1: Flowchart of the simulation. The target dynamics uses as a reference to the Kalman prediction and the radar measurements correct the estimates. When the loop is over, all the data is transmitted outside to plot results.</p>
+</figcaption></div></section>
 <section id="Extended-Kalman-Filter-(EKF)">
 <h2>Extended Kalman Filter (EKF)<a class="headerlink" href="#Extended-Kalman-Filter-(EKF)" title="Link to this heading">#</a></h2>
 <p>The basics of EKF were covered in <a class="reference external" href="https://c4dynamics.github.io/C4dynamics/api/Filters.html#extended-kalman-filter-ekf">the filters introduction</a> to provide the background material required for the understanding and developing state estimation for nonlinear systems. Here is a brief recap:</p>
@@ -560,7 +559,8 @@ v_z \\
 <div class="math notranslate nohighlight">
 \[y = z + \nu_k\]</div>
 <div class="line-block">
-<div class="line">Where: - <span class="math notranslate nohighlight">\(z\)</span> is the target altitude (<span class="math notranslate nohighlight">\(ft\)</span>)</div>
+<div class="line">Where:</div>
+<div class="line">- <span class="math notranslate nohighlight">\(z\)</span> is the target altitude (<span class="math notranslate nohighlight">\(ft\)</span>)</div>
 <div class="line">- <span class="math notranslate nohighlight">\(v_z\)</span> is the target vertical velocity (<span class="math notranslate nohighlight">\(ft/s\)</span>)</div>
 <div class="line">- <span class="math notranslate nohighlight">\(\beta\)</span> is the target ballistic coefficient (<span class="math notranslate nohighlight">\(lb/ft^2\)</span>)</div>
 <div class="line">- <span class="math notranslate nohighlight">\(y\)</span> is the system output</div>
@@ -626,13 +626,13 @@ v_z \\
 <section id="Plotting">
 <h3>Plotting<a class="headerlink" href="#Plotting" title="Link to this heading">#</a></h3>
 <p>Let’s write a plotting function to draw the results in the ideal case as well as in later cases.</p>
-<div class="line-block">
-<div class="line">The parameters of the function <code class="docutils literal notranslate"><span class="pre">drawekf()</span></code> enable to control the elements of the components to draw:</div>
-<div class="line">- <code class="docutils literal notranslate"><span class="pre">ekf</span></code>: estimated object</div>
-<div class="line">- <code class="docutils literal notranslate"><span class="pre">trueobj</span></code>: ground truth reference to the estimation</div>
-<div class="line">- <code class="docutils literal notranslate"><span class="pre">measure</span></code>: the raw samples of the sensor</div>
-<div class="line">- <code class="docutils literal notranslate"><span class="pre">std</span></code>: the square root of the covariance matrix <span class="math notranslate nohighlight">\(P\)</span>, representing one standard deviation of the estimation error</div>
-</div>
+<p>The parameters of the function <code class="docutils literal notranslate"><span class="pre">drawekf()</span></code> enable to control the elements of the components to draw:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ekf</span></code>: estimated object</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">trueobj</span></code>: ground truth reference to the estimation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">measure</span></code>: the raw samples of the sensor</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">std</span></code>: the square root of the covariance matrix <span class="math notranslate nohighlight">\(P\)</span>, representing one standard deviation of the estimation error</p></li>
+</ul>
 <p>Each subplot calls <code class="docutils literal notranslate"><span class="pre">plotdefaults()</span></code> from c4dynamics <a class="reference external" href="https://c4dynamics.github.io/C4dynamics/api/generated/utils/c4dynamics.utils.plottools.plotdefaults.html">utils</a> to set default properties for an axis.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
@@ -1150,7 +1150,7 @@ By c4dynamics
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Jan 17, 2025.
+  Last updated on Jan 29, 2025.
   <br/>
 </p>
   </div>

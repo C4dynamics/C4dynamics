@@ -54,7 +54,7 @@
     <link rel="prev" title="c4dynamics.detectors.yolo3_opencv.yolov3.detect" href="generated/yolov3/c4dynamics.detectors.yolo3_opencv.yolov3.detect.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jan 17, 2025"/>
+    <meta name="docbuild:last-update" content="Jan 29, 2025"/>
   </head>
   
   
@@ -705,7 +705,7 @@ Then the error covariance is updated to reflect the reduced uncertainty after in
 <p>The <cite>update</cite> equations are calculated after a measure is taken (a posteriori), and the new state <span class="math notranslate nohighlight">\(x\)</span> and the new covariance <span class="math notranslate nohighlight">\(P\)</span>
 are notated by <span class="math notranslate nohighlight">\((+)\)</span> superscript.</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}K = P_k^- \cdot H^T \cdot (H \cdot P_k^- \cdot H^T + R)^{-1}\\x_k^+ = x_k^- \cdot K \cdot (y - H \cdot x_k^-)\\P_k^+ = (I - K \cdot H) \cdot P_k^-\end{aligned}\end{align} \]</div>
+\[ \begin{align}\begin{aligned}K = P_k^- \cdot H^T \cdot (H \cdot P_k^- \cdot H^T + R)^{-1}\\x_k^+ = x_k^- + K \cdot (y - H \cdot x_k^-)\\P_k^+ = (I - K \cdot H) \cdot P_k^-\end{aligned}\end{align} \]</div>
 <p>Where:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(K\)</span> is the Kalman gain</p></li>
@@ -758,7 +758,7 @@ inherits all the mathematical attributes
 and data attributes (storage, plotting, etc.)
 of a state object
 (for further details, see <a class="reference internal" href="States.html#module-c4dynamics.states" title="c4dynamics.states"><code class="xref py py-mod docutils literal notranslate"><span class="pre">states</span></code></a>,
-state <a class="reference internal" href="states.state.html#c4dynamics.states.state.state" title="c4dynamics.states.state.state"><code class="xref py py-class docutils literal notranslate"><span class="pre">state</span></code></a>,
+<a class="reference internal" href="states.state.html#c4dynamics.states.state.state" title="c4dynamics.states.state.state"><code class="xref py py-class docutils literal notranslate"><span class="pre">state</span></code></a>,
 and refer to the examples below)</p>
 <p class="rubric">Example</p>
 <p>An altimeter is measuring the altitude of an aircraft.
@@ -1443,7 +1443,7 @@ By c4dynamics
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Jan 17, 2025.
+  Last updated on Jan 29, 2025.
   <br/>
 </p>
   </div>
